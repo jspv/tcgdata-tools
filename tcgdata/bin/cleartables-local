@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+aws dynamodb delete-table --table-name tcg_cards --endpoint-url http://localhost:8000
+aws dynamodb delete-table --table-name tcg_sets --endpoint-url http://localhost:8000
+aws dynamodb delete-table --table-name test_cards --endpoint-url http://localhost:8000

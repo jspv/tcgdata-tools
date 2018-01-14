@@ -1,0 +1,30 @@
+#!/usr/bin/env python3
+''' Load all cards via pokemontcgsdk and save to specified file '''
+import sys
+import json
+import argparse
+
+# sys.path.insert(0, './pokemon-tcg-sdk-python')
+from pokemontcgsdk import Card
+
+parser = argparse.ArgumentParser()
+parser.add_argument("--file", "-f", type=str, required=False)
+parser.add_argument("--set", "-s", type=str, required=False)
+args = parser.parse_args()
+
+cardarray = []
+
+# Get all Cards, append each to cardarray
+if args.set:
+    cards = Card.where(setCode=args.set).all()
+else:
+    cards = Card.all()
+
+for card in cards:
+    cardarray.append(vars(card))
+
+if args.file:
+    with open(args.file, 'w') as outfile:
+        json.dump(cardarray, outfile)
+else:
+    print(json.dumps(cardarray))

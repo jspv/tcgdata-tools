@@ -1,0 +1,49 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+''' Download images from urls specified in the json file into local images/'''
+import sys
+import os
+import json
+import argparse
+import subprocess
+import urllib3
+import shutil
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('cardjson', type=str)
+    parser.add_argument("--directory", "-d", type=str, required=True)
+    args = parser.parse_args()
+    http = urllib3.PoolManager()
+    urllib3.disable_warnings()
+    urllist = []
+
+    with open(args.cardjson) as json_file:
+        cards = json.load(json_file)
+
+    for card in cards:
+        if card.get('image_url'):
+            urllist.append(card.get('image_url'))
+        if card.get('image_url_hi_res'):
+            urllist.append(card.get('image_url_hi_res'))
+
+    for url in urllist:
+        localpath = args.directory + '/images/' + \
+            url.rsplit('/', 2)[-2] + '/' + url.rsplit('/', 1)[-1]
+        # print('Checking download to {}'.format(localpath))
+
+        # If the file exists, skip it
+        if os.path.isfile(localpath):
+            continue
+
+        os.makedirs(os.path.dirname(localpath), exist_ok=True)
+
+        print('fetching: {} and writing to {}'.format(url, localpath))
+        with http.request('GET', url, preload_content=False) as r, \
+                open(localpath, 'wb') as out_file:
+            shutil.copyfileobj(r, out_file)
+
+
+if __name__ == "__main__":
+    main()
