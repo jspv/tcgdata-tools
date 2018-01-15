@@ -167,3 +167,6 @@ tcgdata/static/images/
 
 # Ignore symlink used to find the module in bin
 tcgdata/bin/tcgdata
+
+# Ignore local database
+local_dynamodb/shared-local-instance.db
