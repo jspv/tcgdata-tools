@@ -1,0 +1,205 @@
+{
+
+    "seasons": {
+        "2017": {
+            "standard_legal_sets": ["xy5", "xy6", "xy7", "xy8", "xy9", "xy10", "xy11", "xy12", "dc1", "g1", "mcd", "tkxy_latias", "tkxy_latios", "tkxy_pikal", "tkxy_suicune", "smp", "sm1", "sm2"],
+            "standard_legal_split_sets": [{
+                "set": "xyp",
+                "number_prefix": "XY",
+                "min": 36
+            }],
+            "expanded_legal_sets": ["bw1", "bw2", "bw3", "bw4", "bw5", "bw6", "bw7", "bw8", "bw9", "bw10", "bw11", "bwp", "dv1", "xy0", "xy1", "xy2", "xy3", "xy4", "xy5", "xy6", "xy7", "xy8", "xy9", "xy10", "xy11", "xy12", "xyp", "tkbw_e", "tkbw_z", "tkxy_latias", "tkxy_latios", "tkxy_pikal", "tkxy_suicune", "mcd", "dc1", "g1", "smp", "sm1", "sm2"],
+            "banned_standard_cards": [],
+            "banned_expanded_cards": ["bw4-72", "xy4-99", "xy4-118"]
+        },
+        "2018": {
+          "standard_legal_sets": ["xy8", "xy9", "xy10", "xy11", "xy12", "g1", "mcd", "smp", "sm1", "sm2", "sm3", "sm35", "sm4"],
+          "standard_legal_split_sets": [{
+            "set": "xyp",
+            "number_prefix": "XY",
+            "min": 67
+            }],
+          "expanded_legal_sets": ["bw1", "bw2", "bw3", "bw4", "bw5", "bw6", "bw7", "bw8", "bw9", "bw10", "bw11", "bwp", "dv1", "xy0", "xy1", "xy2", "xy3", "xy4", "xy5", "xy6", "xy7", "xy8", "xy9", "xy10", "xy11", "xy12", "xyp", "tkbw_e", "tkbw_z", "tkxy_latias", "tkxy_latios", "tkxy_pikal", "tkxy_suicune", "mcd", "dc1", "g1", "smp", "sm1", "sm2", "sm3", "sm35", "sm4"],
+          "banned_standard_cards": [],
+          "banned_expanded_cards": []
+        }
+    },
+    "abbreviations": {
+        "bw1": {
+            "abbr": "blw",
+            "name": "Black & White"
+        },
+        "bw2": {
+            "abbr": "epo",
+            "name": "Black & White - Emerging Powers"
+        },
+        "bw3": {
+            "abbr": "nvi",
+            "name": "Black & White - Noble Victories"
+        },
+        "bw4": {
+            "abbr": "nxd",
+            "name": "Black & White - Next Destinies"
+        },
+        "bw5": {
+            "abbr": "dex",
+            "name": "Black & White - Dark Explorers"
+        },
+        "bw6": {
+            "abbr": "drx",
+            "name": "Black & White - Dragons Exalted"
+        },
+        "bw7": {
+            "abbr": "bcr",
+            "name": "Black & White - Boundaries Crossed"
+        },
+        "bw8": {
+            "abbr": "pls",
+            "name": "Black & White - Plasma Storm"
+        },
+        "bw9": {
+            "abbr": "plf",
+            "name": "Black & White - Plasma Freeze"
+        },
+        "bw10": {
+            "abbr": "plb",
+            "name": "Black & White - Plasma Blast"
+        },
+        "bw11": {
+            "abbr": "ltr",
+            "name": "Black & White - Legendary Treasures"
+        },
+        "bwp": {
+            "abbr": "pr",
+            "name": "Black Star Promos BW"
+        },
+        "dv1": {
+            "abbr": "drv",
+            "name": "Dragon Vault"
+        },
+        "xy0": {
+            "abbr": "kss",
+            "name": "XY - Kalos Starter Set"
+        },
+        "xy1": {
+            "abbr": "xy",
+            "name": "XY"
+        },
+        "xy2": {
+            "abbr": "flf",
+            "name": "XY - Flashfire"
+        },
+        "xy3": {
+            "abbr": "ffi",
+            "name": "XY - Furious Fists"
+        },
+        "xy4": {
+            "abbr": "phf",
+            "name": "XY - Phantom Forces"
+        },
+        "xy5": {
+            "abbr": "prc",
+            "name": "XY - Primal Clash"
+        },
+        "xy6": {
+            "abbr": "ros",
+            "name": "XY - Roaring Skies"
+        },
+        "xy7": {
+            "abbr": "aor",
+            "name": "XY - Ancient Origins"
+        },
+        "xy8": {
+            "abbr": "bkt",
+            "name": "XY - BREAKthrough"
+        },
+        "xy9": {
+            "abbr": "bkp",
+            "name": "XY - BREAKpoint"
+        },
+        "xy10": {
+            "abbr": "fco",
+            "name": "XY - Fates Collide"
+        },
+        "xy11": {
+            "abbr": "sts",
+            "name": "XY - Steam Siege"
+        },
+        "xy12": {
+            "abbr": "evo",
+            "name": "XY - Evolutions"
+        },
+        "xyp": {
+            "abbr": "pr",
+            "name": "Black Star Promos XY"
+        },
+        "tkbw_e": {
+            "abbr": "tk",
+            "name": "Black & White Trainer Kit - Excadrill"
+        },
+        "tkbw_z": {
+            "abbr": "tk",
+            "name": "Black & White Trainer Kit - Zoroark"
+        },
+        "tkxy_latios": {
+            "abbr": "tk",
+            "name": "XY Trainer Kit - Latios"
+        },
+        "tkxy_latias": {
+            "abbr": "tk",
+            "name": "XY Trainer Kit - Latias"
+        },
+        "tkxy_pikal": {
+            "abbr": "tk",
+            "name": "XY Trainer Kit - Pikachu Libre"
+        },
+        "tkxy_suicune": {
+            "abbr": "tk",
+            "name": "XY Trainer Kit - Suicune"
+        },
+        "tkxy_bisharp": {
+            "abbr": "tk",
+            "name": "XY Trainer Kit - Bisharp"
+        },
+        "tkxy_wigglytuff": {
+            "abbr": "tk",
+            "name": "XY Trainer Kit - Wiggytuff"
+        },
+        "mcd": {
+            "abbr": "mcd",
+            "name": "McDonalds Collection"
+        },
+        "dc1": {
+            "abbr": "dcr",
+            "name": "Double Crisis"
+        },
+        "g1": {
+            "abbr": "gen",
+            "name": "Generations"
+        },
+        "smp": {
+            "abbr": "pr",
+            "name": "Black Star Promos S&M"
+        },
+        "sm1": {
+            "abbr": "sum",
+            "name": "Sun & Moon"
+        },
+        "sm2": {
+            "abbr": "gri",
+            "name": "Sun & Moon - Guardians Rising"
+        },
+        "sm3": {
+            "abbr": "bus",
+            "name": "Sun & Moon - Burning Shadows"
+        },
+        "sm35": {
+            "abbr": "slg",
+            "name": "Sun & Moon - Shining Legends"
+        },
+        "sm4": {
+            "abbr": "cin",
+            "name": "Sun & Moon - Crimson Invasion"
+        }
+    }
+}

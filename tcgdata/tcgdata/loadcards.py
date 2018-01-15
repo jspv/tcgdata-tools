@@ -1,3 +1,4 @@
+''' Load cards into the database and/or optionally post-process the data '''
 import boto3
 from botocore.exceptions import ClientError
 from boto3.dynamodb.conditions import Key, Attr
@@ -11,6 +12,16 @@ import re
 logger = logging.getLogger(__name__)
 logging.getLogger('botocore').setLevel(logging.WARNING)
 logging.getLogger('boto3').setLevel(logging.WARNING)
+
+"""
+    This script expects the following configuraiton files:
+        * allsets.json - list of all the sets (from pullsets)
+        * allcards.json - list of all the cards (from pullcards)
+        * formats.json - list of seasons and sets which are valide in search
+        * reprints.json - list of reprints, used to post-process the data
+            already stored in the database, enriching it with reprint info
+        * errata.json - errata informaiton to add to cards
+"""
 
 """
     Notes:
@@ -34,12 +45,12 @@ def main():
     parsegroup = parser.add_mutually_exclusive_group()
     parser.add_argument(
         '-t', '--test',
-        action='store_true', help='For testing',
+        action='store_true', help='For testing - uses test data only',
         required=False
     )
     parser.add_argument(
         '-l', '--localdb',
-        action='store_true', help='use local database',
+        action='store_true', help='use local database instad of dynamodb',
         required=False
     )
     parsegroup.add_argument(
