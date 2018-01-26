@@ -22,13 +22,15 @@ logger = logging.getLogger(__name__)
 # logging.getLogger('botocore').setLevel(logging.WARNING)
 # logging.getLogger('boto3').setLevel(logging.WARNING)
 
-# Nasty Global
+# Nasty Globals
 errorlist = []
+nomatchlist = []
 
 
 def main():
     # ensure we use the global errorlist
     global errorlist
+    global nomatchlist
     # webtest()
     # builtins.wait("waiting")
     parser = argparse.ArgumentParser()
@@ -38,8 +40,10 @@ def main():
                         type=argparse.FileType('w'),
                         default=[sys.stdout], required=False,
                         help='load then output reprints to file')
-    parser.add_argument('--errorfile', '-ef', nargs=1,
-                        help='load then output errors to file')
+    parser.add_argument('--errorfile', nargs=1, default=['errors.json'],
+                        help='override errorfile.json file')
+    parser.add_argument('--nomatchfile', nargs=1, default=['nomatches.json'],
+                        help='override nomatches.json file')
     parser.add_argument('--hard', action='store_true',
                         help='find hard matches', required=False)
     parser.add_argument('-l', '--localdb', action='store_true',
@@ -108,6 +112,7 @@ def main():
     cardfilter = None
     cards = query_cards(cardtable, cardfilter)
 
+    print ('got errorfile ', args.errorfile[0])
     # initialise errorlist - if the file exists, load the json files
     if args.errorfile and os.path.isfile(args.errorfile[0]):
         with open(args.errorfile[0], 'r') as errorfile:
@@ -123,15 +128,21 @@ def main():
                             'Cant find cardid={} loading errorfile')
                     _put_val(card, errorstruct['key'], errorstruct['index'],
                              errorstruct['newvalue'])
-    else:
-        errorlist = []
+
+    # initialise nomatchfile - if the file exists, load the json files
+    if args.nomatchfile and os.path.isfile(args.nomatchfile[0]):
+        with open(args.nomatchfile[0], 'r') as nomatchfile:
+            nomatchlist = json.load(nomatchfile)
 
     print(find_reprints(cards, is_easymode), file=args.reprintsfile[0])
 
-    if args.errorfile:
-        with open(args.errorfile[0], 'w') as errorfile:
-            logger.debug('errorlist = {}'.format(errorlist))
-            print(json.dumps(errorlist), file=errorfile)
+    with open(args.errorfile[0], 'w') as errorfile:
+        logger.debug('errorlist = {}'.format(errorlist))
+        print(json.dumps(errorlist), file=errorfile)
+
+    with open(args.nomatchfile[0], 'w') as nomatchfile:
+        logger.debug('nomatchlist = {}'.format(nomatchlist))
+        print(json.dumps(nomatchlist), file=nomatchfile)
 
 
 def find_reprints(cards, is_easymode):
