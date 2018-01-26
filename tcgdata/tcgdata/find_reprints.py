@@ -1,5 +1,6 @@
 ''' Search through database and detect reprints '''
 import builtins
+import os
 import boto3
 import json
 import argparse
@@ -21,16 +22,24 @@ logger = logging.getLogger(__name__)
 # logging.getLogger('botocore').setLevel(logging.WARNING)
 # logging.getLogger('boto3').setLevel(logging.WARNING)
 
+# Nasty Global
+errorlist = []
+
 
 def main():
+    # ensure we use the global errorlist
+    global errorlist
     # webtest()
     # builtins.wait("waiting")
     parser = argparse.ArgumentParser()
     parser.add_argument('--easy', '-e', action='store_true',
                         help='find easy matches only', required=False)
-    parser.add_argument('--file', '-f', nargs=1, type=argparse.FileType('w'),
+    parser.add_argument('--reprintsfile', '-rf', nargs=1,
+                        type=argparse.FileType('w'),
                         default=[sys.stdout], required=False,
-                        help='output to file',)
+                        help='load then output reprints to file')
+    parser.add_argument('--errorfile', '-ef', nargs=1,
+                        help='load then output errors to file')
     parser.add_argument('--hard', action='store_true',
                         help='find hard matches', required=False)
     parser.add_argument('-l', '--localdb', action='store_true',
@@ -49,8 +58,6 @@ def main():
     parser.add_argument("-vv", "--deepverbose", action="store_const",
                         help="increase output verbosity",
                         dest='deeploglevel', const=logging.INFO)
-    parser.add_argument('-t', '--test', action='store_true',
-                        help='Dev testing', required=False)
 
     args = parser.parse_args()
 
@@ -75,19 +82,6 @@ def main():
     if args.deeploglevel != args.loglevel:
         logging.getLogger(__name__.split('.')[0]).setLevel(args.loglevel)
 
-    # Place to dump quick tests
-    if args.test:
-        card1 = pickle.loads(b'\x80\x03}q\x00(X\x0c\x00\x00\x00retreat_costq\x01]q\x02(X\t\x00\x00\x00Colorlessq\x03X\t\x00\x00\x00Colorlessq\x04X\t\x00\x00\x00Colorlessq\x05eX\x05\x00\x00\x00typesq\x06]q\x07X\t\x00\x00\x00Lightningq\x08aX\t\x00\x00\x00supertypeq\tX\x08\x00\x00\x00Pok\xc3\xa9monq\nX\x03\x00\x00\x00setq\x0bX\x0e\x00\x00\x00Secret Wondersq\x0cX\x0f\x00\x00\x00set_total_cardsq\rcdecimal\nDecimal\nq\x0eX\x03\x00\x00\x00132q\x0f\x85q\x10Rq\x11X\x06\x00\x00\x00artistq\x12X\x0c\x00\x00\x00Kouki Saitouq\x13X\t\x00\x00\x00image_urlq\x14X&\x00\x00\x00https://images.pokemontcg.io/dp3/1.pngq\x15X\x02\x00\x00\x00hpq\x16X\x03\x00\x00\x00130q\x17X\x0b\x00\x00\x00resistancesq\x18]q\x19}q\x1a(X\x04\x00\x00\x00typeq\x1bX\x05\x00\x00\x00Metalq\x1cX\x05\x00\x00\x00valueq\x1dX\x03\x00\x00\x00-20q\x1euaX\x10\x00\x00\x00set_release_dateq\x1fX\n\x00\x00\x0011/01/2007q X\x10\x00\x00\x00image_url_hi_resq!X,\x00\x00\x00https://images.pokemontcg.io/dp3/1_hires.pngq"X\r\x00\x00\x002017_standardq#\x89X\r\x00\x00\x002017_expandedq$\x89X\x17\x00\x00\x00national_pokedex_numberq%h\x0eX\x03\x00\x00\x00181q&\x85q\'Rq(X\x06\x00\x00\x00numberq)X\x01\x00\x00\x001q*X\x08\x00\x00\x00set_codeq+X\x03\x00\x00\x00dp3q,X\x07\x00\x00\x00subtypeq-X\x07\x00\x00\x00Stage 2q.X\x07\x00\x00\x00attacksq/]q0}q1(X\x04\x00\x00\x00nameq2X\x0c\x00\x00\x00Cluster Boltq3X\x06\x00\x00\x00damageq4X\x02\x00\x00\x0070q5X\x04\x00\x00\x00costq6]q7(X\t\x00\x00\x00Colorlessq8X\t\x00\x00\x00Colorlessq9X\t\x00\x00\x00Lightningq:eX\x04\x00\x00\x00textq;X\xf2\x00\x00\x00You may discard all Lightning Energy attached to Ampharos. If you do, this attack does 20 damage to each of your opponent\'s Benched Pok\xc3\xa9mon that has any Energy cards attached to it. (Don\'t apply Weakness and Resistance for Benched Pok\xc3\xa9mon.)q<X\x13\x00\x00\x00convertedEnergyCostq=h\x0eX\x01\x00\x00\x003q>\x85q?Rq@uaX\x06\x00\x00\x00seriesqAX\x0f\x00\x00\x00Diamond & PearlqBX\n\x00\x00\x00weaknessesqC]qD}qE(h\x1bX\x08\x00\x00\x00FightingqFh\x1dX\x03\x00\x00\x00+30qGuah2X\x08\x00\x00\x00AmpharosqHX\x02\x00\x00\x00idqIX\x05\x00\x00\x00dp3-1qJX\x07\x00\x00\x00abilityqK}qL(h2X\x07\x00\x00\x00JammingqMh\x1bX\n\x00\x00\x00Pok\xc3\xa9-BodyqNh;X\xb2\x00\x00\x00After your opponent plays a Supporter card from his or her hand, put 1 damage counter on each of your opponent\'s Pok\xc3\xa9mon. You can\'t use more than 1 Jamming Pok\xc3\xa9-Body each turn.qOuX\x06\x00\x00\x00rarityqPX\t\x00\x00\x00Rare HoloqQu.')
-
-        card2 = pickle.loads(b'\x80\x03}q\x00(X\x0c\x00\x00\x00retreat_costq\x01]q\x02(X\t\x00\x00\x00Colorlessq\x03X\t\x00\x00\x00Colorlessq\x04X\t\x00\x00\x00Colorlessq\x05eX\x05\x00\x00\x00typesq\x06]q\x07X\t\x00\x00\x00Lightningq\x08aX\t\x00\x00\x00supertypeq\tX\x08\x00\x00\x00Pok\xc3\xa9monq\nX\x03\x00\x00\x00setq\x0bX\x0c\x00\x00\x00POP Series 7q\x0cX\x0f\x00\x00\x00set_total_cardsq\rcdecimal\nDecimal\nq\x0eX\x02\x00\x00\x0017q\x0f\x85q\x10Rq\x11X\x06\x00\x00\x00artistq\x12X\x0c\x00\x00\x00Kouki Saitouq\x13X\t\x00\x00\x00image_urlq\x14X\'\x00\x00\x00https://images.pokemontcg.io/pop7/1.pngq\x15X\x02\x00\x00\x00hpq\x16X\x03\x00\x00\x00130q\x17X\x0b\x00\x00\x00resistancesq\x18]q\x19}q\x1a(X\x04\x00\x00\x00typeq\x1bX\x05\x00\x00\x00Metalq\x1cX\x05\x00\x00\x00valueq\x1dX\x03\x00\x00\x00-20q\x1euaX\x10\x00\x00\x00set_release_dateq\x1fX\n\x00\x00\x0003/01/2008q X\x10\x00\x00\x00image_url_hi_resq!X-\x00\x00\x00https://images.pokemontcg.io/pop7/1_hires.pngq"X\r\x00\x00\x002017_standardq#\x89X\r\x00\x00\x002017_expandedq$\x89X\x17\x00\x00\x00national_pokedex_numberq%h\x0eX\x03\x00\x00\x00181q&\x85q\'Rq(X\x06\x00\x00\x00numberq)X\x01\x00\x00\x001q*X\x08\x00\x00\x00set_codeq+X\x04\x00\x00\x00pop7q,X\x07\x00\x00\x00subtypeq-X\x07\x00\x00\x00Stage 2q.X\x07\x00\x00\x00attacksq/]q0}q1(X\x04\x00\x00\x00nameq2X\x0c\x00\x00\x00Cluster Boltq3X\x06\x00\x00\x00damageq4X\x02\x00\x00\x0070q5X\x04\x00\x00\x00costq6]q7(X\t\x00\x00\x00Colorlessq8X\t\x00\x00\x00Colorlessq9X\t\x00\x00\x00Lightningq:eX\x04\x00\x00\x00textq;X\xe8\x00\x00\x00You may discard all Energy attached to Ampharos. If you do, this attack does 20 damage to each of your opponent\'s Benched Pok\xc3\xa9mon that has any Energy cards attached to it. (Don\'t apply Weakness and Resistance for Benched Pok\xc3\xa9mon.)q<X\x13\x00\x00\x00convertedEnergyCostq=h\x0eX\x01\x00\x00\x003q>\x85q?Rq@uaX\x06\x00\x00\x00seriesqAX\x03\x00\x00\x00POPqBX\n\x00\x00\x00weaknessesqC]qD}qE(h\x1bX\x08\x00\x00\x00FightingqFh\x1dX\x03\x00\x00\x00\xc3\x972qGuah2X\x08\x00\x00\x00AmpharosqHX\x02\x00\x00\x00idqIX\x06\x00\x00\x00pop7-1qJX\x07\x00\x00\x00abilityqK}qL(h2X\x07\x00\x00\x00JammingqMh\x1bX\n\x00\x00\x00Pok\xc3\xa9-BodyqNh;X\xb2\x00\x00\x00After your opponent plays a Supporter card from his or her hand, put 1 damage counter on each of your opponent\'s Pok\xc3\xa9mon. You can\'t use more than 1 Jamming Pok\xc3\xa9-Body each turn.qOuX\x06\x00\x00\x00rarityqPX\x04\x00\x00\x00RareqQu.')
-
-        matchdata = pickle.loads(
-            b"\x80\x03}q\x00(X\x0f\x00\x00\x00attacks.text[0]q\x01]q\x02}q\x03(X\x05\x00\x00\x00scoreq\x04KbX\x04\x00\x00\x00valsq\x05]q\x06(X\xf2\x00\x00\x00You may discard all Lightning Energy attached to Ampharos. If you do, this attack does 20 damage to each of your opponent's Benched Pok\xc3\xa9mon that has any Energy cards attached to it. (Don't apply Weakness and Resistance for Benched Pok\xc3\xa9mon.)q\x07X\xe8\x00\x00\x00You may discard all Energy attached to Ampharos. If you do, this attack does 20 damage to each of your opponent's Benched Pok\xc3\xa9mon that has any Energy cards attached to it. (Don't apply Weakness and Resistance for Benched Pok\xc3\xa9mon.)q\x08euaX\r\x00\x00\x00weaknesses[0]q\t]q\n}q\x0b(h\x04K\x00h\x05]q\x0c(]q\r}q\x0e(X\x04\x00\x00\x00typeq\x0fX\x08\x00\x00\x00Fightingq\x10X\x05\x00\x00\x00valueq\x11X\x03\x00\x00\x00+30q\x12ua]q\x13}q\x14(X\x04\x00\x00\x00typeq\x15X\x08\x00\x00\x00Fightingq\x16X\x05\x00\x00\x00valueq\x17X\x03\x00\x00\x00\xc3\x972q\x18uaeuau.")
-
-        logger.info(review_cards_manually(card1, card2, matchdata))
-        logger.info('done with test')
-        quit()
-
     if args.hard and args.easy:
         parser.error("--easy and --hard are mutually exclusive")
         sys.exit(2)
@@ -110,19 +104,45 @@ def main():
     print('Connected to table {} created at {}\n'.format(
         cardbase_name, cardtable.creation_date_time))
 
+    # if cardfilter = None, get all cards
     cardfilter = None
     cards = query_cards(cardtable, cardfilter)
-    print(find_reprints(cards, is_easymode), file=args.file[0])
+
+    # initialise errorlist - if the file exists, load the json files
+    if args.errorfile and os.path.isfile(args.errorfile[0]):
+        with open(args.errorfile[0], 'r') as errorfile:
+            errorlist = json.load(errorfile)
+            for error in errorlist:
+                for cardid, errorstruct in error.items():
+                    # use generator exporession to find the right card,
+                    # if cardid is not Found then None is returned
+                    card = next(
+                        (card for card in cards if card['id'] == cardid), None)
+                    if card is None:
+                        raise Exception(
+                            'Cant find cardid={} loading errorfile')
+                    _put_val(card, errorstruct['key'], errorstruct['index'],
+                             errorstruct['newvalue'])
+    else:
+        errorlist = []
+
+    print(find_reprints(cards, is_easymode), file=args.reprintsfile[0])
+
+    if args.errorfile:
+        with open(args.errorfile[0], 'w') as errorfile:
+            logger.debug('errorlist = {}'.format(errorlist))
+            print(json.dumps(errorlist), file=errorfile)
 
 
 def find_reprints(cards, is_easymode):
     """ Search through a list of card objects and find all reprints """
 
-    # holder for list of reprints in the format of {Name:[cardid, cardid]}
+    # holder for list of reprints in the format of:
+    #   [{Name:[cardid, cardid]}, {Name:[cardid, cardid, cardid]}]
     reprintslist = []
 
     # Use an index i so that we can pass the current index to the
-    # fund_reprints_x function indicating where to start the search from.
+    # find_reprints_x function indicating where to start the search from.
     # cards prior to i would have been checked already.
     for i, card in enumerate(cards):
         supertype = card['supertype']
@@ -132,16 +152,32 @@ def find_reprints(cards, is_easymode):
             # if there are any reprint objects in the reprintslist, check to
             # see if the current card is already listed in any of them, if not
             # then go ahead and search for reprints.
+            # below code loops through all current items in reprintslist,
+            #   sees if the name of the current card matches the key, looks
+            #   through the values to see if the card is already
+            #   the list  If so, then this card is an already known
+            #   reprint, no need to go further.
+            # reminder:
+            #   reprintlist is in the format of:
+            #   [{Name:[cardid, cardid]}, {Name:[cardid, cardid, cardid]}]
+
             if not any(card['id'] in prints.get(card['name'], {})
                        for prints in reprintslist):
+                # output the index so we can follow the progress
                 print(i)
-                reprints = find_reprints_pokemon(cards, i, is_easymode)
-                if reprints:
-                    reprintslist.append(reprints)
-                    # with open('manual_reprints.json', 'a') as outfile:
-                    # print(json.dumps(reprintslist),
-                    #       file=outfile)
-                    print(json.dumps(reprints))
+                try:
+                    reprints = find_reprints_pokemon(cards, i, is_easymode)
+                    if reprints:
+                        reprintslist.append(reprints)
+                        # with open('manual_reprints.json', 'a') as outfile:
+                        # print(json.dumps(reprintslist),
+                        #       file=outfile)
+                        print(json.dumps(reprints))
+                except Exception as e:
+                    print('Quit chosen or something else happened.  Exiting')
+                    print('Exception was {}'.format(e))
+                    print('Errorlist is {}'.format(errorlist))
+                    return(json.dumps(reprintslist))
 
     return(json.dumps(reprintslist))
 
@@ -165,7 +201,7 @@ def find_reprints_pokemon(cards, index, find_easy=False):
             return(reprintslist)
         return None
 
-    # It's a detailed/fuzzy search
+    # It's a detailed/fuzzy search (hard)
     for k in range(index + 1, len(cards)):
         card2 = cards[k]
         try:
@@ -175,34 +211,84 @@ def find_reprints_pokemon(cards, index, find_easy=False):
             print('\n\ncard1=\n{}\n\ncard2=\n{}\n\n'.format(card1, card2))
             raise
 
+        # matchlevel of 1 means possible match
         if (response['matchlevel'] == 1 and
                 response.get('mismatch_fields') is not None):
             logger.info('{!a}'.format(response))
             # print(pickle.dumps(card1), '\n\n', pickle.dumps(card2),
             #       '\n\n',  pickle.dumps(response['mismatch_fields']))
 
-            # Cards need manual review
+            # Send the cards off for manual review of the picture
+            # return struct = {
+            # 'matched' : True, False 'Quit' or 'Error'
+            # 'review': [id, id]
+            # 'errors': [{'id': cardid,
+            #             'field': field_to_fix,
+            #             'index': index_in_field,
+            #             'newvalue': new_text},]}
             reviewstatus = review_cards_manually(
                 card1, card2, response['mismatch_fields'])
-            if reviewstatus['matched'] is True:
 
+            logger.debug(
+                'Return from review_cards_manually = {}'.format(reviewstatus))
+            # if one of the cards matched the picture, mark the cards as
+            # matched, fix the error, and update the reprintslist
+            if reviewstatus['matched'] == 'True':
                 # Write the errors to the error file and apply them to the
                 # cards in memory.  Errors is a list of 2 key/value dicts
                 for error in reviewstatus['errors']:
-                    print(error['id'])
-                    print(error['field'])
-                    print(error['newvalue'])
-                    _put_val(cards[error['id']],
-                             cards[error['field']],
-                             cards[error['newvalue']])
+                    logger.debug('card to fix = {}'.format(error['id']))
+                    logger.debug('field to fix = {}'.format(error['field']))
+                    logger.debug('new entry = {}'.format(error['newvalue']))
+                    # Check if card1 matches the error
+                    if card1['id'] == error['id']:
+                        # logging.debug('original\n{}'.format(card1))
+                        _save_error(card1,
+                                    error['field'],
+                                    error['index'],
+                                    error['newvalue'])
+                        _put_val(card1,
+                                 error['field'],
+                                 error['index'],
+                                 error['newvalue'])
+                    # the error is in card2
+                    else:
+                        # logger.debug('original\n{}'.format(card2))
+                        _save_error(card2,
+                                    error['field'],
+                                    error['index'],
+                                    error['newvalue'])
+                        _put_val(card2,
+                                 error['field'],
+                                 error['index'],
+                                 error['newvalue'])
+                        # logger.debug('revised\n{}'.format(card2))
 
-                    # card[id][field + '_was'] = card[id][field]
+            # Manual review says *no match*
+            elif reviewstatus['matched'] == 'False':
+                response['matchlevel'] = 0
+
+            # Abort early if quit was chosen
+            elif reviewstatus['matched'] == 'Quit':
+                raise Exception('Quit Exception')
+
+            # Should never get here, abort
+            else:
+                raise Exception('Bad Reviewstatus')
+
+        # if matched, add to reprints list
+        if (response['matchlevel'] == 1):
+            if len(reprintslist) == 0:
+                reprintslist[card1['name']] = [card1['id']]
+            reprintslist[card1['name']].append(card2['id'])
+
+            return(reprintslist)
 
         # # TODO - get logic here
         # if response:
         #     pass
-
-    return reprintslist
+    if reprintslist:
+        return reprintslist
 
 
 def query_cards(cardtable, filter):
@@ -298,15 +384,22 @@ def compare_cards_full(card1, card2):
     """ Compare two pokémon cards, find ones that are close matches (perfect
     matches on field are ingored, those should be found with the --easy match)
 
-    Return structure: {matchlevel: [-1|0|1]}
+    Return structure: {'matchlevel': [-1|0|1]}
                           -1 = not supported
                            0 = not match of checked value
                            1 = match of checked values
-                       mismatch_fields: {field: [{score: fuzzyscore,
-                                                   vals:[card1val, cardval]}]
+                       'mismatch_fields':
+                            {'field':  [{
+                                # which key (if multiples (e.g.attacks))
+                                'index': int,
+                                'score': XX,            # score on fuzzy match
+                                'vals': [val1, val2]]   # versions compared
+                            }],
+                            'field2': ...
 
                        Since there can be multiple values for a field (e.g.
                        attacks), the response is returned as a list.
+
                        TODO - check this, currently using attack[x] to make
                        sure keys are unique.
                        Note: cardval may be a dict.
@@ -316,23 +409,41 @@ def compare_cards_full(card1, card2):
     NONSUPPORTED = {'matchlevel': -1}
     response = QUICKPASS
 
-    # Build response structure
-    def _key_response(key, score, val1, val2):
-        logger.debug('key={}, score={}\n\tval1=\'{}\'\n\tval2=\'{}\''.format(
-            key, score, val1, val2
-        ))
+    def _build_response(field, index, score, val1, val2):
+        """ Function to Build response structure when necessary
+
+        Response Structure: response['mismatch_fields']:
+            {'field':  [{
+                        'index': int,      # which key (if multiples (attacks))
+                        'score': XX,            # score on fuzzy match
+                        'vals': [val1, val2]]   # versions compared
+                      }],
+            'field2': ...
+
+        Each field is in the format of field.subfield.subfield, this references
+        the particular field in the card record. For example:
+
+        attacks.text refers "text" field of the "attacks" field, the 'index' is
+            which attacks.text field specifically as there may be more than 1
+
+        """
+
+        logger.debug('key={}, index={}, score={}\n\tval1=\'{}\''
+                     '\n\tval2=\'{}\''.format(key, index, score, val1, val2))
         if response.get('mismatch_fields') is None:
             response['mismatch_fields'] = {}
         if response['mismatch_fields'].get(key) is None:
             response['mismatch_fields'][key] = []
         response['mismatch_fields'][key].append({
+            'index': index,
             'score': score,
             'vals': [val1, val2]
         })
 
-    # If it's not a pokemon, continue (TODO - add more comparisons)
     if card1['supertype'] != card2['supertype']:
         return QUICKFAIL
+
+    # If it's not a pokemon, continue (TODO - add more comparisons)
     if card1['supertype'] != 'Pokémon':
         return NONSUPPORTED
 
@@ -344,7 +455,7 @@ def compare_cards_full(card1, card2):
         # greater than the specified value is considered a match.  Less than
         # the integer results in full rejection of the card.
         checks = {'hp': 100,
-                  'name': 90,
+                  'name': 80,
                   'attacks.name': 70,
                   'attacks.text': 70,
                   'text': 'match',
@@ -360,15 +471,30 @@ def compare_cards_full(card1, card2):
                   'ancient_trait': 'match',
                   'retreat_cost': 'match'}
 
+    # For each of the checks, extract a *list* of values from the cards which
+    # match the check.  It's a list as there may be more than one (e.g multiple
+    # attacks)
     for key, value in checks.items():
         recval1 = _get_val(card1, key)
         recval2 = _get_val(card2, key)
 
+        # logger.debug('key = {}\nrecval1 = {}\nrecval2 = {}'.format(
+        #     key, recval1, recval2))
+
+        # if comparison value is integer, just do straight compare and if not
+        # the same, then do a fuzzy compare
         if type(value) == int:
             if recval1 == recval2:
                 continue
+
+            # recval1 != recval2
             # loop through each value in the record values (e.g. attacks)
+            # There may be a different number of values (e.g. again attacks)
             # loop enough times to process the longest list of the two cards
+            # by padding the shorter list.  Need to loop through all so we can
+            # build full list of necessary changes in the response.
+            # TODO - Need to remember why I'm doing the padding of different
+            # sized lists - seems if they are different size it's never a match
             for v in range(max(len(recval1), len(recval2))):
                 # if a list is exhausted, fill later loops with ""
                 if v == len(recval1):
@@ -377,12 +503,20 @@ def compare_cards_full(card1, card2):
                     recval2.append("")
                 if recval1[v] == recval2[v]:
                     continue
+                # They are not exactly equal, so do a fuzzy compare and see if
+                # they are significantly different (<ratio).  If they are
+                # close, populate the response.
                 ratio = fuzz.ratio(recval1[v], recval2[v])
                 if ratio < value:
                     return QUICKFAIL
                 else:
-                    _key_response(key + '[' + str(v) + ']',
-                                  ratio, recval1[v], recval2[v])
+                    if (recval1[v] == "" or recval2[v] == ""):
+                        print(
+                            '\n\n\n*************\n***  TODO MET  ***\n*************\n\n\n')
+                    _build_response(key, v, ratio, recval1[v], recval2[v])
+
+        # if comparison value is 'match' do a compare of each entry, populate
+        # the response for any that are different.
         if value == 'match':
             # compensate for when one card has more values than the other by
             # adding blank entries at the end
@@ -391,20 +525,25 @@ def compare_cards_full(card1, card2):
                     recval1.append("")
                 if v == len(recval2):
                     recval2.append("")
-                # if they match, move along
+                # if they match exact, move along
                 if recval1[v] == recval2[v]:
                     continue
                 if type(recval1[v]) == str and type(recval2[v]) == str:
                     ratio = fuzz.ratio(recval1[v], recval2[v])
                 else:
                     ratio = 0
-                _key_response(key + '[' + str(v) + ']',
-                              ratio, recval1[v], recval2[v])
+                if (recval1[v] == "" or recval2[v] == ""):
+                    print(
+                        '\n\n\n*************\n***  TODO MET  ***\n*************\n\n\n')
+                _build_response(key, v, ratio, recval1[v], recval2[v])
+
+        # if comparison value is 'count' - check to see if there are exactly
+        # the same number of records of that particular item.
         if value == 'count':
             count1 = 0 if recval1 is None else len(recval1)
             count2 = 0 if recval2 is None else len(recval2)
             if count1 != count2:
-                _key_response(key, 0, recval1, recval2)
+                _build_response(key, 0, 0, recval1, recval2)
 
     return response
 
@@ -447,32 +586,47 @@ def _get_val(record, key):
     return _get_val(nextrecord, '.'.join(keylist[1:]))
 
 
-def _put_val(record, key, value):
+def _put_val(record, key, index, value, level=0):
     """ put a value into a record handling subkeys with '.' and list indexes
 
     recursively goes down subkeys until it finds the record and updates the
     value.  If the record is in a list of records, it expects an index of which
     item in the list to update.
 
+    level is just to track the depth of recursion (not used right now)
+
     TODO - put examples here
     """
 
     keylist = key.split('.')
+
+    # Check to see if we're down to the final key
     if len(keylist) == 1:
+        # check to see if it's a list of dictionaries
         if isinstance(record, list) and isinstance(record[0], dict):
-            # There should be an index embedded in the key [x] if not - error
-            index = int(keylist[keylist.find('[' + 1):keylist.find(']')])
-            logger.debug('index is ' + index)
-            key = keylist[:keylist.find('[')]
-            logger.debug('key is ' + key)
-            record[index][key + '_was'] = record[index][key]
+            logger.debug('record = {}\nkey = {}'.format(record, key))
+            record[index][key + '_was'] = record[index].get(key, "__missing__")
             record[index][key] = value
             return
-        record[key + '_was'] = record[key]
+        # it must be a single object
+        # logger.debug('record = {}\nkey = {}'.format(record, key))
+        record[key + '_was'] = record.get(key, "__missing__")
         record[key] = value
         return
     nextrecord = record.get(keylist[0])
-    return _put_val(nextrecord, '.'.join(kelist[1:]))
+    return _put_val(nextrecord, '.'.join(keylist[1:]), index,
+                    value, level=level + 1)
+
+
+def _save_error(card, key, index, newvalue):
+    """ add entry to errorlist - will save to a file on exit.
+    """
+    oldvalue = _get_val(card, key)[index]
+    errorlist.append({card['id']: {'key': key,
+                                   'index': index,
+                                   'newvalue': newvalue,
+                                   'oldvalue': oldvalue}})
+    logger.debug(errorlist)
 
 
 if __name__ == "__main__":
