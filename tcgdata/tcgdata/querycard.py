@@ -13,8 +13,21 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--id', '-i', nargs=1, type=str,
                         required=False, help='pull specific card by id')
-    parser.add_argument('--set', '-s', nargs=1, type=str,
-                        required=False, help='pull all cards in a set')
+    # parser.add_argument('--set', '-s', nargs=1, type=str,
+    #                     required=False, help='pull all cards in a set')
+    parser.add_argument(
+        '--standard', required=False, action="store_true",
+        help='limit to only standard legal cards'
+    )
+    parser.add_argument(
+        '--expanded', required=False, action="store_true",
+        help='limit to only expanded legal cards'
+    )
+    parser.add_argument(
+        '--ability', nargs='?', type=str, required=False,
+        const=True, default=False,
+        help='limit to Pokémon with abilities, next arg can be text to match',
+    )
     parser.add_argument(
         '-l', '--localdb',
         action='store_true', help='use local database',
@@ -45,15 +58,30 @@ def main():
     # print('Connected to table {} created at {}\n'.format(
     #     cardbase_name, cardtable.creation_date_time))
 
+    # initialize filters
+    filter = ''
+    if args.standard:
+        filter = filter & Attr('2018_standard').eq(True)
+    if args.expanded:
+        filter = filter & Attr('2018_expanded').eq(True)
+    if args.ability:
+        # filter = filter & Attr('ability').contains(args.ability[0])
+        # filter = Attr('ability').contains(args.ability[0])
+        #print('searching for {}'.format(args.ability))
+        # print(args.ability)
+        filter = (Attr('ability.name').contains(args.ability) |
+                  Attr('ability.text').contains(args.ability))
+
     if args.id:
         filter = Attr('id').eq(args.id[0])
-    elif args.set:
-        filter = Key('set_code').eq(args.set[0])
-    else:
+    # elif args.set:
+    #     filter = Key('set_code').eq(args.set[0])
+    # else:
         # filter = None
         # filter = Attr('name').contains('Mew-EX') & Attr('2017_standard').eq(True)
+        # filter = filter & Attr('ability').exists()
         # filter = Attr('name').contains('Switch')
-        filter = Attr('id').eq('g1-rc15')
+        # filter = Attr('id').eq('g1-rc15')
         # filter = Attr('abbr').contains('sum') & Attr('name').contains('Tauros-GX')
         # filter = (Attr('name').contains(
         #     '-GX') | Attr('name').contains('-EX')) & Attr('ability').exists() & Attr('2017_standard').eq(True)

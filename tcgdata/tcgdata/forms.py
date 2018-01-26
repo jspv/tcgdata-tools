@@ -38,10 +38,17 @@ def create_compare_form(*args, **kwargs):
                      ('flag_right', 'Review Later')]
         )
 
+    # the matchrecord dictionary contains a list of the fields
+    # that differed between the cards
+    # {field: [{'score': fuzzyscore,
+    #           'vals':[card1val, cardval],
+    #           'index': int}]
     for key, value in kwargs['matchrecord'].items():
         # Need to break items up into tuples of name, value.  Choosing to
         # name them select0, select1, etc.
+        # print('value is {}'.format(value))
         choices = []
+        # grab each card's entry and create a selection radio box
         for num, item in enumerate(value[0]['vals']):
             if item is None:
                 item = "__None__"
@@ -89,10 +96,17 @@ def shutdown_flask_server():
 
 def review_cards_manually(card0, card1, matchrecord):
     """
+    matchrecord contains a mismatch_fields structure of the forms
+       'mismatch_fields': {field: [{'score': fuzzyscore,
+                                  'vals':[card1val, cardval],
+                                  'index': int}
     return struct = {
-    'matched' : True, False or 'Error'
+    'matched' : 'True', 'False', 'Quit' or 'Error'
     'review': [id, id]
-    'errors': [{'id': cardid, 'field': 'newvalue'}, ]
+    'errors': [{'id': cardid,
+                'field': field_to_fix,
+                'index': index_in_field,
+                'newvalue': new_text},]
     }
     """
     # logging_tree.printout()
@@ -132,12 +146,17 @@ def review_cards_manually(card0, card1, matchrecord):
         # this form object will be populated with the submitted information
         form = create_compare_form(request.form, matchrecord=matchrecord)
         # Build the returnstruct
-        if not form.process_changes.data:
-            returnstruct['matched'] = False
+        if form.quit.data:
+            returnstruct['matched'] = 'Quit'
+        elif form.no_match.data:
+            returnstruct['matched'] = 'False'
         else:
-            returnstruct['matched'] = True
+            returnstruct['matched'] = 'True'
 
-            # make sure there is a selection for each entry - TODO
+            # initilaize card error list
+            returnstruct['errors'] = []
+
+            # make sure t   here is a selection for each entry - TODO
             # should do this in the javascript
             for key, value in matchrecord.items():
                 formdata = getattr(form, key)
@@ -147,15 +166,13 @@ def review_cards_manually(card0, card1, matchrecord):
                     shutdown_flask_server()
                     return "Nothing Selected, returning Error"
                 logger.info('still inside')
-                # initilaize card error list
-                returnstruct['errors'] = []
                 if formdata.data == 'select_0':
                     returnstruct['errors'].append({'id': card1.get(
-                        'id'), 'field': key, 'newvalue':
+                        'id'), 'field': key, 'index': matchrecord[key][0]['index'], 'newvalue':
                         matchrecord[key][0]['vals'][0]})
                 elif formdata.data == 'select_1':
                     returnstruct['errors'].append({'id': card0.get(
-                        'id'), 'field': key, 'newvalue':
+                        'id'), 'field': key, 'index': matchrecord[key][0]['index'], 'newvalue':
                         matchrecord[key][0]['vals'][1]})
                 else:
                     # Should never happen, neither selected.
@@ -166,6 +183,7 @@ def review_cards_manually(card0, card1, matchrecord):
 
         logger.debug('no_match = {}'.format(form.no_match.data))
         logger.debug('process = {}'.format(form.process_changes.data))
+        logger.debug('quit = {}'.format(form.quit.data))
         logger.debug('flags = {}'.format(form.flag_for_edits.data))
         for key, value in matchrecord.items():
             formdata = getattr(form, key)

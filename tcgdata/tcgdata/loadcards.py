@@ -2,6 +2,13 @@
 import boto3
 from botocore.exceptions import ClientError
 from boto3.dynamodb.conditions import Key, Attr
+
+# For creating an outputfile of changes
+from dictdiffer import diff
+from pprint import pformat
+from deepdiff import DeepDiff
+from copy import deepcopy
+
 import json
 import argparse
 import logging
@@ -69,6 +76,10 @@ def main():
         help="increase output verbosity", action="store_const",
         dest='loglevel', const=logging.INFO
     )
+    parser.add_argument(
+        "-u", "--updatefile", nargs=1, type=argparse.FileType('w'),
+        required=False, help='File to record updates made to carddata'
+    )
     parsegroup.add_argument(
         "--postprocess",
         help="Process existing table", action="store_true",
@@ -101,6 +112,12 @@ def main():
     formats_initfile = 'formats.json'
     errata_initfile = 'errata.json'
     reprints_initfile = 'reprints.json'
+
+    if args.updatefile:
+        updatefile = args.updatefile[0]
+        logger.info('Saving updates to {}'.format(updatefile.name))
+    else:
+        updatefile = None
 
     if args.test:
         cardbase_name = 'test_cards'
@@ -230,7 +247,8 @@ def main():
                                     clean_attack_text,
                                     update_card_legality,
                                     update_set_data],
-                           tcgdata=tcgdata)
+                           tcgdata=tcgdata,
+                           updatefile=updatefile)
     # Postprocess
     else:
         cardtable = dynamodb.Table(cardbase_name)
@@ -272,7 +290,7 @@ def create_table(database, table_name, key_schema, attribute_definitions,
 
 
 def populate_table(table, init_file, key_schema,
-                   filters=[], returndict=False, tcgdata=False):
+                   filters=[], returndict=False, tcgdata=False, updatefile=False):
     """ Populate the table with json specified in init_file, opt: return the data
     Position arguments:
         table -- dynamodb to populate
@@ -282,6 +300,7 @@ def populate_table(table, init_file, key_schema,
     Keyword arguments:
         returndict -- boolean, return a list of populated items (default False)
         filters -- list of filter functions to run on each item.
+        updatefile -- output file to record updtes
 
     Note: dict keys which have a value of None and string values of ''
     are removed before inserting into the table (DynamoDB requirements).
@@ -293,6 +312,9 @@ def populate_table(table, init_file, key_schema,
     returnedset = {}
     with open(init_file) as json_file:
         items = json.load(json_file)
+        if updatefile:
+            # make backup for later diffing
+            orig_items = deepcopy(items)
         itemcount = 0
         for item in items:
             logger.debug('Orig:\n{}\n'.format(item))
@@ -329,7 +351,23 @@ def populate_table(table, init_file, key_schema,
             # print('\r{}\t\t{:50}'.format(
             # itemcount, item['name']), end='', flush=True)
             itemcount = itemcount + 1
+
+            # Break early for testing
+            # if itemcount == 100:
+            #     break
     print()
+    if updatefile:
+        logger.info('Creating updatefile...')
+        for i, item in enumerate(items):
+            diffresult = pformat(DeepDiff(orig_items[i], item, verbose_level=2))
+            diffresult = diffresult.replace('root', item['id'])
+            print(diffresult, file=updatefile)
+
+        # diffresult = diff(orig_items, items)
+        # diffresult = DeepDiff(orig_items, items)
+        # pprint.pprint(diffresult, updatefile)
+        # print(pprint(diffresult), file=updatefile)
+        logger.info('updatefile created')
     return returnedset
 
 
