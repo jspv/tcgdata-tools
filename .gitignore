@@ -39,7 +39,7 @@ build/Release
 node_modules/
 jspm_packages/
 pokemon_venv/
-dynamodb_local_latest/
+dynamodb_local/
 
 # Typescript v1 declaration files
 typings/
@@ -169,4 +169,4 @@ tcgdata/static/images/
 tcgdata/bin/tcgdata
 
 # Ignore local database
-local_dynamodb/shared-local-instance.db
+local_dynamodb
