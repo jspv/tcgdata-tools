@@ -55,14 +55,15 @@
       </tr>
       {% endfor %}
       <tr>
-        <th> Flag for Later Detailed Review </th>
+        <!-- <th> Flag for Later Detailed Review </th>
         {% for element in form.flag_for_edits %}
           <td> {{ element }} {{ element.label }}</td>
-        {% endfor%}
+        {% endfor%} -->
     </table>
         {{ form.process_changes }}
         {{ form.no_match }}
         {{ form.quit }}
+        {{ form.forcematch }}
     </form>
 
   <body>

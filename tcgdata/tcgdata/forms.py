@@ -31,12 +31,13 @@ def create_compare_form(*args, **kwargs):
         no_match = SubmitField(label='Not a Match')
         process_changes = SubmitField(label='Fix Match')
         quit = SubmitField(label='Quit')
+        forcematch = SubmitField(label='Force the Match')
 
-        flag_for_edits = MultiCheckboxField(
-            'Flag for later Review',
-            choices=[('flag_left', 'Review Later'),
-                     ('flag_right', 'Review Later')]
-        )
+        # flag_for_edits = MultiCheckboxField(
+        #     'Flag for later Review',
+        #     choices=[('flag_left', 'Review Later'),
+        #              ('flag_right', 'Review Later')]
+        # )
 
     # the matchrecord dictionary contains a list of the fields
     # that differed between the cards
@@ -156,16 +157,18 @@ def review_cards_manually(card0, card1, matchrecord):
             # initilaize card error list
             returnstruct['errors'] = []
 
-            # make sure t   here is a selection for each entry - TODO
+            # make sure there is a selection for each entry - TODO
             # should do this in the javascript
+            # the option allowmatch allows empty selecton, and doesn't
+            # populate the matchrecord.  (e.g. legitimate punctuation
+            # difference where both cards are correct and still a match)
             for key, value in matchrecord.items():
                 formdata = getattr(form, key)
                 # formdata.data will be 'None' if nothing was selected *bad*
-                if formdata.data == 'None':
+                if formdata.data == 'None' and form.process_changes.data:
                     returnstruct['matched'] = 'Error'
                     shutdown_flask_server()
                     return "Nothing Selected, returning Error"
-                logger.info('still inside')
                 if formdata.data == 'select_0':
                     returnstruct['errors'].append({'id': card1.get(
                         'id'), 'field': key, 'index': matchrecord[key][0]['index'], 'newvalue':
@@ -174,17 +177,22 @@ def review_cards_manually(card0, card1, matchrecord):
                     returnstruct['errors'].append({'id': card0.get(
                         'id'), 'field': key, 'index': matchrecord[key][0]['index'], 'newvalue':
                         matchrecord[key][0]['vals'][1]})
-                else:
+                elif form.process_changes.data:
                     # Should never happen, neither selected.
                     shutdown_flask_server()
                     raise ValueError('Bad return from CompareForm')
+
+            # if forcematch is set, not it in the matchrecord
+            if form.forcematch.data:
+                returnstruct['forcematch'] = [card0['id'], card1['id']]
 
         # if form.flag_for_edits.data:
 
         logger.debug('no_match = {}'.format(form.no_match.data))
         logger.debug('process = {}'.format(form.process_changes.data))
         logger.debug('quit = {}'.format(form.quit.data))
-        logger.debug('flags = {}'.format(form.flag_for_edits.data))
+        logger.debug('forcematch = {}'.format(form.forcematch.data))
+        # logger.debug('flags = {}'.format(form.flag_for_edits.data))
         for key, value in matchrecord.items():
             formdata = getattr(form, key)
             logger.debug('choice on {} = {}'.format(key, formdata.data))

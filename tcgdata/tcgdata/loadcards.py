@@ -186,7 +186,7 @@ def main():
               ' (TODO)'.format(reprints_initfile))
         reprints = {}
 
-    # reprints is an array of key:[array] pairs where each key is
+    # reprints is an list of key:[list] pairs where each key is
     # a card name.  Note: there may be multiple entries with thee
     # same card name
     for i_reprint in reprints:
@@ -244,6 +244,7 @@ def main():
                                     remove_oldtags,
                                     sort_energy,
                                     x_to_times,
+                                    quote_to_apostrophe,
                                     clean_attack_text,
                                     update_card_legality,
                                     update_set_data],
@@ -359,7 +360,8 @@ def populate_table(table, init_file, key_schema,
     if updatefile:
         logger.info('Creating updatefile...')
         for i, item in enumerate(items):
-            diffresult = pformat(DeepDiff(orig_items[i], item, verbose_level=2))
+            diffresult = pformat(
+                DeepDiff(orig_items[i], item, verbose_level=2))
             diffresult = diffresult.replace('root', item['id'])
             print(diffresult, file=updatefile)
 
@@ -583,6 +585,39 @@ def sort_energy(**kwargs):
                 attack['convertedEnergyCost'] = 0
 
 
+def quote_to_apostrophe(**kwargs):
+    """ Change single quotes to apostrophe characters
+    replace 's and 't with ’s and ’t
+
+    """
+    patterns = [
+        (r'\'s\b', r'’s'),
+        (r'\'t\b', r'’t')
+    ]
+
+    d = kwargs['item']
+    if isinstance(d, dict):
+        for k, v in list(d.items()):
+            if isinstance(v, list) or isinstance(v, dict):
+                quote_to_apostrophe(item=v)
+            if isinstance(v, str):
+                for pattern, replacement in patterns:
+                    if re.search(pattern, v):
+                        logger.debug('replacing[{}]'.format(d[k]))
+                        v = d[k] = re.sub(pattern, replacement, v)
+                        logger.debug('replaced [{}]'.format(d[k]))
+    elif isinstance(d, list):
+        for i, v in enumerate(d):
+            if isinstance(v, str):
+                for pattern, replacement in patterns:
+                    if re.search(pattern, v):
+                        logger.debug('replacing[{}]'.format(d[i]))
+                        v = d[i] = re.sub(pattern, replacement, v)
+                        logger.debug('replaced [{}]'.format(d[i]))
+            if isinstance(v, dict):
+                quote_to_apostrophe(item=v)
+
+
 def x_to_times(**kwargs):
     """ Change where the letter x was used when it should have been \xd7
 
@@ -591,6 +626,7 @@ def x_to_times(**kwargs):
     Change x to 'times' when letter x is used in x+d (e.g. x2) or d+ (e.g. 20x)
             (r'\b(\d+)x\b', r'\1×'),
             (r'\bx(\d+)\b', r'×\1')
+    \b matches empty string at beginning or end of a word
 
     """
     patterns = [
@@ -607,7 +643,7 @@ def x_to_times(**kwargs):
                 for pattern, replacement in patterns:
                     if re.search(pattern, v):
                         logger.debug('replacing[{}]'.format(d[k]))
-                        d[k] = re.sub(pattern, replacement, v)
+                        v = d[k] = re.sub(pattern, replacement, v)
                         logger.debug('replaced [{}]'.format(d[k]))
     elif isinstance(d, list):
         for i, v in enumerate(d):
@@ -615,7 +651,7 @@ def x_to_times(**kwargs):
                 for pattern, replacement in patterns:
                     if re.search(pattern, v):
                         logger.debug('replacing[{}]'.format(d[i]))
-                        d[i] = re.sub(pattern, replacement, v)
+                        v = d[i] = re.sub(pattern, replacement, v)
                         logger.debug('replaced [{}]'.format(d[i]))
             if isinstance(v, dict):
                 x_to_times(item=v)

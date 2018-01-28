@@ -7,6 +7,8 @@ import argparse
 import sys
 import logging
 import pickle
+import re
+import copy
 from botocore.exceptions import ClientError
 from boto3.dynamodb.conditions import Key, Attr
 from fuzzywuzzy import fuzz
@@ -24,22 +26,37 @@ logger = logging.getLogger(__name__)
 
 # Nasty Globals
 errorlist = []
-nomatchlist = []
+nomatchlist = {}
+forcematchlist = {}
+reprintslist = []
+
+
+# Create custom exception for when Quit is chosen on the gui
+class QuitChosen(Exception):
+    pass
 
 
 def main():
     # ensure we use the global errorlist
     global errorlist
     global nomatchlist
+    global forcematchlist
+    global reprintlist
     # webtest()
     # builtins.wait("waiting")
     parser = argparse.ArgumentParser()
     parser.add_argument('--easy', '-e', action='store_true',
                         help='find easy matches only', required=False)
-    parser.add_argument('--reprintsfile', '-rf', nargs=1,
-                        type=argparse.FileType('w'),
-                        default=[sys.stdout], required=False,
-                        help='load then output reprints to file')
+    # parser.add_argument('--reprintsfile', '-rf', nargs=1,
+    #                     type=argparse.FileType('w'),
+    #                     default=[sys.stdout], required=False,
+    #                     help='load then output reprints to file')
+    parser.add_argument('--reprintsfile', nargs=1, default=['reprints.json'],
+                        required=False, help='output reprints to file')
+    parser.add_argument('--startindex', nargs=1, type=int, required=False,
+                        help='force start at a specified index (dangerous)')
+    parser.add_argument('--forcematchfile', nargs=1, default=['forced.json'],
+                        help='known reprints with negligible differences')
     parser.add_argument('--errorfile', nargs=1, default=['errors.json'],
                         help='override errorfile.json file')
     parser.add_argument('--nomatchfile', nargs=1, default=['nomatches.json'],
@@ -92,6 +109,14 @@ def main():
     if not (args.hard or args.easy):
         parser.error("--easy or --hard required")
         sys.exit(2)
+    if args.startindex and not args.reprintsfile:
+        parser.error("--startindex requires --reprintfile")
+        sys.exit(2)
+    if args.startindex and not os.path.isfile(args.reprintsfile[0]):
+        parser.error(
+            'reprintsfile \'{}\' must exist in order to use '
+            '--startindex'.format(args.reprintsfile[0]))
+        sys.exit(2)
 
     is_easymode = True if args.easy else False
 
@@ -112,7 +137,6 @@ def main():
     cardfilter = None
     cards = query_cards(cardtable, cardfilter)
 
-    print ('got errorfile ', args.errorfile[0])
     # initialise errorlist - if the file exists, load the json files
     if args.errorfile and os.path.isfile(args.errorfile[0]):
         with open(args.errorfile[0], 'r') as errorfile:
@@ -126,36 +150,91 @@ def main():
                     if card is None:
                         raise Exception(
                             'Cant find cardid={} loading errorfile')
-                    _put_val(card, errorstruct['key'], errorstruct['index'],
-                             errorstruct['newvalue'])
+                    # logger.debug('editing card = {}\n'
+                    #              'type={}'.format(card, type(card)))
+                    # Check to see if the error still exists, if so, apply
+                    # the edit
+                    check_val = _get_val(
+                        card,
+                        errorstruct['key'])[errorstruct['index']]
+                    if (check_val == errorstruct['oldvalue']):
+                        _put_val(card, errorstruct['key'],
+                                 errorstruct['index'], errorstruct['newvalue'])
+                    else:
+                        logger.debug('Oldvalue does not match current value '
+                                     'not applying edit.\ncard = {}\n'
+                                     'key = {}\ncurrent = {}\noldvalue = {}\n'
+                                     'newvalue '
+                                     '= {}'.format(card['id'],
+                                                   errorstruct['key'],
+                                                   check_val,
+                                                   errorstruct['oldvalue'],
+                                                   errorstruct['newvalue']))
+                        if check_val == errorstruct['newvalue']:
+                            logger.debug('Current is same as newvalue! '
+                                         'removing error, it\'s been fixed')
+                            _delete_error(card, errorstruct['key'],
+                                          errorstruct['index'])
+                        else:
+                            sys.exit(2)
 
-    # initialise nomatchfile - if the file exists, load the json files
+    # initialise nomatchfile - if the file exists, load the json
     if args.nomatchfile and os.path.isfile(args.nomatchfile[0]):
         with open(args.nomatchfile[0], 'r') as nomatchfile:
             nomatchlist = json.load(nomatchfile)
 
-    print(find_reprints(cards, is_easymode), file=args.reprintsfile[0])
+    # initialize forcematchfile - if the file exists, load the json
+    if args.forcematchfile and os.path.isfile(args.forcematchfile[0]):
+        with open(args.forcematchfile[0], 'r') as forcematchfile:
+            forcematchlist = json.load(forcematchfile)
 
+    # initilalize reprintsfile - used for --startindex (existance is checked)
+    # earlier
+    if args.startindex:
+        with open(args.reprintsfile[0], 'r') as reprintsfile:
+            reprintslist = json.load(reprintsfile)
+
+    # Find the reprints
+    with open(args.reprintsfile[0], 'w') as reprintsfile:
+        if args.startindex:
+            print(find_reprints(cards, is_easymode, args.startindex[0]),
+                  file=reprintsfile)
+        else:
+            print(find_reprints(cards, is_easymode), file=reprintsfile)
+
+    # write the errorfile
     with open(args.errorfile[0], 'w') as errorfile:
-        logger.debug('errorlist = {}'.format(errorlist))
-        print(json.dumps(errorlist), file=errorfile)
+        # logger.debug('errorlist = {}'.format(errorlist))
+        print(json.dumps(errorlist, indent=4), file=errorfile)
 
+    # write the nomatchfile
+    # {cardid: [cardid, cardid, carddid], cardid: [...]}
     with open(args.nomatchfile[0], 'w') as nomatchfile:
         logger.debug('nomatchlist = {}'.format(nomatchlist))
-        print(json.dumps(nomatchlist), file=nomatchfile)
+        print(json.dumps(nomatchlist, indent=4), file=nomatchfile)
+
+    # write the forcematchfile
+    with open(args.forcematchfile[0], 'w') as forcematchfile:
+        logger.debug('forcematchlist = {}'.format(forcematchlist))
+        print(json.dumps(forcematchlist, indent=4), file=forcematchfile)
 
 
-def find_reprints(cards, is_easymode):
+def find_reprints(cards, is_easymode, startindex=0):
     """ Search through a list of card objects and find all reprints """
 
     # holder for list of reprints in the format of:
     #   [{Name:[cardid, cardid]}, {Name:[cardid, cardid, cardid]}]
-    reprintslist = []
+    #  reprintslist = []  (now a global
 
     # Use an index i so that we can pass the current index to the
     # find_reprints_x function indicating where to start the search from.
     # cards prior to i would have been checked already.
     for i, card in enumerate(cards):
+
+        # if startindex specified, shortcut to that index
+        if i < startindex:
+            continue
+
         supertype = card['supertype']
 
         if supertype == 'Pokémon':
@@ -184,19 +263,19 @@ def find_reprints(cards, is_easymode):
                         # print(json.dumps(reprintslist),
                         #       file=outfile)
                         print(json.dumps(reprints))
-                except Exception as e:
-                    print('Quit chosen or something else happened.  Exiting')
+                except QuitChosen as e:
+                    print('Quit chosen Exiting cleaning saving file')
                     print('Exception was {}'.format(e))
-                    print('Errorlist is {}'.format(errorlist))
-                    return(json.dumps(reprintslist))
+                    return(json.dumps(reprintslist, indent=4))
 
-    return(json.dumps(reprintslist))
+    return(json.dumps(reprintslist, indent=4))
 
 
 def find_reprints_pokemon(cards, index, find_easy=False):
-    """ identify reprints, return reprintslist """
-
-    reprintslist = {}
+    """ identify reprints for a specific pokemon card, return a dictionary
+        in the form of {Name: [cardid, cardid]}
+    """
+    reprintdict = {}
     card1 = cards[index]
     if find_easy:
         # check each card starting from the next card in the index, it is
@@ -204,50 +283,79 @@ def find_reprints_pokemon(cards, index, find_easy=False):
         for k in range(index + 1, len(cards)):
             card2 = cards[k]
             if compare_cards_easy(card1, card2)['matchlevel'] == 1:
-                if len(reprintslist) == 0:
-                    reprintslist[card1['name']] = [card1['id']]
-                reprintslist[card1['name']].append(card2['id'])
+                if len(reprintdict) == 0:
+                    reprintdict[card1['name']] = [card1['id']]
+                reprintdict[card1['name']].append(card2['id'])
 
-        if reprintslist:
-            return(reprintslist)
+        if reprintdict:
+            return(reprintdict)
         return None
 
     # It's a detailed/fuzzy search (hard)
     for k in range(index + 1, len(cards)):
         card2 = cards[k]
-        try:
-            response = compare_cards_full(card1, card2)
-        # catch all exeptions, print cards and reraise
-        except Exception as e:
-            print('\n\ncard1=\n{}\n\ncard2=\n{}\n\n'.format(card1, card2))
-            raise
+
+        # first check the nomatches dictionary, if the cards are there, we
+        # already know they don't match - so move along
+        if (card1['id'] in nomatchlist and
+                card2['id'] in nomatchlist[card1['id']]):
+            continue
+
+        # now check the forcematches dictionary, if the cards are there,
+        # we know they need to match
+        if (card1['id'] in forcematchlist and
+                card2['id'] in forcematchlist[card1['id']]):
+            compare_response['matchlevel'] = 1
+            compare_response['mismatch_fields'] = None
+        else:
+            try:
+                compare_response = compare_cards_full(card1, card2)
+            # catch all exeptions, print cards and reraise
+            except Exception as e:
+                print('Exception caught running compare_cards_full')
+                print('\n\ncard1=\n{}\n\ncard2=\n{}\n\n'.format(card1, card2))
+                raise
 
         # matchlevel of 1 means possible match
-        if (response['matchlevel'] == 1 and
-                response.get('mismatch_fields') is not None):
-            logger.info('{!a}'.format(response))
+        if (compare_response['matchlevel'] == 1 and
+                compare_response.get('mismatch_fields') is not None):
+            logger.info('{!a}'.format(compare_response))
             # print(pickle.dumps(card1), '\n\n', pickle.dumps(card2),
-            #       '\n\n',  pickle.dumps(response['mismatch_fields']))
+            #       '\n\n',  pickle.dumps(compare_response['mismatch_fields']))
 
             # Send the cards off for manual review of the picture
             # return struct = {
             # 'matched' : True, False 'Quit' or 'Error'
-            # 'review': [id, id]
+            # 'forcematch': [id, id]
             # 'errors': [{'id': cardid,
             #             'field': field_to_fix,
             #             'index': index_in_field,
             #             'newvalue': new_text},]}
-            reviewstatus = review_cards_manually(
-                card1, card2, response['mismatch_fields'])
+            manual_reviewstatus = review_cards_manually(
+                card1, card2, compare_response['mismatch_fields'])
+            logger.debug('Return from review_cards_manually = {}'.format(
+                manual_reviewstatus))
 
-            logger.debug(
-                'Return from review_cards_manually = {}'.format(reviewstatus))
+            # If forcematch was set, add it to the forcematchlist
+            if manual_reviewstatus.get('forcematch') is not None:
+                # logger.debug('type of forcematchlist is {}'.format(
+                #     type(forcematchlist)))
+                # logger.debug(forcematchlist)
+                if card1['id'] in forcematchlist:
+                    forcematchlist[card1['id']].append(card2['id'])
+                else:
+                    forcematchlist[card1['id']] = [card2['id']]
+                if card2['id'] in forcematchlist:
+                    forcematchlist[card2['id']].append(card1['id'])
+                else:
+                    forcematchlist[card2['id']] = [card1['id']]
+
             # if one of the cards matched the picture, mark the cards as
             # matched, fix the error, and update the reprintslist
-            if reviewstatus['matched'] == 'True':
+            if manual_reviewstatus['matched'] == 'True':
                 # Write the errors to the error file and apply them to the
                 # cards in memory.  Errors is a list of 2 key/value dicts
-                for error in reviewstatus['errors']:
+                for error in manual_reviewstatus['errors']:
                     logger.debug('card to fix = {}'.format(error['id']))
                     logger.debug('field to fix = {}'.format(error['field']))
                     logger.debug('new entry = {}'.format(error['newvalue']))
@@ -276,30 +384,41 @@ def find_reprints_pokemon(cards, index, find_easy=False):
                         # logger.debug('revised\n{}'.format(card2))
 
             # Manual review says *no match*
-            elif reviewstatus['matched'] == 'False':
-                response['matchlevel'] = 0
+            elif manual_reviewstatus['matched'] == 'False':
+                # set the compare_response as a solid "no" and append to the
+                # nomatchlist dict (value is a list of cardids) so we can
+                # ignore these in the future
+                compare_response['matchlevel'] = 0
+                if card1['id'] in nomatchlist:
+                    nomatchlist[card1['id']].append(card2['id'])
+                else:
+                    nomatchlist[card1['id']] = [card2['id']]
+                if card2['id'] in nomatchlist:
+                    nomatchlist[card2['id']].append(card1['id'])
+                else:
+                    nomatchlist[card2['id']] = [card1['id']]
 
             # Abort early if quit was chosen
-            elif reviewstatus['matched'] == 'Quit':
-                raise Exception('Quit Exception')
+            elif manual_reviewstatus['matched'] == 'Quit':
+                raise QuitChosen
 
             # Should never get here, abort
             else:
-                raise Exception('Bad Reviewstatus')
+                raise Exception('Bad manual_reviewstatus')
 
         # if matched, add to reprints list
-        if (response['matchlevel'] == 1):
-            if len(reprintslist) == 0:
-                reprintslist[card1['name']] = [card1['id']]
-            reprintslist[card1['name']].append(card2['id'])
+        # reprints is an list of [{key:[list]}] pairs where each key is
+        # a card name.  Note: there may be multiple entries with thee
+        # same card name
+        if (compare_response['matchlevel'] == 1):
+            if len(reprintdict) == 0:
+                reprintdict[card1['name']] = [card1['id']]
+            reprintdict[card1['name']].append(card2['id'])
 
-            return(reprintslist)
+            # return(reprintslist)
 
-        # # TODO - get logic here
-        # if response:
-        #     pass
-    if reprintslist:
-        return reprintslist
+    if reprintdict:
+        return reprintdict
 
 
 def query_cards(cardtable, filter):
@@ -439,8 +558,8 @@ def compare_cards_full(card1, card2):
 
         """
 
-        logger.debug('key={}, index={}, score={}\n\tval1=\'{}\''
-                     '\n\tval2=\'{}\''.format(key, index, score, val1, val2))
+        # logger.debug('key={}, index={}, score={}\n\tval1=\'{}\''
+        #              '\n\tval2=\'{}\''.format(key, index, score, val1, val2))
         if response.get('mismatch_fields') is None:
             response['mismatch_fields'] = {}
         if response['mismatch_fields'].get(key) is None:
@@ -465,22 +584,41 @@ def compare_cards_full(card1, card2):
         # Note: checks are done in order, when an integer, any fuzzy match
         # greater than the specified value is considered a match.  Less than
         # the integer results in full rejection of the card.
-        checks = {'hp': 100,
-                  'name': 80,
-                  'attacks.name': 70,
-                  'attacks.text': 70,
-                  'text': 'match',
-                  'attacks': 'count',
-                  'attacks.damage': 'match',
-                  'attacks.cost': 'match',
-                  'attacks.convertedEnergyCost': 'match',
-                  'ability.name': 'match',
-                  'ability.text': 'match',
-                  'ability.type': 'match',
-                  'weaknesses': 'match',
-                  'resistances': 'match',
-                  'ancient_trait': 'match',
-                  'retreat_cost': 'match'}
+        # Use different match set if Unown
+        if bool(re.match('Unown', card1['name'], re.I)):
+            checks = {'hp': 100,
+                      'name': 90,
+                      'attacks.name': 70,
+                      'attacks.text': 70,
+                      'text': 'match',
+                      'attacks': 'count',
+                      'attacks.damage': 'match',
+                      'attacks.cost': 'match',
+                      'attacks.convertedEnergyCost': 'match',
+                      'ability.name': 'match',
+                      'ability.text': '80',
+                      'ability.type': 'match',
+                      'weaknesses': 'match',
+                      'resistances': 'match',
+                      'ancient_trait': 'match',
+                      'retreat_cost': 'match'}
+        else:
+            checks = {'hp': 100,
+                      'name': 80,
+                      'attacks.name': 70,
+                      'attacks.text': 70,
+                      'text': 'match',
+                      'attacks': 'count',
+                      'attacks.damage': 'match',
+                      'attacks.cost': 'match',
+                      'attacks.convertedEnergyCost': 'match',
+                      'ability.name': 'match',
+                      'ability.text': 'match',
+                      'ability.type': 'match',
+                      'weaknesses': 'match',
+                      'resistances': 'match',
+                      'ancient_trait': 'match',
+                      'retreat_cost': 'match'}
 
     # For each of the checks, extract a *list* of values from the cards which
     # match the check.  It's a list as there may be more than one (e.g multiple
@@ -504,8 +642,6 @@ def compare_cards_full(card1, card2):
             # loop enough times to process the longest list of the two cards
             # by padding the shorter list.  Need to loop through all so we can
             # build full list of necessary changes in the response.
-            # TODO - Need to remember why I'm doing the padding of different
-            # sized lists - seems if they are different size it's never a match
             for v in range(max(len(recval1), len(recval2))):
                 # if a list is exhausted, fill later loops with ""
                 if v == len(recval1):
@@ -523,7 +659,7 @@ def compare_cards_full(card1, card2):
                 else:
                     if (recval1[v] == "" or recval2[v] == ""):
                         print(
-                            '\n\n\n*************\n***  TODO MET  ***\n*************\n\n\n')
+                            '\n\n\n*************\n***  TODO1 MET  ***\n*************\n\n\n')
                     _build_response(key, v, ratio, recval1[v], recval2[v])
 
         # if comparison value is 'match' do a compare of each entry, populate
@@ -545,7 +681,7 @@ def compare_cards_full(card1, card2):
                     ratio = 0
                 if (recval1[v] == "" or recval2[v] == ""):
                     print(
-                        '\n\n\n*************\n***  TODO MET  ***\n*************\n\n\n')
+                        '\n\n\n*************\n***  TODO2 MET  ***\n*************\n\n\n')
                 _build_response(key, v, ratio, recval1[v], recval2[v])
 
         # if comparison value is 'count' - check to see if there are exactly
@@ -610,12 +746,15 @@ def _put_val(record, key, index, value, level=0):
     """
 
     keylist = key.split('.')
+    # logger.debug('record type = {}'.format(type(record)))
+    # logger.debug('record = {}'.format(record))
+    # logger.debug('key = {}'.format(key))
 
     # Check to see if we're down to the final key
     if len(keylist) == 1:
         # check to see if it's a list of dictionaries
         if isinstance(record, list) and isinstance(record[0], dict):
-            logger.debug('record = {}\nkey = {}'.format(record, key))
+            # logger.debug('record = {}\nkey = {}'.format(record, key))
             record[index][key + '_was'] = record[index].get(key, "__missing__")
             record[index][key] = value
             return
@@ -625,6 +764,10 @@ def _put_val(record, key, index, value, level=0):
         record[key] = value
         return
     nextrecord = record.get(keylist[0])
+    if nextrecord is None:
+        # A parent structue is missing (e.g. abilities) - will need to created
+        record[keylist[0]] = {}
+        nextrecord = record.get(keylist[0])
     return _put_val(nextrecord, '.'.join(keylist[1:]), index,
                     value, level=level + 1)
 
@@ -633,11 +776,23 @@ def _save_error(card, key, index, newvalue):
     """ add entry to errorlist - will save to a file on exit.
     """
     oldvalue = _get_val(card, key)[index]
-    errorlist.append({card['id']: {'key': key,
+    errorlist.append({card['id']: {'name': card['name'],
+                                   'set': card['set'],
+                                   'key': key,
                                    'index': index,
                                    'newvalue': newvalue,
                                    'oldvalue': oldvalue}})
-    logger.debug(errorlist)
+
+
+def _delete_error(card, key, index):
+    """ remove entry from errorlist
+    """
+    for i, error in enumerate(errorlist):
+        for cardid in error:
+            if (cardid == card['id'] and
+                key == error[cardid]['key'] and
+                    index == error[cardid]['index']):
+                del errorlist[i]
 
 
 if __name__ == "__main__":
