@@ -1,205 +1,337 @@
 {
 
-    "seasons": {
-        "2017": {
-            "standard_legal_sets": ["xy5", "xy6", "xy7", "xy8", "xy9", "xy10", "xy11", "xy12", "dc1", "g1", "mcd", "tkxy_latias", "tkxy_latios", "tkxy_pikal", "tkxy_suicune", "smp", "sm1", "sm2"],
-            "standard_legal_split_sets": [{
-                "set": "xyp",
-                "number_prefix": "XY",
-                "min": 36
-            }],
-            "expanded_legal_sets": ["bw1", "bw2", "bw3", "bw4", "bw5", "bw6", "bw7", "bw8", "bw9", "bw10", "bw11", "bwp", "dv1", "xy0", "xy1", "xy2", "xy3", "xy4", "xy5", "xy6", "xy7", "xy8", "xy9", "xy10", "xy11", "xy12", "xyp", "tkbw_e", "tkbw_z", "tkxy_latias", "tkxy_latios", "tkxy_pikal", "tkxy_suicune", "mcd", "dc1", "g1", "smp", "sm1", "sm2"],
-            "banned_standard_cards": [],
-            "banned_expanded_cards": ["bw4-72", "xy4-99", "xy4-118"]
-        },
-        "2018": {
-          "standard_legal_sets": ["xy8", "xy9", "xy10", "xy11", "xy12", "g1", "mcd", "smp", "sm1", "sm2", "sm3", "sm35", "sm4"],
-          "standard_legal_split_sets": [{
-            "set": "xyp",
-            "number_prefix": "XY",
-            "min": 67
-            }],
-          "expanded_legal_sets": ["bw1", "bw2", "bw3", "bw4", "bw5", "bw6", "bw7", "bw8", "bw9", "bw10", "bw11", "bwp", "dv1", "xy0", "xy1", "xy2", "xy3", "xy4", "xy5", "xy6", "xy7", "xy8", "xy9", "xy10", "xy11", "xy12", "xyp", "tkbw_e", "tkbw_z", "tkxy_latias", "tkxy_latios", "tkxy_pikal", "tkxy_suicune", "mcd", "dc1", "g1", "smp", "sm1", "sm2", "sm3", "sm35", "sm4"],
-          "banned_standard_cards": [],
-          "banned_expanded_cards": []
-        }
+  "seasons": {
+    "2017": {
+      "standard_legal_sets": ["xy5", "xy6", "xy7", "xy8", "xy9", "xy10", "xy11", "xy12", "dc1", "g1", "mcd", "tkxy_latias", "tkxy_latios", "tkxy_pikal", "tkxy_suicune", "smp", "sm1", "sm2"],
+      "standard_legal_split_sets": [{
+        "set": "xyp",
+        "number_prefix": "XY",
+        "min": 36
+      }],
+      "expanded_legal_sets": ["bw1", "bw2", "bw3", "bw4", "bw5", "bw6", "bw7", "bw8", "bw9", "bw10", "bw11", "bwp", "dv1", "xy0", "xy1", "xy2", "xy3", "xy4", "xy5", "xy6", "xy7", "xy8", "xy9", "xy10", "xy11", "xy12", "xyp", "tkbw_e", "tkbw_z", "tkxy_latias", "tkxy_latios", "tkxy_pikal", "tkxy_suicune", "mcd", "dc1", "g1", "smp", "sm1", "sm2"],
+      "banned_standard_cards": [],
+      "banned_expanded_cards": ["bw4-72", "xy4-99", "xy4-118"]
     },
-    "abbreviations": {
-        "bw1": {
-            "abbr": "blw",
-            "name": "Black & White"
-        },
-        "bw2": {
-            "abbr": "epo",
-            "name": "Black & White - Emerging Powers"
-        },
-        "bw3": {
-            "abbr": "nvi",
-            "name": "Black & White - Noble Victories"
-        },
-        "bw4": {
-            "abbr": "nxd",
-            "name": "Black & White - Next Destinies"
-        },
-        "bw5": {
-            "abbr": "dex",
-            "name": "Black & White - Dark Explorers"
-        },
-        "bw6": {
-            "abbr": "drx",
-            "name": "Black & White - Dragons Exalted"
-        },
-        "bw7": {
-            "abbr": "bcr",
-            "name": "Black & White - Boundaries Crossed"
-        },
-        "bw8": {
-            "abbr": "pls",
-            "name": "Black & White - Plasma Storm"
-        },
-        "bw9": {
-            "abbr": "plf",
-            "name": "Black & White - Plasma Freeze"
-        },
-        "bw10": {
-            "abbr": "plb",
-            "name": "Black & White - Plasma Blast"
-        },
-        "bw11": {
-            "abbr": "ltr",
-            "name": "Black & White - Legendary Treasures"
-        },
-        "bwp": {
-            "abbr": "pr",
-            "name": "Black Star Promos BW"
-        },
-        "dv1": {
-            "abbr": "drv",
-            "name": "Dragon Vault"
-        },
-        "xy0": {
-            "abbr": "kss",
-            "name": "XY - Kalos Starter Set"
-        },
-        "xy1": {
-            "abbr": "xy",
-            "name": "XY"
-        },
-        "xy2": {
-            "abbr": "flf",
-            "name": "XY - Flashfire"
-        },
-        "xy3": {
-            "abbr": "ffi",
-            "name": "XY - Furious Fists"
-        },
-        "xy4": {
-            "abbr": "phf",
-            "name": "XY - Phantom Forces"
-        },
-        "xy5": {
-            "abbr": "prc",
-            "name": "XY - Primal Clash"
-        },
-        "xy6": {
-            "abbr": "ros",
-            "name": "XY - Roaring Skies"
-        },
-        "xy7": {
-            "abbr": "aor",
-            "name": "XY - Ancient Origins"
-        },
-        "xy8": {
-            "abbr": "bkt",
-            "name": "XY - BREAKthrough"
-        },
-        "xy9": {
-            "abbr": "bkp",
-            "name": "XY - BREAKpoint"
-        },
-        "xy10": {
-            "abbr": "fco",
-            "name": "XY - Fates Collide"
-        },
-        "xy11": {
-            "abbr": "sts",
-            "name": "XY - Steam Siege"
-        },
-        "xy12": {
-            "abbr": "evo",
-            "name": "XY - Evolutions"
-        },
-        "xyp": {
-            "abbr": "pr",
-            "name": "Black Star Promos XY"
-        },
-        "tkbw_e": {
-            "abbr": "tk",
-            "name": "Black & White Trainer Kit - Excadrill"
-        },
-        "tkbw_z": {
-            "abbr": "tk",
-            "name": "Black & White Trainer Kit - Zoroark"
-        },
-        "tkxy_latios": {
-            "abbr": "tk",
-            "name": "XY Trainer Kit - Latios"
-        },
-        "tkxy_latias": {
-            "abbr": "tk",
-            "name": "XY Trainer Kit - Latias"
-        },
-        "tkxy_pikal": {
-            "abbr": "tk",
-            "name": "XY Trainer Kit - Pikachu Libre"
-        },
-        "tkxy_suicune": {
-            "abbr": "tk",
-            "name": "XY Trainer Kit - Suicune"
-        },
-        "tkxy_bisharp": {
-            "abbr": "tk",
-            "name": "XY Trainer Kit - Bisharp"
-        },
-        "tkxy_wigglytuff": {
-            "abbr": "tk",
-            "name": "XY Trainer Kit - Wiggytuff"
-        },
-        "mcd": {
-            "abbr": "mcd",
-            "name": "McDonalds Collection"
-        },
-        "dc1": {
-            "abbr": "dcr",
-            "name": "Double Crisis"
-        },
-        "g1": {
-            "abbr": "gen",
-            "name": "Generations"
-        },
-        "smp": {
-            "abbr": "pr",
-            "name": "Black Star Promos S&M"
-        },
-        "sm1": {
-            "abbr": "sum",
-            "name": "Sun & Moon"
-        },
-        "sm2": {
-            "abbr": "gri",
-            "name": "Sun & Moon - Guardians Rising"
-        },
-        "sm3": {
-            "abbr": "bus",
-            "name": "Sun & Moon - Burning Shadows"
-        },
-        "sm35": {
-            "abbr": "slg",
-            "name": "Sun & Moon - Shining Legends"
-        },
-        "sm4": {
-            "abbr": "cin",
-            "name": "Sun & Moon - Crimson Invasion"
-        }
+    "2018": {
+      "standard_legal_sets": ["xy8", "xy9", "xy10", "xy11", "xy12", "g1", "mcd", "smp", "sm1", "sm2", "sm3", "sm35", "sm4"],
+      "standard_legal_split_sets": [{
+        "set": "xyp",
+        "number_prefix": "XY",
+        "min": 67
+      }],
+      "expanded_legal_sets": ["bw1", "bw2", "bw3", "bw4", "bw5", "bw6", "bw7", "bw8", "bw9", "bw10", "bw11", "bwp", "dv1", "xy0", "xy1", "xy2", "xy3", "xy4", "xy5", "xy6", "xy7", "xy8", "xy9", "xy10", "xy11", "xy12", "xyp", "tkbw_e", "tkbw_z", "tkxy_latias", "tkxy_latios", "tkxy_pikal", "tkxy_suicune", "mcd", "dc1", "g1", "smp", "sm1", "sm2", "sm3", "sm35", "sm4"],
+      "banned_standard_cards": [],
+      "banned_expanded_cards": []
     }
+  },
+  "abbreviations": {
+    "bw1": {
+      "abbr": "blw",
+      "name": "Black & White"
+    },
+    "bw2": {
+      "abbr": "epo",
+      "name": "Black & White - Emerging Powers"
+    },
+    "bw3": {
+      "abbr": "nvi",
+      "name": "Black & White - Noble Victories"
+    },
+    "bw4": {
+      "abbr": "nxd",
+      "name": "Black & White - Next Destinies"
+    },
+    "bw5": {
+      "abbr": "dex",
+      "name": "Black & White - Dark Explorers"
+    },
+    "bw6": {
+      "abbr": "drx",
+      "name": "Black & White - Dragons Exalted"
+    },
+    "bw7": {
+      "abbr": "bcr",
+      "name": "Black & White - Boundaries Crossed"
+    },
+    "bw8": {
+      "abbr": "pls",
+      "name": "Black & White - Plasma Storm"
+    },
+    "bw9": {
+      "abbr": "plf",
+      "name": "Black & White - Plasma Freeze"
+    },
+    "bw10": {
+      "abbr": "plb",
+      "name": "Black & White - Plasma Blast"
+    },
+    "bw11": {
+      "abbr": "ltr",
+      "name": "Black & White - Legendary Treasures"
+    },
+    "bwp": {
+      "abbr": "pr",
+      "name": "Black Star Promos BW"
+    },
+    "dv1": {
+      "abbr": "drv",
+      "name": "Dragon Vault"
+    },
+    "xy0": {
+      "abbr": "kss",
+      "name": "XY - Kalos Starter Set"
+    },
+    "xy1": {
+      "abbr": "xy",
+      "name": "XY"
+    },
+    "xy2": {
+      "abbr": "flf",
+      "name": "XY - Flashfire"
+    },
+    "xy3": {
+      "abbr": "ffi",
+      "name": "XY - Furious Fists"
+    },
+    "xy4": {
+      "abbr": "phf",
+      "name": "XY - Phantom Forces"
+    },
+    "xy5": {
+      "abbr": "prc",
+      "name": "XY - Primal Clash"
+    },
+    "xy6": {
+      "abbr": "ros",
+      "name": "XY - Roaring Skies"
+    },
+    "xy7": {
+      "abbr": "aor",
+      "name": "XY - Ancient Origins"
+    },
+    "xy8": {
+      "abbr": "bkt",
+      "name": "XY - BREAKthrough"
+    },
+    "xy9": {
+      "abbr": "bkp",
+      "name": "XY - BREAKpoint"
+    },
+    "xy10": {
+      "abbr": "fco",
+      "name": "XY - Fates Collide"
+    },
+    "xy11": {
+      "abbr": "sts",
+      "name": "XY - Steam Siege"
+    },
+    "xy12": {
+      "abbr": "evo",
+      "name": "XY - Evolutions"
+    },
+    "xyp": {
+      "abbr": "pr",
+      "name": "Black Star Promos XY"
+    },
+    "tkbw_e": {
+      "abbr": "tk",
+      "name": "Black & White Trainer Kit - Excadrill"
+    },
+    "tkbw_z": {
+      "abbr": "tk",
+      "name": "Black & White Trainer Kit - Zoroark"
+    },
+    "tkxy_latios": {
+      "abbr": "tk",
+      "name": "XY Trainer Kit - Latios"
+    },
+    "tkxy_latias": {
+      "abbr": "tk",
+      "name": "XY Trainer Kit - Latias"
+    },
+    "tkxy_pikal": {
+      "abbr": "tk",
+      "name": "XY Trainer Kit - Pikachu Libre"
+    },
+    "tkxy_suicune": {
+      "abbr": "tk",
+      "name": "XY Trainer Kit - Suicune"
+    },
+    "tkxy_bisharp": {
+      "abbr": "tk",
+      "name": "XY Trainer Kit - Bisharp"
+    },
+    "tkxy_wigglytuff": {
+      "abbr": "tk",
+      "name": "XY Trainer Kit - Wiggytuff"
+    },
+    "mcd": {
+      "abbr": "mcd",
+      "name": "McDonalds Collection"
+    },
+    "dc1": {
+      "abbr": "dcr",
+      "name": "Double Crisis"
+    },
+    "g1": {
+      "abbr": "gen",
+      "name": "Generations"
+    },
+    "smp": {
+      "abbr": "pr",
+      "name": "Black Star Promos S&M"
+    },
+    "sm1": {
+      "abbr": "sum",
+      "name": "Sun & Moon"
+    },
+    "sm2": {
+      "abbr": "gri",
+      "name": "Sun & Moon - Guardians Rising"
+    },
+    "sm3": {
+      "abbr": "bus",
+      "name": "Sun & Moon - Burning Shadows"
+    },
+    "sm35": {
+      "abbr": "slg",
+      "name": "Sun & Moon - Shining Legends"
+    },
+    "sm4": {
+      "abbr": "cin",
+      "name": "Sun & Moon - Crimson Invasion"
+    }
+  },
+  "setfiles": {
+    "xy7": "Ancient Origins.json",
+    "ecard2": "Aquapolis.json",
+    "pl4": "Arceus.json",
+    "xy9": "BREAKpoint.json",
+    "xy8": "BREAKthrough.json",
+    "bwp": "BW Black Star Promos.json",
+    "base4": "Base Set 2.json",
+    "base1": "Base.json",
+    "bw1": "Black & White.json",
+    "bw7": "Boundaries Crossed.json",
+    "sm3": "Burning Shadows.json",
+    "col1": "Call of Legends.json",
+    "sm4": "Crimson Invasion.json",
+    "ex14": "Crystal Guardians.json",
+    "bw5": "Dark Explorers.json",
+    "ex11": "Delta Species.json",
+    "ex8": "Deoxys.json",
+    "dp1": "Diamond & Pearl.json",
+    "dc1": "Double Crisis.json",
+    "ex15": "Dragon Frontiers.json",
+    "dv1": "Dragon Vault.json",
+    "ex3": "Dragon.json",
+    "bw6": "Dragons Exalted.json",
+    "ex9": "Emerald.json",
+    "bw2": "Emerging Powers.json",
+    "xy12": "Evolutions.json",
+    "ecard1": "Expedition Base Set.json",
+    "xy10": "Fates Collide.json",
+    "ex6": "FireRed & LeafGreen.json",
+    "xy2": "Flashfire.json",
+    "base3": "Fossil.json",
+    "xy3": "Furious Fists.json",
+    "g1": "Generations.json",
+    "dp4": "Great Encounters.json",
+    "sm2": "Guardians Rising.json",
+    "gym2": "Gym Challenge.json",
+    "gym1": "Gym Heroes.json",
+    "hgss4": "HS—Triumphant.json",
+    "hgss3": "HS—Undaunted.json",
+    "hgss2": "HS—Unleashed.json",
+    "hgss1": "HeartGold & SoulSilver.json",
+    "ex5": "Hidden Legends.json",
+    "ex13": "Holon Phantoms.json",
+    "base2": "Jungle.json",
+    "xy0": "Kalos Starter Set.json",
+    "ex12": "Legend Maker.json",
+    "base6": "Legendary Collection.json",
+    "bw11": "Legendary Treasures.json",
+    "dp6": "Legends Awakened.json",
+    "dp5": "Majestic Dawn.json",
+    "dp2": "Mysterious Treasures.json",
+    "neo4": "Neo Destiny.json",
+    "neo2": "Neo Discovery.json",
+    "neo1": "Neo Genesis.json",
+    "neo3": "Neo Revelation.json",
+    "bw4": "Next Destinies.json",
+    "bw3": "Noble Victories.json",
+    "pop1": "POP Series 1.json",
+    "pop2": "POP Series 2.json",
+    "pop3": "POP Series 3.json",
+    "pop4": "POP Series 4.json",
+    "pop5": "POP Series 5.json",
+    "pop6": "POP Series 6.json",
+    "pop7": "POP Series 7.json",
+    "pop8": "POP Series 8.json",
+    "pop9": "POP Series 9.json",
+    "xy4": "Phantom Forces.json",
+    "bw10": "Plasma Blast.json",
+    "bw9": "Plasma Freeze.json",
+    "bw8": "Plasma Storm.json",
+    "pl1": "Platinum.json",
+    "ex16": "Power Keepers.json",
+    "xy5": "Primal Clash.json",
+    "pl2": "Rising Rivals.json",
+    "xy6": "Roaring Skies.json",
+    "ex1": "Ruby & Sapphire.json",
+    "ex2": "Sandstorm.json",
+    "dp3": "Secret Wonders.json",
+    "sm35": "Shining Legends.json",
+    "ecard3": "Skyridge.json",
+    "xy11": "Steam Siege.json",
+    "dp7": "Stormfront.json",
+    "smp": "Sun & Moon Black Star Promos.json",
+    "sm1": "Sun & Moon.json",
+    "pl3": "Supreme Victors.json",
+    "ex4": "Team Magma vs Team Aqua.json",
+    "ex7": "Team Rocket Returns.json",
+    "base5": "Team Rocket.json",
+    "ex10": "Unseen Forces.json",
+    "basep": "Wizards Black Star Promos.json",
+    "xyp": "XY Black Star Promos.json",
+    "xy1": "XY.json"
+  },
+  "keyorder": [
+      "id",
+      "name",
+      "imageURL",
+      "subtype",
+      "supertype",
+      "level",
+      "evolvesFrom",
+      "ability",
+      "ability.name",
+      "ability.text",
+      "abiltiy.type",
+      "hp",
+      "retreatCost",
+      "number",
+      "artist",
+      "rarity",
+      "series",
+      "set",
+      "setCode",
+      "text",
+      "types",
+      "attacks",
+      "attacks.name",
+      "attacks.cost",
+      "attacks.convertedEnergyCost",
+      "attacks.damage",
+      "attacks.text",
+      "weaknesses",
+      "weaknesses.type",
+      "weaknesses.value",
+      "resistances",
+      "resistances.type",
+      "resistances.value",
+      "nationalPokedexNumber",
+      "imageUrlHiRes",
+      "evolvesTo"
+  ]
 }

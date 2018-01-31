@@ -575,7 +575,7 @@ def sort_energy(**kwargs):
     if item.get('attacks'):
         for attack in item['attacks']:
             if attack.get('cost'):
-                attack['cost'].sort()
+                attack['cost'].sort(reverse=True)
                 if attack['cost'] != ['Free']:
                     attack['convertedEnergyCost'] = len(attack['cost'])
                 else:
