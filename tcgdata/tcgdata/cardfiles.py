@@ -6,8 +6,9 @@ import argparse
 import logging
 import os
 import sys
+import re
 
-from loadcards import sort_energy, x_to_times, quote_to_apostrophe
+from loadcards import x_to_times, quote_to_apostrophe
 
 # Note: not using OrderedDict, but leaving remenants of it here in cardset
 # I need to add it back in
@@ -81,8 +82,10 @@ def main():
     cards = readfiles(args.carddir[0], formats['setfiles'])
     logger.info('Loaded {} cards'.format(len(cards)))
 
+    # Apply filters
     for card in cards:
-        sort_energy(item=card)
+        # sort_energy(card=card, dont_sort_energy=formats['dont_sort_energy'])
+        apostrophe_to_quotes(item=card)
 
     writefiles(args.carddir[0], cards, formats['setfiles'])
 
@@ -134,6 +137,103 @@ def writefiles(dirpath, cards, setfiles):
                              ensure_ascii=False), file=set_file_handler)
 
 
+def apostrophe_to_quotes(**kwargs):
+    """ Change apostrophe to single quote characters
+    replace ’s and ’t with 's and 't with
+
+    """
+    patterns = [
+        (r'’s\b', r"'s"),
+        (r'’t\b', r"'t")
+    ]
+
+    d = kwargs['item']
+    if isinstance(d, dict):
+        for k, v in list(d.items()):
+            if isinstance(v, list) or isinstance(v, dict):
+                apostrophe_to_quotes(item=v)
+            if isinstance(v, str):
+                for pattern, replacement in patterns:
+                    if re.search(pattern, v):
+                        logger.debug('replacing[{}]'.format(d[k]))
+                        v = d[k] = re.sub(pattern, replacement, v)
+                        logger.debug('replaced [{}]'.format(d[k]))
+    elif isinstance(d, list):
+        for i, v in enumerate(d):
+            if isinstance(v, str):
+                for pattern, replacement in patterns:
+                    if re.search(pattern, v):
+                        logger.debug('replacing[{}]'.format(d[i]))
+                        v = d[i] = re.sub(pattern, replacement, v)
+                        logger.debug('replaced [{}]'.format(d[i]))
+            if isinstance(v, dict):
+                apostrophe_to_quotes(item=v)
+
+
+def sort_energy(**kwargs):
+    """ Ensure energy costs are sorted - allows for better matching """
+
+    def _energy_order(energytype):
+        order = {
+            'Free': 5,
+            'Fire': 10,
+            'Grass': 20,
+            'Water': 30,
+            'Psychic': 40,
+            'Darkness': 50,
+            'Fairy': 60,
+            'Lightning': 70,
+            'Fighting': 80,
+            'Metal': 90,
+            'Colorless': 100
+        }
+        return order[energytype]
+
+    def _colorless_order(energytype):
+        order = {
+            'Free': 5,
+            'Fire': 5,
+            'Grass': 5,
+            'Psychic': 5,
+            'Darkness': 5,
+            'Fairy': 5,
+            'Water': 5,
+            'Lightning': 5,
+            'Fighting': 5,
+            'Metal': 5,
+            'Colorless': 100
+        }
+        return order[energytype]
+
+    card = kwargs['card']
+    if card.get('attacks'):
+        for attack in card['attacks']:
+            if attack.get('cost'):
+
+                # Fix a few common mistakes
+                for i, energy_card in enumerate(attack['cost']):
+                    if energy_card == 'Green':
+                        attack['cost'][i] = 'Grass'
+                    if energy_card == 'Dark':
+                        attack['cost'][i] = 'Darkness'
+
+                # # Check to see if a multi-type attack (debugging)
+                # energy_set = set(attack['cost'])
+                # energy_set.discard('Colorless')
+                # if len(energy_set) > 1:
+                #     print('CardId = {} in set {}'.format(card['id'], card['set']))
+
+                if card['setCode'] in kwargs['dont_sort_energy']:
+                    attack['cost'].sort(key=_colorless_order)
+                else:
+                    attack['cost'].sort(key=_energy_order)
+                if attack['cost'] != ['Free']:
+                    attack['convertedEnergyCost'] = len(attack['cost'])
+                else:
+                    attack['convertedEnergyCost'] = 0
+            else:
+                attack['cost'] = ['Free']
+                attack['convertedEnergyCost'] = 0
 
 
 if __name__ == "__main__":

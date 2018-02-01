@@ -659,7 +659,7 @@ def compare_cards_full(card1, card2):
                 else:
                     if (recval1[v] == "" or recval2[v] == ""):
                         print(
-                            '\n\n\n*************\n***  TODO1 MET  ***\n*************\n\n\n')
+                            '\n\n\n*****\n***  TODO1 MET  ***\n********\n\n\n')
                     _build_response(key, v, ratio, recval1[v], recval2[v])
 
         # if comparison value is 'match' do a compare of each entry, populate
@@ -681,7 +681,7 @@ def compare_cards_full(card1, card2):
                     ratio = 0
                 if (recval1[v] == "" or recval2[v] == ""):
                     print(
-                        '\n\n\n*************\n***  TODO2 MET  ***\n*************\n\n\n')
+                        '\n\n\n*****\n***  TODO2 MET  ***\n**********\n\n\n')
                 _build_response(key, v, ratio, recval1[v], recval2[v])
 
         # if comparison value is 'count' - check to see if there are exactly

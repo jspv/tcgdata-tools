@@ -296,6 +296,18 @@
     "xyp": "XY Black Star Promos.json",
     "xy1": "XY.json"
   },
+  "dont_sort_energy": [
+      "ecard",
+      "ecard2",
+      "ecard3",
+      "pl4",
+      "ex8",
+      "ex13",
+      "dp2",
+      "neo3",
+      "neo4",
+      "ex10"
+    ],
   "keyorder": [
       "id",
       "name",

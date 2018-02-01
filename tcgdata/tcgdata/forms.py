@@ -171,12 +171,14 @@ def review_cards_manually(card0, card1, matchrecord):
                     return "Nothing Selected, returning Error"
                 if formdata.data == 'select_0':
                     returnstruct['errors'].append({'id': card1.get(
-                        'id'), 'field': key, 'index': matchrecord[key][0]['index'], 'newvalue':
-                        matchrecord[key][0]['vals'][0]})
+                        'id'), 'field': key,
+                        'index': matchrecord[key][0]['index'],
+                        'newvalue': matchrecord[key][0]['vals'][0]})
                 elif formdata.data == 'select_1':
                     returnstruct['errors'].append({'id': card0.get(
-                        'id'), 'field': key, 'index': matchrecord[key][0]['index'], 'newvalue':
-                        matchrecord[key][0]['vals'][1]})
+                        'id'), 'field': key,
+                        'index': matchrecord[key][0]['index'],
+                        'newvalue': matchrecord[key][0]['vals'][1]})
                 elif form.process_changes.data:
                     # Should never happen, neither selected.
                     shutdown_flask_server()

@@ -290,8 +290,8 @@ def create_table(database, table_name, key_schema, attribute_definitions,
     return table
 
 
-def populate_table(table, init_file, key_schema,
-                   filters=[], returndict=False, tcgdata=False, updatefile=False):
+def populate_table(table, init_file, key_schema, filters=[],
+                   returndict=False, tcgdata=False, updatefile=False):
     """ Populate the table with json specified in init_file, opt: return the data
     Position arguments:
         table -- dynamodb to populate
