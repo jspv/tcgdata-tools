@@ -37,7 +37,7 @@
         "pop2-7": {
             "key": "attacks.damage",
             "index": 0,
-            "newvalue": null,
+            "newvalue": "",
             "oldvalue": "10"
         }
     },
@@ -211,7 +211,7 @@
         "pop7-8": {
             "key": "attacks.damage",
             "index": 1,
-            "newvalue": null,
+            "newvalue": "",
             "oldvalue": "40"
         }
     },
@@ -1117,7 +1117,7 @@
         "xy7-21": {
             "key": "text",
             "index": 0,
-            "newvalue": null,
+            "newvalue": "",
             "oldvalue": [
                 "This Pok\u00e9mon may have up to 2 Pok\u00e9mon Tool cards attached to it."
             ]
@@ -2082,7 +2082,7 @@
             "set": "Wizards Black Star Promos",
             "key": "retreatCost",
             "index": 0,
-            "newvalue": null,
+            "newvalue": "",
             "oldvalue": [
                 "Colorless"
             ]
@@ -2186,7 +2186,7 @@
             "set": "Black Star Promos BW",
             "key": "attacks.damage",
             "index": 0,
-            "newvalue": null,
+            "newvalue": "",
             "oldvalue": "n/a"
         }
     },
@@ -2616,13 +2616,23 @@
         }
     },
     {
-        "smp-SM04": {
-            "name": "Pikachu",
-            "set": "SM Black Star Promos",
-            "key": "attacks.name",
+        "pop6-10": {
+            "name": "Staravia",
+            "set": "POP Series 6",
+            "key": "weaknesses",
             "index": 0,
-            "newvalue": "Thunder Wave",
-            "oldvalue": "Thunderwave"
+            "newvalue": [
+                {
+                    "type": "Lightning",
+                    "value": "+20"
+                }
+            ],
+            "oldvalue": [
+                {
+                    "type": "Lightning",
+                    "value": "\u00d72"
+                }
+            ]
         }
     }
 ]
