@@ -61,11 +61,11 @@ def create_compare_form(*args, **kwargs):
 def display_cards(card0, card1):
 
     # Get images
-    image0 = card0.get('image_url_hi_res')
+    image0 = card0.get('imageUrlHiRes')
     image0 = image0.replace(
         'https://images.pokemontcg.io/',
         'images/')
-    image1 = card1.get('image_url_hi_res')
+    image1 = card1.get('imageUrlHiRes')
     image1 = image1.replace(
         'https://images.pokemontcg.io/',
         'images/')
@@ -117,11 +117,11 @@ def review_cards_manually(card0, card1, matchrecord):
     returnstruct = {}
 
     # Get images
-    image0 = card0.get('image_url_hi_res')
+    image0 = card0.get('imageUrlHiRes')
     image0 = image0.replace(
         'https://images.pokemontcg.io/',
         'images/')
-    image1 = card1.get('image_url_hi_res')
+    image1 = card1.get('imageUrlHiRes')
     image1 = image1.replace(
         'https://images.pokemontcg.io/',
         'images/')

@@ -8,7 +8,7 @@
         "number_prefix": "XY",
         "min": 36
       }],
-      "expanded_legal_sets": ["bw1", "bw2", "bw3", "bw4", "bw5", "bw6", "bw7", "bw8", "bw9", "bw10", "bw11", "bwp", "dv1", "xy0", "xy1", "xy2", "xy3", "xy4", "xy5", "xy6", "xy7", "xy8", "xy9", "xy10", "xy11", "xy12", "xyp", "tkbw_e", "tkbw_z", "tkxy_latias", "tkxy_latios", "tkxy_pikal", "tkxy_suicune", "mcd", "dc1", "g1", "smp", "sm1", "sm2"],
+      "expanded_legal_sets": ["bw1", "bw2", "bw3", "bw4", "bw5", "bw6", "bw7", "bw8", "bw9", "bw10", "bw11", "bwp", "dv1", "xy0", "xy1", "xy2", "xy3", "xy4", "xy5", "xy6", "xy7", "xy8", "xy9", "xy10", "xy11", "xy12", "xyp", "tkbw_e", "tkbw_z", "tkxy_latias", "tkxy_latios", "tkxy_pikal", "tkxy_suicune", "mcd", "dc1", "g1", "smp", "sm1", "sm2", "sm5"],
       "banned_standard_cards": [],
       "banned_expanded_cards": ["bw4-72", "xy4-99", "xy4-118"]
     },
@@ -19,7 +19,7 @@
         "number_prefix": "XY",
         "min": 67
       }],
-      "expanded_legal_sets": ["bw1", "bw2", "bw3", "bw4", "bw5", "bw6", "bw7", "bw8", "bw9", "bw10", "bw11", "bwp", "dv1", "xy0", "xy1", "xy2", "xy3", "xy4", "xy5", "xy6", "xy7", "xy8", "xy9", "xy10", "xy11", "xy12", "xyp", "tkbw_e", "tkbw_z", "tkxy_latias", "tkxy_latios", "tkxy_pikal", "tkxy_suicune", "mcd", "dc1", "g1", "smp", "sm1", "sm2", "sm3", "sm35", "sm4"],
+      "expanded_legal_sets": ["bw1", "bw2", "bw3", "bw4", "bw5", "bw6", "bw7", "bw8", "bw9", "bw10", "bw11", "bwp", "dv1", "xy0", "xy1", "xy2", "xy3", "xy4", "xy5", "xy6", "xy7", "xy8", "xy9", "xy10", "xy11", "xy12", "xyp", "tkbw_e", "tkbw_z", "tkxy_latias", "tkxy_latios", "tkxy_pikal", "tkxy_suicune", "mcd", "dc1", "g1", "smp", "sm1", "sm2", "sm3", "sm35", "sm4", "sm5"],
       "banned_standard_cards": [],
       "banned_expanded_cards": []
     }
@@ -291,35 +291,35 @@
     "ex4": "Team Magma vs Team Aqua.json",
     "ex7": "Team Rocket Returns.json",
     "base5": "Team Rocket.json",
+    "sm5": "Ultra Prism.json",
     "ex10": "Unseen Forces.json",
     "basep": "Wizards Black Star Promos.json",
     "xyp": "XY Black Star Promos.json",
     "xy1": "XY.json"
   },
   "dont_sort_energy": [
-      "ecard",
-      "ecard2",
-      "ecard3",
-      "pl4",
-      "ex8",
-      "ex13",
-      "dp2",
-      "neo3",
-      "neo4",
-      "ex10"
-    ],
-  "keyorder": [
+    "ecard",
+    "ecard2",
+    "ecard3",
+    "pl4",
+    "ex8",
+    "ex13",
+    "dp2",
+    "neo3",
+    "neo4",
+    "ex10"
+  ],
+  "keyorder": {
+    ".": [
       "id",
       "name",
-      "imageURL",
+      "imageUrl",
       "subtype",
       "supertype",
       "level",
       "evolvesFrom",
       "ability",
-      "ability.name",
-      "ability.text",
-      "abiltiy.type",
+      "ancientTrait",
       "hp",
       "retreatCost",
       "number",
@@ -331,19 +331,35 @@
       "text",
       "types",
       "attacks",
-      "attacks.name",
-      "attacks.cost",
-      "attacks.convertedEnergyCost",
-      "attacks.damage",
-      "attacks.text",
       "weaknesses",
-      "weaknesses.type",
-      "weaknesses.value",
       "resistances",
-      "resistances.type",
-      "resistances.value",
       "nationalPokedexNumber",
       "imageUrlHiRes",
       "evolvesTo"
-  ]
+    ],
+    ".ability": [
+      "name",
+      "text",
+      "type"
+    ],
+    ".ancientTrait": [
+      "name",
+      "text"
+    ],
+    ".attacks": [
+      "name",
+      "cost",
+      "convertedEnergyCost",
+      "damage",
+      "text"
+    ],
+    ".weaknesses": [
+      "type",
+      "value"
+    ],
+    ".resistances": [
+      "type",
+      "value"
+    ]
+  }
 }

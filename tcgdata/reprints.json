@@ -1,455 +1,856 @@
 [
     {
-        "Deoxys ex": [
-            "ex9-93",
-            "pop4-17"
+        "Sceptile-EX": [
+            "xy7-7",
+            "xy7-84"
         ]
     },
     {
-        "Pikachu": [
-            "pop2-16",
-            "base4-87",
-            "pl2-112",
-            "base1-58"
+        "M Sceptile-EX": [
+            "xy7-8",
+            "xy7-85"
         ]
     },
     {
-        "Pidgeot": [
-            "pop2-2",
-            "ecard1-23",
-            "ecard1-59"
+        "Magikarp": [
+            "xy7-19",
+            "g1-22",
+            "xyp-XY143"
         ]
     },
     {
-        "Ivysaur": [
-            "pop2-7",
-            "ex6-35"
+        "Gyarados": [
+            "xy7-20",
+            "g1-23",
+            "xyp-XY109"
         ]
     },
     {
-        "Ampharos": [
-            "dp3-1",
-            "pop7-1"
+        "Gyarados": [
+            "xy7-21",
+            "xyp-XY60"
+        ]
+    },
+    {
+        "Kyurem-EX": [
+            "xy7-25",
+            "xy7-86"
+        ]
+    },
+    {
+        "Ampharos-EX": [
+            "xy7-27",
+            "xy7-87"
+        ]
+    },
+    {
+        "M Ampharos-EX": [
+            "xy7-28",
+            "xy7-88"
+        ]
+    },
+    {
+        "Hoopa-EX": [
+            "xy7-36",
+            "xy7-89",
+            "xyp-XY71"
+        ]
+    },
+    {
+        "Machamp-EX": [
+            "xy7-37",
+            "xy7-90"
+        ]
+    },
+    {
+        "Tyranitar-EX": [
+            "xy7-42",
+            "xy7-91"
+        ]
+    },
+    {
+        "M Tyranitar-EX": [
+            "xy7-43",
+            "xy7-92"
         ]
     },
     {
         "Ralts": [
-            "dp3-102",
-            "pop7-15"
+            "xy7-52",
+            "xy8-100"
         ]
     },
     {
-        "Sentret": [
-            "dp3-104",
-            "pop7-16"
+        "Giratina-EX": [
+            "xy7-57",
+            "xy7-93"
         ]
     },
     {
-        "Spinda": [
-            "dp3-111",
-            "pop7-17"
+        "Persian": [
+            "xy7-62",
+            "g1-54"
         ]
     },
     {
-        "Stantler": [
-            "dp3-113",
-            "pop7-9"
-        ]
-    },
-    {
-        "Mothim": [
-            "dp3-33",
-            "pop7-5"
-        ]
-    },
-    {
-        "Wormadam Sandy Cloak": [
-            "dp3-42",
-            "pop7-10"
-        ]
-    },
-    {
-        "Flaaffy": [
-            "dp3-50",
-            "pop7-7"
-        ]
-    },
-    {
-        "Kirlia": [
-            "dp3-53",
-            "pop7-8"
-        ]
-    },
-    {
-        "Gallade": [
-            "dp3-6",
-            "pop7-2"
-        ]
-    },
-    {
-        "Burmy Plant Cloak": [
-            "dp3-78",
-            "pop7-11"
-        ]
-    },
-    {
-        "Burmy Sandy Cloak": [
-            "dp3-79",
-            "pop7-12"
-        ]
-    },
-    {
-        "Corsola": [
-            "dp3-84",
-            "pop7-13"
-        ]
-    },
-    {
-        "Mareep": [
-            "dp3-94",
-            "pop7-14"
-        ]
-    },
-    {
-        "Black Kyurem": [
-            "bw7-100",
-            "bwp-BW58"
-        ]
-    },
-    {
-        "Black Kyurem-EX": [
-            "bw7-101",
-            "bw7-145",
-            "bw11-100",
-            "bwp-BW62"
-        ]
-    },
-    {
-        "White Kyurem": [
-            "bw7-102",
-            "bwp-BW59"
-        ]
-    },
-    {
-        "White Kyurem-EX": [
-            "bw7-103",
-            "bw7-146",
-            "bw11-101",
-            "bwp-BW63"
-        ]
-    },
-    {
-        "Celebi-EX": [
-            "bw7-141",
-            "bw7-9"
-        ]
-    },
-    {
-        "Keldeo-EX": [
-            "bw7-142",
-            "bw7-49",
-            "bw11-45",
-            "bwp-BW61"
-        ]
-    },
-    {
-        "Cresselia-EX": [
-            "bw7-143",
-            "bw7-67"
-        ]
-    },
-    {
-        "Landorus-EX": [
-            "bw7-144",
-            "bw7-89"
-        ]
-    },
-    {
-        "Golurk": [
-            "bw7-150",
-            "bw6-59"
-        ]
-    },
-    {
-        "Terrakion": [
-            "bw7-151",
-            "bw11-84",
-            "bw3-73",
-            "bw3-99"
-        ]
-    },
-    {
-        "Altaria": [
-            "bw7-152",
-            "bw6-84",
-            "bwp-BW48"
-        ]
-    },
-    {
-        "Charmander": [
-            "bw7-18",
-            "bw11-17"
-        ]
-    },
-    {
-        "Charmeleon": [
-            "bw7-19",
-            "bw11-18"
-        ]
-    },
-    {
-        "Charizard": [
-            "bw7-20",
-            "bw11-19",
-            "bw8-136"
-        ]
-    },
-    {
-        "Blastoise": [
-            "bw7-31",
-            "bw8-137",
-            "bw10-16"
-        ]
-    },
-    {
-        "Dusknoir": [
-            "bw7-63",
-            "bw10-104"
-        ]
-    },
-    {
-        "Croagunk": [
-            "bw7-65",
-            "bw11-62"
-        ]
-    },
-    {
-        "Toxicroak": [
-            "bw7-66",
-            "bw11-63"
-        ]
-    },
-    {
-        "Meloetta": [
-            "bw7-77",
-            "bw11-78"
-        ]
-    },
-    {
-        "Purrloin": [
-            "bw7-90",
-            "bw11-RC13"
-        ]
-    },
-    {
-        "Flygon": [
-            "bw7-99",
-            "bwp-BW53"
-        ]
-    },
-    {
-        "Alakazam": [
-            "ecard1-1",
-            "ecard1-33"
-        ]
-    },
-    {
-        "Dugtrio": [
-            "ecard1-10",
-            "ecard1-44"
-        ]
-    },
-    {
-        "Fearow": [
-            "ecard1-11",
-            "ecard1-45"
-        ]
-    },
-    {
-        "Larvitar": [
-            "ecard1-116",
-            "ex15-51"
-        ]
-    },
-    {
-        "Feraligatr": [
-            "ecard1-12",
-            "ecard1-47"
-        ]
-    },
-    {
-        "Gengar": [
-            "ecard1-13",
-            "ecard1-48"
-        ]
-    },
-    {
-        "Golem": [
-            "ecard1-14",
-            "ecard1-49"
-        ]
-    },
-    {
-        "Kingler": [
-            "ecard1-15",
-            "ecard1-50"
-        ]
-    },
-    {
-        "Machamp": [
-            "ecard1-16",
-            "ecard1-51"
-        ]
-    },
-    {
-        "Magby": [
-            "ecard1-17",
-            "ecard1-52"
-        ]
-    },
-    {
-        "Meganium": [
-            "ecard1-18",
-            "ecard1-54"
-        ]
-    },
-    {
-        "Mew": [
-            "ecard1-19",
-            "ecard1-55"
+        "Lugia-EX": [
+            "xy7-68",
+            "xy7-94"
         ]
     },
     {
         "Ampharos": [
-            "ecard1-2",
-            "ecard1-34"
+            "ecard2-1",
+            "ecard2-151"
         ]
     },
     {
-        "Mewtwo": [
-            "ecard1-20",
-            "ecard1-56"
+        "Arcanine": [
+            "ecard2-2",
+            "ecard2-152"
+        ]
+    },
+    {
+        "Ariados": [
+            "ecard2-3",
+            "ecard2-153"
+        ]
+    },
+    {
+        "Azumarill": [
+            "ecard2-4",
+            "ecard2-154"
+        ]
+    },
+    {
+        "Bellossom": [
+            "ecard2-5",
+            "ecard2-155"
+        ]
+    },
+    {
+        "Blissey": [
+            "ecard2-6",
+            "ecard2-156"
+        ]
+    },
+    {
+        "Electrode": [
+            "ecard2-157",
+            "ecard2-8"
+        ]
+    },
+    {
+        "Espeon": [
+            "ecard2-159",
+            "ecard2-11"
+        ]
+    },
+    {
+        "Exeggutor": [
+            "ecard2-160",
+            "ecard2-12"
+        ]
+    },
+    {
+        "Houndoom": [
+            "ecard2-161",
+            "ecard2-15"
+        ]
+    },
+    {
+        "Jumpluff": [
+            "ecard2-163",
+            "ecard2-17"
+        ]
+    },
+    {
+        "Kingdra": [
+            "ecard2-164",
+            "ecard2-19"
+        ]
+    },
+    {
+        "Lanturn": [
+            "ecard2-165",
+            "ecard2-21"
+        ]
+    },
+    {
+        "Magneton": [
+            "ecard2-166",
+            "ecard2-22"
+        ]
+    },
+    {
+        "Muk": [
+            "ecard2-167",
+            "ecard2-23"
+        ]
+    },
+    {
+        "Nidoking": [
+            "ecard2-168",
+            "ecard2-24"
         ]
     },
     {
         "Ninetales": [
-            "ecard1-21",
-            "ecard1-57"
+            "ecard2-169",
+            "ecard2-25"
         ]
     },
     {
-        "Pichu": [
-            "ecard1-22",
-            "ecard1-58"
+        "Octillery": [
+            "ecard2-170",
+            "ecard2-26"
         ]
     },
     {
-        "Poliwrath": [
-            "ecard1-24",
-            "ecard1-60"
+        "Scizor": [
+            "ecard2-171",
+            "ecard2-32"
         ]
     },
     {
-        "Raichu": [
-            "ecard1-25",
-            "ecard1-61"
+        "Slowking": [
+            "ecard2-172",
+            "ecard2-34"
         ]
     },
     {
-        "Rapidash": [
-            "ecard1-26",
-            "ecard1-62"
+        "Steelix": [
+            "ecard2-173",
+            "ecard2-35"
         ]
     },
     {
-        "Skarmory": [
-            "ecard1-27",
-            "ecard1-63"
+        "Sudowoodo": [
+            "ecard2-174",
+            "ecard2-36"
         ]
     },
     {
-        "Typhlosion": [
-            "ecard1-28",
-            "ecard1-65"
+        "Suicune": [
+            "ecard2-175",
+            "ecard2-37",
+            "basep-53"
+        ]
+    },
+    {
+        "Tentacruel": [
+            "ecard2-176",
+            "ecard2-38"
+        ]
+    },
+    {
+        "Togetic": [
+            "ecard2-177",
+            "ecard2-39"
         ]
     },
     {
         "Tyranitar": [
-            "ecard1-29",
-            "ecard1-66"
+            "ecard2-178",
+            "ecard2-40"
         ]
     },
     {
-        "Arbok": [
-            "ecard1-3",
-            "ecard1-35"
+        "Umbreon": [
+            "ecard2-179",
+            "ecard2-41"
         ]
     },
     {
-        "Venusaur": [
-            "ecard1-30",
-            "ecard1-68"
+        "Victreebel": [
+            "ecard2-180",
+            "ecard2-42"
         ]
     },
     {
         "Vileplume": [
-            "ecard1-31",
-            "ecard1-69"
+            "ecard2-181",
+            "ecard2-43"
         ]
     },
     {
-        "Weezing": [
-            "ecard1-32",
-            "ecard1-70"
+        "Zapdos": [
+            "ecard2-182",
+            "ecard2-44"
         ]
     },
     {
-        "Blastoise": [
-            "ecard1-37",
-            "ecard1-4"
+        "Gyarados-EX": [
+            "xy9-26",
+            "xy9-114",
+            "xy9-123"
         ]
     },
     {
-        "Butterfree": [
-            "ecard1-38",
-            "ecard1-5"
+        "M Gyarados-EX": [
+            "xy9-27",
+            "xy9-115"
         ]
     },
     {
-        "Charizard": [
-            "ecard1-40",
-            "ecard1-6"
+        "Manaphy-EX": [
+            "xy9-32",
+            "xy9-116"
         ]
     },
     {
-        "Clefable": [
-            "ecard1-41",
-            "ecard1-7"
+        "Froakie": [
+            "xy9-38",
+            "xyp-XY138"
         ]
     },
     {
-        "Cloyster": [
-            "ecard1-42",
-            "ecard1-8"
+        "Espeon-EX": [
+            "xy9-52",
+            "xy9-117"
         ]
     },
     {
-        "Dragonite": [
-            "ecard1-43",
-            "ecard1-9"
+        "Darkrai-EX": [
+            "xy9-74",
+            "xy9-118"
         ]
     },
     {
-        "Pupitar": [
-            "ecard1-90",
-            "ex15-58"
+        "Scizor-EX": [
+            "xy9-76",
+            "xy9-119"
+        ]
+    },
+    {
+        "M Scizor-EX": [
+            "xy9-77",
+            "xy9-120"
+        ]
+    },
+    {
+        "Ho-Oh-EX": [
+            "xy9-92",
+            "xy9-121"
+        ]
+    },
+    {
+        "Paras": [
+            "xy8-1",
+            "g1-6"
+        ]
+    },
+    {
+        "Parasect": [
+            "xy8-2",
+            "g1-7"
+        ]
+    },
+    {
+        "Pinsir": [
+            "xy8-3",
+            "g1-9"
+        ]
+    },
+    {
+        "Chesnaught": [
+            "xy8-11",
+            "xyp-XY68"
+        ]
+    },
+    {
+        "Houndoom-EX": [
+            "xy8-21",
+            "xy8-153"
+        ]
+    },
+    {
+        "M Houndoom-EX": [
+            "xy8-22",
+            "xy8-154"
+        ]
+    },
+    {
+        "Pansear": [
+            "xy8-23",
+            "xyp-XY131"
+        ]
+    },
+    {
+        "Glalie-EX": [
+            "xy8-34",
+            "xy8-155"
+        ]
+    },
+    {
+        "M Glalie-EX": [
+            "xy8-35",
+            "xy8-156"
+        ]
+    },
+    {
+        "Gastly": [
+            "xy8-58",
+            "g1-33",
+            "xyp-XY132"
+        ]
+    },
+    {
+        "Haunter": [
+            "xy8-59",
+            "g1-34"
+        ]
+    },
+    {
+        "Gengar": [
+            "xy8-60",
+            "g1-35"
+        ]
+    },
+    {
+        "Mewtwo-EX": [
+            "xy8-61",
+            "xy8-157",
+            "xy8-163",
+            "xyp-XY125",
+            "xyp-XY183"
+        ]
+    },
+    {
+        "Mewtwo-EX": [
+            "xy8-62",
+            "xy8-158",
+            "xy8-164"
+        ]
+    },
+    {
+        "M Mewtwo-EX": [
+            "xy8-63",
+            "xy8-159"
+        ]
+    },
+    {
+        "M Mewtwo-EX": [
+            "xy8-64",
+            "xy8-160"
+        ]
+    },
+    {
+        "Mr. Mime": [
+            "xy8-97",
+            "g1-52"
+        ]
+    },
+    {
+        "Floette": [
+            "xy8-102",
+            "xyp-XY139"
+        ]
+    },
+    {
+        "Meowth": [
+            "xy8-114",
+            "g1-53"
+        ]
+    },
+    {
+        "Doduo": [
+            "xy8-116",
+            "g1-55"
+        ]
+    },
+    {
+        "Dodrio": [
+            "xy8-117",
+            "g1-56"
+        ]
+    },
+    {
+        "Swablu": [
+            "xy8-124",
+            "g1-rc23",
+            "xy6-73"
+        ]
+    },
+    {
+        "Reshiram": [
+            "bwp-BW04",
+            "bwp-BW23",
+            "bw1-26",
+            "bw1-113",
+            "bw11-28",
+            "bw11-114",
+            "bw11-RC22",
+            "bw4-21"
+        ]
+    },
+    {
+        "Zekrom": [
+            "bwp-BW05",
+            "bwp-BW24",
+            "bw1-47",
+            "bw1-114",
+            "bw11-51",
+            "bw11-115",
+            "bw4-50"
+        ]
+    },
+    {
+        "Zoroark": [
+            "bwp-BW09",
+            "bw1-71"
+        ]
+    },
+    {
+        "Axew": [
+            "bwp-BW10",
+            "bwp-BW16"
+        ]
+    },
+    {
+        "Pansage": [
+            "bwp-BW11",
+            "bwp-BW14"
+        ]
+    },
+    {
+        "Pidove": [
+            "bwp-BW15",
+            "bw2-80"
+        ]
+    },
+    {
+        "Ducklett": [
+            "bwp-BW17",
+            "bw1-36"
+        ]
+    },
+    {
+        "Serperior": [
+            "bwp-BW20",
+            "bw1-6",
+            "bw6-125",
+            "bw11-8"
+        ]
+    },
+    {
+        "Emboar": [
+            "bwp-BW21",
+            "bw1-20",
+            "bw11-27",
+            "bw4-100"
+        ]
+    },
+    {
+        "Samurott": [
+            "bwp-BW22",
+            "bw1-32",
+            "bw11-39"
+        ]
+    },
+    {
+        "Victini": [
+            "bwp-BW32",
+            "bw11-23",
+            "bw3-14",
+            "bw3-98"
+        ]
+    },
+    {
+        "Reshiram-EX": [
+            "bwp-BW36",
+            "bw11-29",
+            "bw4-22",
+            "bw4-95"
+        ]
+    },
+    {
+        "Kyurem-EX": [
+            "bwp-BW37",
+            "bw11-44",
+            "bw4-38",
+            "bw4-96"
+        ]
+    },
+    {
+        "Zekrom-EX": [
+            "bwp-BW38",
+            "bw11-52",
+            "bw4-51",
+            "bw4-97"
+        ]
+    },
+    {
+        "Volcarona": [
+            "bwp-BW40",
+            "bw5-22"
+        ]
+    },
+    {
+        "Thundurus": [
+            "bwp-BW41",
+            "bw2-35",
+            "bw2-97",
+            "bw11-50"
+        ]
+    },
+    {
+        "Tornadus": [
+            "bwp-BW42",
+            "bw2-89",
+            "bw2-98",
+            "bw11-108"
+        ]
+    },
+    {
+        "Landorus": [
+            "bwp-BW43",
+            "bw11-85",
+            "bw3-74"
+        ]
+    },
+    {
+        "Kyurem": [
+            "bwp-BW44",
+            "bw11-43",
+            "bw3-34"
+        ]
+    },
+    {
+        "Mewtwo-EX": [
+            "bwp-BW45",
+            "bw11-54",
+            "bw4-54",
+            "bw4-98"
+        ]
+    },
+    {
+        "Darkrai-EX": [
+            "bwp-BW46",
+            "bw5-63",
+            "bw5-107",
+            "bw11-88"
+        ]
+    },
+    {
+        "Rayquaza-EX": [
+            "bwp-BW47",
+            "bw6-85",
+            "bw6-123"
+        ]
+    },
+    {
+        "Altaria": [
+            "bwp-BW48",
+            "bw7-152",
+            "bw6-84"
+        ]
+    },
+    {
+        "Crobat": [
+            "bwp-BW51",
+            "bw8-55"
+        ]
+    },
+    {
+        "Flygon": [
+            "bwp-BW53",
+            "bw7-99"
+        ]
+    },
+    {
+        "Black Kyurem": [
+            "bwp-BW58",
+            "bw7-100"
+        ]
+    },
+    {
+        "White Kyurem": [
+            "bwp-BW59",
+            "bw7-102"
+        ]
+    },
+    {
+        "Keldeo-EX": [
+            "bwp-BW61",
+            "bw7-49",
+            "bw7-142",
+            "bw11-45"
+        ]
+    },
+    {
+        "Black Kyurem-EX": [
+            "bwp-BW62",
+            "bw7-101",
+            "bw7-145",
+            "bw11-100"
+        ]
+    },
+    {
+        "White Kyurem-EX": [
+            "bwp-BW63",
+            "bw7-103",
+            "bw7-146",
+            "bw11-101"
+        ]
+    },
+    {
+        "Drifblim": [
+            "bwp-BW64",
+            "bw6-51"
+        ]
+    },
+    {
+        "Ninetales": [
+            "bwp-BW66",
+            "bw6-19"
+        ]
+    },
+    {
+        "Giratina": [
+            "bwp-BW74",
+            "bw8-62"
+        ]
+    },
+    {
+        "Metagross": [
+            "bwp-BW75",
+            "bw9-52"
+        ]
+    },
+    {
+        "Thundurus-EX": [
+            "bwp-BW81",
+            "bw9-38",
+            "bw9-110"
+        ]
+    },
+    {
+        "Deoxys-EX": [
+            "bwp-BW82",
+            "bw9-53",
+            "bw9-111"
+        ]
+    },
+    {
+        "Lugia-EX": [
+            "bwp-BW83",
+            "bw11-102",
+            "bw8-108",
+            "bw8-134"
+        ]
+    },
+    {
+        "Porygon-Z": [
+            "bwp-BW84",
+            "bw10-74"
+        ]
+    },
+    {
+        "Flareon": [
+            "bwp-BW88",
+            "bw5-12"
+        ]
+    },
+    {
+        "Vaporeon": [
+            "bwp-BW89",
+            "bw5-25"
+        ]
+    },
+    {
+        "Glaceon": [
+            "bwp-BW90",
+            "bw5-30"
+        ]
+    },
+    {
+        "Jolteon": [
+            "bwp-BW91",
+            "bw5-37"
+        ]
+    },
+    {
+        "Espeon": [
+            "bwp-BW92",
+            "bw5-48"
+        ]
+    },
+    {
+        "Umbreon": [
+            "bwp-BW93",
+            "bw5-60"
+        ]
+    },
+    {
+        "Eevee": [
+            "bwp-BW94",
+            "bwp-BW97",
+            "bw9-89"
+        ]
+    },
+    {
+        "Genesect": [
+            "bwp-BW99",
+            "bwp-BW101"
         ]
     },
     {
         "Alakazam": [
             "base4-1",
-            "base6-1",
-            "base1-1"
+            "base1-1",
+            "base6-1"
+        ]
+    },
+    {
+        "Blastoise": [
+            "base4-2",
+            "base1-2"
+        ]
+    },
+    {
+        "Chansey": [
+            "base4-3",
+            "base1-3"
+        ]
+    },
+    {
+        "Charizard": [
+            "base4-4",
+            "base1-4"
+        ]
+    },
+    {
+        "Clefable": [
+            "base4-5",
+            "base2-1",
+            "base2-17"
+        ]
+    },
+    {
+        "Clefairy": [
+            "base4-6",
+            "base1-5"
+        ]
+    },
+    {
+        "Gyarados": [
+            "base4-7",
+            "base1-6",
+            "base6-12"
+        ]
+    },
+    {
+        "Hitmonchan": [
+            "base4-8",
+            "base1-7",
+            "pl1-129"
+        ]
+    },
+    {
+        "Magneton": [
+            "base4-9",
+            "base1-9"
         ]
     },
     {
@@ -459,25 +860,17 @@
         ]
     },
     {
-        "Weedle": [
-            "base4-100",
-            "base6-99",
-            "base1-69",
-            "xy12-5"
-        ]
-    },
-    {
         "Nidoking": [
             "base4-11",
-            "base6-31",
-            "base1-11"
+            "base1-11",
+            "base6-31"
         ]
     },
     {
         "Nidoqueen": [
             "base4-12",
-            "base2-23",
             "base2-7",
+            "base2-23",
             "base6-32"
         ]
     },
@@ -490,8 +883,8 @@
     {
         "Pidgeot": [
             "base4-14",
-            "base2-24",
             "base2-8",
+            "base2-24",
             "base6-33"
         ]
     },
@@ -518,8 +911,8 @@
     {
         "Venusaur": [
             "base4-18",
-            "base6-18",
-            "base1-15"
+            "base1-15",
+            "base6-18"
         ]
     },
     {
@@ -527,12 +920,6 @@
             "base4-19",
             "base2-16",
             "base2-32"
-        ]
-    },
-    {
-        "Blastoise": [
-            "base4-2",
-            "base1-2"
         ]
     },
     {
@@ -544,8 +931,8 @@
     {
         "Beedrill": [
             "base4-21",
-            "base6-20",
-            "base1-17"
+            "base1-17",
+            "base6-20"
         ]
     },
     {
@@ -576,35 +963,29 @@
     {
         "Kangaskhan": [
             "base4-26",
-            "base2-21",
-            "base2-5"
+            "base2-5",
+            "base2-21"
         ]
     },
     {
         "Mr. Mime": [
             "base4-27",
-            "base2-22",
-            "base2-6"
+            "base2-6",
+            "base2-22"
         ]
     },
     {
         "Pidgeotto": [
             "base4-28",
-            "base6-34",
-            "base1-22"
+            "base1-22",
+            "base6-34"
         ]
     },
     {
         "Pinsir": [
             "base4-29",
-            "base2-25",
-            "base2-9"
-        ]
-    },
-    {
-        "Chansey": [
-            "base4-3",
-            "base1-3"
+            "base2-9",
+            "base2-25"
         ]
     },
     {
@@ -632,8 +1013,8 @@
     {
         "Arcanine": [
             "base4-33",
-            "base6-36",
-            "base1-23"
+            "base1-23",
+            "base6-36"
         ]
     },
     {
@@ -646,15 +1027,15 @@
     {
         "Charmeleon": [
             "base4-35",
-            "base6-37",
-            "base1-24"
+            "base1-24",
+            "base6-37"
         ]
     },
     {
         "Dewgong": [
             "base4-36",
-            "base6-40",
-            "base1-25"
+            "base1-25",
+            "base6-40"
         ]
     },
     {
@@ -667,8 +1048,8 @@
     {
         "Dratini": [
             "base4-38",
-            "base6-72",
-            "base1-26"
+            "base1-26",
+            "base6-72"
         ]
     },
     {
@@ -676,12 +1057,6 @@
             "base4-39",
             "base2-35",
             "base6-23"
-        ]
-    },
-    {
-        "Charizard": [
-            "base4-4",
-            "base1-4"
         ]
     },
     {
@@ -700,8 +1075,8 @@
     {
         "Growlithe": [
             "base4-42",
-            "base6-45",
-            "base1-28"
+            "base1-28",
+            "base6-45"
         ]
     },
     {
@@ -713,29 +1088,29 @@
     {
         "Ivysaur": [
             "base4-44",
-            "base6-47",
-            "base1-30"
+            "base1-30",
+            "base6-47"
         ]
     },
     {
         "Jynx": [
             "base4-45",
-            "base6-26",
-            "base1-31"
+            "base1-31",
+            "base6-26"
         ]
     },
     {
         "Kadabra": [
             "base4-46",
-            "base6-49",
-            "base1-32"
+            "base1-32",
+            "base6-49"
         ]
     },
     {
         "Kakuna": [
             "base4-47",
-            "base6-50",
-            "base1-33"
+            "base1-33",
+            "base6-50"
         ]
     },
     {
@@ -747,22 +1122,15 @@
     {
         "Machoke": [
             "base4-49",
-            "base6-51",
-            "base1-34"
-        ]
-    },
-    {
-        "Clefable": [
-            "base4-5",
-            "base2-1",
-            "base2-17"
+            "base1-34",
+            "base6-51"
         ]
     },
     {
         "Magikarp": [
             "base4-50",
-            "base6-52",
-            "base1-35"
+            "base1-35",
+            "base6-52"
         ]
     },
     {
@@ -787,8 +1155,8 @@
     {
         "Nidorino": [
             "base4-54",
-            "base6-56",
-            "base1-37"
+            "base1-37",
+            "base6-56"
         ]
     },
     {
@@ -812,8 +1180,8 @@
     {
         "Raticate": [
             "base4-58",
-            "base6-61",
-            "base1-40"
+            "base1-40",
+            "base6-61"
         ]
     },
     {
@@ -821,12 +1189,6 @@
             "base4-59",
             "base2-45",
             "base6-35"
-        ]
-    },
-    {
-        "Clefairy": [
-            "base4-6",
-            "base1-5"
         ]
     },
     {
@@ -838,8 +1200,8 @@
     {
         "Seel": [
             "base4-61",
-            "base6-92",
-            "base1-41"
+            "base1-41",
+            "base6-92"
         ]
     },
     {
@@ -864,8 +1226,8 @@
     {
         "Abra": [
             "base4-65",
-            "base6-67",
-            "base1-43"
+            "base1-43",
+            "base6-67"
         ]
     },
     {
@@ -877,30 +1239,23 @@
     {
         "Bulbasaur": [
             "base4-67",
-            "base6-68",
-            "base1-44"
+            "base1-44",
+            "base6-68"
         ]
     },
     {
         "Caterpie": [
             "base4-68",
-            "base6-69",
             "base1-45",
-            "xy12-3"
+            "xy12-3",
+            "base6-69"
         ]
     },
     {
         "Charmander": [
             "base4-69",
-            "base6-70",
-            "base1-46"
-        ]
-    },
-    {
-        "Gyarados": [
-            "base4-7",
-            "base6-12",
-            "base1-6"
+            "base1-46",
+            "base6-70"
         ]
     },
     {
@@ -918,8 +1273,8 @@
     {
         "Doduo": [
             "base4-72",
-            "base6-71",
-            "base1-48"
+            "base1-48",
+            "base6-71"
         ]
     },
     {
@@ -962,15 +1317,8 @@
     {
         "Magnemite": [
             "base4-79",
-            "base6-80",
-            "base1-53"
-        ]
-    },
-    {
-        "Hitmonchan": [
-            "base4-8",
-            "base1-7",
-            "pl1-129"
+            "base1-53",
+            "base6-80"
         ]
     },
     {
@@ -983,8 +1331,8 @@
     {
         "Metapod": [
             "base4-81",
-            "base6-54",
-            "base1-54"
+            "base1-54",
+            "base6-54"
         ]
     },
     {
@@ -997,15 +1345,15 @@
     {
         "Nidoran\u2642": [
             "base4-83",
-            "base6-83",
-            "base1-55"
+            "base1-55",
+            "base6-83"
         ]
     },
     {
         "Onix": [
             "base4-84",
-            "base6-84",
-            "base1-56"
+            "base1-56",
+            "base6-84"
         ]
     },
     {
@@ -1021,6 +1369,14 @@
         ]
     },
     {
+        "Pikachu": [
+            "base4-87",
+            "base1-58",
+            "pop2-16",
+            "pl2-112"
+        ]
+    },
+    {
         "Poliwag": [
             "base4-88",
             "base1-59"
@@ -1029,14 +1385,8 @@
     {
         "Rattata": [
             "base4-89",
-            "base6-89",
-            "base1-61"
-        ]
-    },
-    {
-        "Magneton": [
-            "base4-9",
-            "base1-9"
+            "base1-61",
+            "base6-89"
         ]
     },
     {
@@ -1062,8 +1412,8 @@
     {
         "Squirtle": [
             "base4-93",
-            "base6-95",
-            "base1-63"
+            "base1-63",
+            "base6-95"
         ]
     },
     {
@@ -1093,857 +1443,328 @@
     {
         "Voltorb": [
             "base4-98",
-            "base6-97",
-            "base1-67"
+            "base1-67",
+            "base6-97"
         ]
     },
     {
         "Vulpix": [
             "base4-99",
-            "base6-98",
-            "base1-68"
+            "base1-68",
+            "base6-98"
         ]
     },
     {
-        "Kommo-o-GX": [
-            "sm2-100",
-            "sm2-141",
-            "sm2-159"
+        "Weedle": [
+            "base4-100",
+            "base1-69",
+            "xy12-5",
+            "base6-99"
         ]
     },
     {
-        "Drampa-GX": [
-            "sm2-115",
-            "sm2-142",
-            "sm2-160"
-        ]
-    },
-    {
-        "Turtonator-GX": [
-            "sm2-131",
-            "sm2-148",
-            "sm2-18"
-        ]
-    },
-    {
-        "Alolan Ninetales-GX": [
-            "sm2-132",
-            "sm2-150",
-            "sm2-22"
-        ]
-    },
-    {
-        "Wishiwashi-GX": [
-            "sm2-133",
-            "sm2-151",
-            "sm2-38"
-        ]
-    },
-    {
-        "Vikavolt-GX": [
-            "sm2-134",
-            "sm2-152",
-            "sm2-45"
-        ]
-    },
-    {
-        "Tapu Koko-GX": [
-            "sm2-135",
-            "sm2-153",
-            "sm2-47",
-            "smp-SM33"
-        ]
-    },
-    {
-        "Toxapex-GX": [
-            "sm2-136",
-            "sm2-154",
-            "sm2-57"
-        ]
-    },
-    {
-        "Tapu Lele-GX": [
-            "sm2-137",
-            "sm2-155",
-            "sm2-60"
-        ]
-    },
-    {
-        "Lycanroc-GX": [
-            "sm2-138",
-            "sm2-156",
-            "sm2-74"
-        ]
-    },
-    {
-        "Metagross-GX": [
-            "sm2-139",
-            "sm2-157",
-            "sm2-85"
-        ]
-    },
-    {
-        "Sylveon-GX": [
-            "sm2-140",
-            "sm2-158",
-            "sm2-92"
-        ]
-    },
-    {
-        "Decidueye-GX": [
-            "sm2-146",
-            "sm1-12",
-            "smp-SM37"
-        ]
-    },
-    {
-        "Incineroar-GX": [
-            "sm2-147",
-            "sm1-27",
-            "smp-SM38"
-        ]
-    },
-    {
-        "Primarina-GX": [
-            "sm2-149",
-            "sm1-42",
-            "smp-SM39"
-        ]
-    },
-    {
-        "Alolan Sandslash": [
-            "sm2-20",
-            "smp-SM18"
-        ]
-    },
-    {
-        "Oricorio": [
-            "sm2-56",
-            "smp-SM19"
-        ]
-    },
-    {
-        "Mudsdale": [
-            "sm2-76",
-            "smp-SM20"
-        ]
-    },
-    {
-        "Drampa": [
-            "sm2-97",
-            "smp-SM21"
-        ]
-    },
-    {
-        "Deoxys \u03b4": [
-            "ex13-5",
-            "pop4-2"
-        ]
-    },
-    {
-        "Jirachi": [
-            "hgss2-1",
-            "col1-11"
-        ]
-    },
-    {
-        "Magmortar": [
-            "hgss2-2",
-            "col1-16"
-        ]
-    },
-    {
-        "Ursaring": [
-            "hgss2-27",
-            "col1-37"
-        ]
-    },
-    {
-        "Magmar": [
-            "hgss2-52",
-            "col1-62"
-        ]
-    },
-    {
-        "Slaking": [
-            "ex16-13",
-            "ex1-12"
-        ]
-    },
-    {
-        "Lanturn": [
-            "ex16-15",
-            "ex5-38"
-        ]
-    },
-    {
-        "Magneton": [
-            "ex16-16",
-            "ex3-17"
-        ]
-    },
-    {
-        "Ninetales": [
-            "ex16-19",
-            "ex5-22"
-        ]
-    },
-    {
-        "Omastar": [
-            "ex16-20",
-            "ex2-19"
-        ]
-    },
-    {
-        "Wobbuffet": [
-            "ex16-24",
-            "ex2-26"
-        ]
-    },
-    {
-        "Combusken": [
-            "ex16-29",
-            "ex1-28"
-        ]
-    },
-    {
-        "Delcatty": [
-            "ex16-8",
-            "ex1-5"
-        ]
-    },
-    {
-        "Gardevoir": [
-            "ex16-9",
-            "ex1-7"
-        ]
-    },
-    {
-        "Ho-Oh-EX": [
-            "bw6-119",
-            "bw6-22"
-        ]
-    },
-    {
-        "Mew-EX": [
-            "bw6-120",
-            "bw6-46",
-            "xyp-XY126",
-            "bw11-RC24"
-        ]
-    },
-    {
-        "Terrakion-EX": [
-            "bw6-121",
-            "bw6-71"
-        ]
-    },
-    {
-        "Registeel-EX": [
-            "bw6-122",
-            "bw6-81"
-        ]
-    },
-    {
-        "Rayquaza-EX": [
-            "bw6-123",
-            "bw6-85",
-            "bwp-BW47"
-        ]
-    },
-    {
-        "Giratina-EX": [
-            "bw6-124",
-            "bw6-92"
-        ]
-    },
-    {
-        "Serperior": [
-            "bw6-125",
-            "bw1-6",
-            "bw11-8",
-            "bwp-BW20"
-        ]
-    },
-    {
-        "Reuniclus": [
-            "bw6-126",
-            "bw1-57"
-        ]
-    },
-    {
-        "Krookodile": [
-            "bw6-127",
-            "bw5-66"
-        ]
-    },
-    {
-        "Rayquaza": [
-            "bw6-128",
-            "dv1-11",
-            "bw11-93"
-        ]
-    },
-    {
-        "Ninetales": [
-            "bw6-19",
-            "bwp-BW66"
-        ]
-    },
-    {
-        "Emolga": [
-            "bw6-45",
-            "bw11-49",
-            "bw11-RC23"
-        ]
-    },
-    {
-        "Drifblim": [
-            "bw6-51",
-            "bwp-BW64"
-        ]
-    },
-    {
-        "Sigilyph": [
-            "bw6-52",
-            "bw9-118",
-            "bw11-66"
-        ]
-    },
-    {
-        "Trubbish": [
-            "bw6-53",
-            "bw11-67"
-        ]
-    },
-    {
-        "Garbodor": [
-            "bw6-54",
-            "bw9-119",
-            "bw11-68"
-        ]
-    },
-    {
-        "Stunfisk": [
-            "bw6-70",
-            "bw11-83"
-        ]
-    },
-    {
-        "Gible": [
-            "bw6-86",
-            "bw11-94"
-        ]
-    },
-    {
-        "Gabite": [
-            "bw6-88",
-            "bw11-95"
-        ]
-    },
-    {
-        "Garchomp": [
-            "bw6-90",
-            "bw9-120",
-            "bw11-96"
-        ]
-    },
-    {
-        "Deino": [
-            "bw6-93",
-            "bw11-97"
-        ]
-    },
-    {
-        "Zweilous": [
-            "bw6-95",
-            "bw11-98"
-        ]
-    },
-    {
-        "Hydreigon": [
-            "bw6-97",
-            "bw11-99"
-        ]
-    },
-    {
-        "Bagon": [
-            "dv1-6",
-            "bw10-62"
-        ]
-    },
-    {
-        "Shelgon": [
-            "dv1-7",
-            "bw10-63"
-        ]
-    },
-    {
-        "Entei-EX": [
-            "bw5-103",
-            "bw5-13"
-        ]
-    },
-    {
-        "Kyogre-EX": [
-            "bw5-104",
-            "bw5-26"
-        ]
-    },
-    {
-        "Raikou-EX": [
-            "bw5-105",
-            "bw5-38"
-        ]
-    },
-    {
-        "Groudon-EX": [
-            "bw5-106",
-            "bw5-54"
-        ]
-    },
-    {
-        "Darkrai-EX": [
-            "bw5-107",
-            "bw5-63",
-            "bw11-88",
-            "bwp-BW46"
-        ]
-    },
-    {
-        "Tornadus-EX": [
-            "bw5-108",
-            "bw5-90"
-        ]
-    },
-    {
-        "Gardevoir": [
-            "bw5-109",
-            "bw4-57"
-        ]
-    },
-    {
-        "Archeops": [
-            "bw5-110",
-            "bw3-67"
-        ]
-    },
-    {
-        "Flareon": [
-            "bw5-12",
-            "bwp-BW88"
-        ]
-    },
-    {
-        "Torchic": [
-            "bw5-15",
-            "bw11-RC5"
-        ]
-    },
-    {
-        "Volcarona": [
-            "bw5-22",
-            "bwp-BW40"
-        ]
-    },
-    {
-        "Vaporeon": [
-            "bw5-25",
-            "bwp-BW89"
-        ]
-    },
-    {
-        "Empoleon": [
-            "bw5-29",
-            "bw9-117"
-        ]
-    },
-    {
-        "Glaceon": [
-            "bw5-30",
-            "bwp-BW90"
-        ]
-    },
-    {
-        "Jolteon": [
-            "bw5-37",
-            "bwp-BW91"
-        ]
-    },
-    {
-        "Plusle": [
-            "bw5-39",
-            "bw11-47"
-        ]
-    },
-    {
-        "Minun": [
-            "bw5-40",
-            "bw11-48"
-        ]
-    },
-    {
-        "Espeon": [
-            "bw5-48",
-            "bwp-BW92"
-        ]
-    },
-    {
-        "Umbreon": [
-            "bw5-60",
-            "bwp-BW93"
-        ]
-    },
-    {
-        "Zorua": [
-            "bw5-69",
-            "bw11-89"
-        ]
-    },
-    {
-        "Zoroark": [
-            "bw5-71",
-            "bw11-90"
-        ]
-    },
-    {
-        "Eevee": [
-            "bw5-83",
-            "bw11-RC14"
-        ]
-    },
-    {
-        "Chimchar": [
-            "pop8-12",
-            "pop6-14",
-            "dp1-76"
-        ]
-    },
-    {
-        "Croagunk": [
-            "pop8-13",
-            "dp2-78"
-        ]
-    },
-    {
-        "Happiny": [
-            "pop8-14",
-            "dp2-52"
-        ]
-    },
-    {
-        "Piplup": [
-            "pop8-15",
-            "pop6-15",
-            "dp1-93"
-        ]
-    },
-    {
-        "Turtwig": [
-            "pop8-17",
-            "pop6-17",
-            "dp1-103"
-        ]
-    },
-    {
-        "Cherrim": [
-            "pop8-6",
-            "dp1-45"
-        ]
-    },
-    {
-        "Carnivine": [
-            "pop8-7",
-            "dp1-21"
-        ]
-    },
-    {
-        "Luxio": [
-            "pop8-8",
-            "dp1-52"
-        ]
-    },
-    {
-        "Caterpie": [
-            "xy2-1",
-            "g1-3"
-        ]
-    },
-    {
-        "Charizard-EX": [
-            "xy2-100",
-            "xy2-11",
-            "xyp-XY29"
-        ]
-    },
-    {
-        "Magnezone-EX": [
-            "xy2-101",
-            "xy2-35"
-        ]
-    },
-    {
-        "Toxicroak-EX": [
-            "xy2-102",
-            "xy2-41"
-        ]
-    },
-    {
-        "Kangaskhan-EX": [
-            "xy2-103",
-            "xy2-78"
-        ]
-    },
-    {
-        "M Charizard-EX": [
-            "xy2-107",
-            "xy2-13",
-            "xy12-101",
-            "xy12-13"
-        ]
-    },
-    {
-        "M Charizard-EX": [
-            "xy2-108",
-            "xy2-69"
-        ]
-    },
-    {
-        "M Kangaskhan-EX": [
-            "xy2-109",
-            "xy2-79"
-        ]
-    },
-    {
-        "Charizard-EX": [
-            "xy2-12",
-            "xy12-12"
+        "Machamp": [
+            "base1-8",
+            "base6-15"
         ]
     },
     {
         "Ponyta": [
-            "xy2-14",
-            "g1-14"
+            "base1-60",
+            "base6-87"
         ]
     },
     {
-        "Rapidash": [
-            "xy2-15",
-            "g1-15"
+        "Snivy": [
+            "bw1-2",
+            "bw11-6"
         ]
     },
     {
-        "Metapod": [
-            "xy2-2",
-            "g1-4"
+        "Servine": [
+            "bw1-4",
+            "bw11-7"
         ]
     },
     {
-        "Spheal": [
-            "xy2-24",
-            "xy5-46"
+        "Tepig": [
+            "bw1-16",
+            "bw11-25"
         ]
     },
     {
-        "Butterfree": [
-            "xy2-3",
-            "g1-5"
+        "Pignite": [
+            "bw1-18",
+            "bw11-26"
         ]
     },
     {
-        "Meowstic": [
-            "xy2-43",
-            "g1-rc15"
+        "Oshawott": [
+            "bw1-28",
+            "bw11-37"
         ]
     },
     {
-        "Geodude": [
-            "xy2-45",
-            "g1-43"
+        "Dewott": [
+            "bw1-30",
+            "bw11-38"
         ]
     },
     {
-        "Graveler": [
-            "xy2-46",
-            "g1-44"
+        "Reuniclus": [
+            "bw1-57",
+            "bw6-126"
         ]
     },
     {
-        "Golem": [
-            "xy2-47",
-            "g1-45"
+        "Patrat": [
+            "bw1-78",
+            "bw2-78"
         ]
     },
     {
-        "Flab\u00e9b\u00e9": [
-            "xy2-63",
-            "g1-rc17"
+        "Minccino": [
+            "bw1-88",
+            "bw11-RC18"
         ]
     },
     {
-        "Floette": [
-            "xy2-65",
-            "g1-rc18"
+        "Bouffalant": [
+            "bw1-91",
+            "bw11-107"
         ]
     },
     {
-        "Dragalge": [
-            "xy2-71",
-            "xyp-XY10"
+        "Celebi-EX": [
+            "bw7-9",
+            "bw7-141"
         ]
     },
     {
-        "Goomy": [
-            "xy2-72",
-            "xy4-75"
+        "Charmander": [
+            "bw7-18",
+            "bw11-17"
         ]
     },
     {
-        "Sliggoo": [
-            "xy2-73",
-            "xy4-76"
+        "Charmeleon": [
+            "bw7-19",
+            "bw11-18"
         ]
     },
     {
-        "Snorlax": [
-            "xy2-80",
-            "g1-58"
+        "Charizard": [
+            "bw7-20",
+            "bw11-19",
+            "bw8-136"
         ]
     },
     {
-        "Furfrou": [
-            "xy2-87",
-            "xy0-32",
-            "xy0-33",
-            "xy4-90"
+        "Blastoise": [
+            "bw7-31",
+            "bw10-16",
+            "bw8-137"
         ]
     },
     {
-        "Tauros-GX": [
-            "sm1-100",
-            "sm1-144",
-            "sm1-156"
+        "Dusknoir": [
+            "bw7-63",
+            "bw10-104"
         ]
     },
     {
-        "Gumshoos-GX": [
-            "sm1-110",
-            "sm1-145",
-            "sm1-157"
+        "Croagunk": [
+            "bw7-65",
+            "bw11-62"
         ]
     },
     {
-        "Oranguru": [
-            "sm1-113",
-            "smp-SM13"
+        "Toxicroak": [
+            "bw7-66",
+            "bw11-63"
         ]
     },
     {
-        "Lurantis-GX": [
-            "sm1-138",
-            "sm1-15",
-            "sm1-150"
+        "Cresselia-EX": [
+            "bw7-67",
+            "bw7-143"
         ]
     },
     {
-        "Lapras-GX": [
-            "sm1-139",
-            "sm1-151",
-            "sm1-35"
+        "Meloetta": [
+            "bw7-77",
+            "bw11-78"
         ]
     },
     {
-        "Espeon-GX": [
-            "sm1-140",
-            "sm1-152",
-            "sm1-61"
+        "Landorus-EX": [
+            "bw7-89",
+            "bw7-144"
         ]
     },
     {
-        "Lunala-GX": [
-            "sm1-141",
-            "sm1-153",
-            "sm1-66"
+        "Purrloin": [
+            "bw7-90",
+            "bw11-RC13"
         ]
     },
     {
-        "Umbreon-GX": [
-            "sm1-142",
-            "sm1-154",
-            "sm1-80"
+        "Golurk": [
+            "bw7-150",
+            "bw6-59"
         ]
     },
     {
-        "Solgaleo-GX": [
-            "sm1-143",
-            "sm1-155",
-            "sm1-89"
+        "Terrakion": [
+            "bw7-151",
+            "bw11-84",
+            "bw3-73",
+            "bw3-99"
         ]
     },
     {
-        "Shiinotic": [
-            "sm1-17",
-            "smp-SM10"
+        "Golisopod-GX": [
+            "sm3-17",
+            "sm3-129",
+            "sm3-148",
+            "smp-SM62"
         ]
     },
     {
-        "Tsareena": [
-            "sm1-20",
-            "smp-SM26"
+        "Charizard-GX": [
+            "sm3-20",
+            "smp-SM60"
         ]
     },
     {
-        "Litten": [
-            "sm1-24",
-            "smp-SM23"
+        "Ho-Oh-GX": [
+            "sm3-21",
+            "sm3-131",
+            "sm3-150",
+            "smp-SM57",
+            "smp-SM80"
         ]
     },
     {
-        "Popplio": [
-            "sm1-39",
-            "smp-SM24"
+        "Salazzle-GX": [
+            "sm3-25",
+            "sm3-132",
+            "sm3-151",
+            "smp-SM63"
         ]
     },
     {
-        "Bruxish": [
-            "sm1-48",
-            "smp-SM11"
+        "Turtonator": [
+            "sm3-26",
+            "smp-SM27"
         ]
     },
     {
-        "Vikavolt": [
-            "sm1-52",
-            "smp-SM28"
+        "Tapu Fini-GX": [
+            "sm3-39",
+            "sm3-133",
+            "sm3-152"
         ]
     },
     {
-        "Togedemaru": [
-            "sm1-53",
-            "smp-SM09"
+        "Pikachu": [
+            "sm3-40",
+            "smp-SM98"
         ]
     },
     {
-        "Passimian": [
-            "sm1-73",
-            "smp-SM12"
+        "Seviper": [
+            "sm3-50",
+            "smp-SM46"
         ]
     },
     {
-        "Rowlet": [
-            "sm1-9",
-            "smp-SM22"
+        "Necrozma-GX": [
+            "sm3-63",
+            "sm3-134",
+            "sm3-153",
+            "smp-SM58"
         ]
     },
     {
-        "Kirlia": [
-            "ex2-40",
-            "ex15-32"
+        "Machamp-GX": [
+            "sm3-64",
+            "sm3-135",
+            "sm3-154"
         ]
     },
     {
-        "Ralts": [
-            "ex2-74",
-            "ex15-60"
+        "Lucario": [
+            "sm3-71",
+            "smp-SM54"
+        ]
+    },
+    {
+        "Crabominable": [
+            "sm3-74",
+            "smp-SM47"
+        ]
+    },
+    {
+        "Marshadow-GX": [
+            "sm3-80",
+            "sm3-137",
+            "sm3-156",
+            "smp-SM59"
+        ]
+    },
+    {
+        "Alolan Muk-GX": [
+            "sm3-84",
+            "sm3-138",
+            "sm3-157"
+        ]
+    },
+    {
+        "Darkrai-GX": [
+            "sm3-88",
+            "sm3-139",
+            "sm3-158"
+        ]
+    },
+    {
+        "Gardevoir-GX": [
+            "sm3-93",
+            "sm3-140",
+            "sm3-159"
+        ]
+    },
+    {
+        "Noivern-GX": [
+            "sm3-99",
+            "sm3-141",
+            "sm3-160"
+        ]
+    },
+    {
+        "Zygarde": [
+            "sm3-100",
+            "smp-SM48"
+        ]
+    },
+    {
+        "Bewear": [
+            "sm3-111",
+            "smp-SM49"
+        ]
+    },
+    {
+        "Tapu Bulu-GX": [
+            "sm3-130",
+            "sm3-149",
+            "smp-SM32"
+        ]
+    },
+    {
+        "Lycanroc-GX": [
+            "sm3-136",
+            "sm3-155",
+            "smp-SM14"
         ]
     },
     {
@@ -1953,9 +1774,63 @@
         ]
     },
     {
+        "Deoxys": [
+            "col1-2",
+            "col1-SL1"
+        ]
+    },
+    {
+        "Dialga": [
+            "col1-3",
+            "col1-SL2"
+        ]
+    },
+    {
+        "Espeon": [
+            "col1-4",
+            "hgss3-2"
+        ]
+    },
+    {
+        "Forretress": [
+            "col1-5",
+            "hgss3-3"
+        ]
+    },
+    {
+        "Groudon": [
+            "col1-6",
+            "col1-SL4"
+        ]
+    },
+    {
+        "Gyarados": [
+            "col1-7",
+            "hgss1-4"
+        ]
+    },
+    {
+        "Hitmontop": [
+            "col1-8",
+            "hgss1-5"
+        ]
+    },
+    {
+        "Ho-Oh": [
+            "col1-9",
+            "col1-SL5"
+        ]
+    },
+    {
         "Houndoom": [
             "col1-10",
             "hgss3-5"
+        ]
+    },
+    {
+        "Jirachi": [
+            "col1-11",
+            "hgss2-1"
         ]
     },
     {
@@ -1977,6 +1852,12 @@
         ]
     },
     {
+        "Magmortar": [
+            "col1-16",
+            "hgss2-2"
+        ]
+    },
+    {
         "Ninetales": [
             "col1-17",
             "hgss1-7"
@@ -1986,12 +1867,6 @@
         "Palkia": [
             "col1-19",
             "col1-SL8"
-        ]
-    },
-    {
-        "Deoxys": [
-            "col1-2",
-            "col1-SL1"
         ]
     },
     {
@@ -2049,12 +1924,6 @@
         ]
     },
     {
-        "Dialga": [
-            "col1-3",
-            "col1-SL2"
-        ]
-    },
-    {
         "Pidgeot": [
             "col1-30",
             "hgss4-29"
@@ -2085,15 +1954,15 @@
         ]
     },
     {
-        "Weezing": [
-            "col1-38",
-            "hgss1-34"
+        "Ursaring": [
+            "col1-37",
+            "hgss2-27"
         ]
     },
     {
-        "Espeon": [
-            "col1-4",
-            "hgss3-2"
+        "Weezing": [
+            "col1-38",
+            "hgss1-34"
         ]
     },
     {
@@ -2151,12 +2020,6 @@
         ]
     },
     {
-        "Forretress": [
-            "col1-5",
-            "hgss3-3"
-        ]
-    },
-    {
         "Vaporeon": [
             "col1-52",
             "hgss3-41"
@@ -2193,12 +2056,6 @@
         ]
     },
     {
-        "Groudon": [
-            "col1-6",
-            "col1-SL4"
-        ]
-    },
-    {
         "Koffing": [
             "col1-60",
             "hgss1-70"
@@ -2208,6 +2065,12 @@
         "Magikarp": [
             "col1-61",
             "hgss1-72"
+        ]
+    },
+    {
+        "Magmar": [
+            "col1-62",
+            "hgss2-52"
         ]
     },
     {
@@ -2235,12 +2098,6 @@
         ]
     },
     {
-        "Gyarados": [
-            "col1-7",
-            "hgss1-4"
-        ]
-    },
-    {
         "Slowpoke": [
             "col1-70",
             "hgss1-81"
@@ -2259,501 +2116,1026 @@
         ]
     },
     {
-        "Hitmontop": [
-            "col1-8",
-            "hgss1-5"
+        "Gyarados-GX": [
+            "sm4-18",
+            "sm4-101",
+            "sm4-112"
         ]
     },
     {
-        "Ho-Oh": [
-            "col1-9",
-            "col1-SL5"
+        "Alolan Raichu": [
+            "sm4-31",
+            "smp-SM72"
         ]
     },
     {
-        "Dialga": [
-            "dp4-16",
-            "dp1-1"
+        "Alolan Golem-GX": [
+            "sm4-34",
+            "sm4-102",
+            "sm4-113"
         ]
     },
     {
-        "Latias": [
-            "dp4-22",
-            "pop7-3"
+        "Salazzle": [
+            "sm4-47",
+            "smp-SM73"
         ]
     },
     {
-        "Latios": [
-            "dp4-23",
-            "pop7-4"
+        "Nihilego-GX": [
+            "sm4-49",
+            "sm4-103",
+            "sm4-114"
         ]
     },
     {
-        "Palkia": [
-            "dp4-26",
-            "dp1-11"
+        "Regirock": [
+            "sm4-53",
+            "smp-SM74"
         ]
     },
     {
-        "Delibird": [
-            "dp4-36",
-            "pop7-6"
+        "Buzzwole-GX": [
+            "sm4-57",
+            "sm4-104",
+            "sm4-115",
+            "smp-SM69"
         ]
     },
     {
-        "M Gallade-EX": [
-            "xy6-100",
-            "xy6-35"
+        "Guzzlord-GX": [
+            "sm4-63",
+            "sm4-63a",
+            "sm4-105",
+            "sm4-116"
         ]
     },
     {
-        "Latios-EX": [
-            "xy6-101",
-            "xy6-58",
-            "xyp-XY72"
+        "Registeel": [
+            "sm4-68",
+            "smp-SM75"
         ]
     },
     {
-        "M Latios-EX": [
-            "xy6-102",
-            "xy6-59"
+        "Kartana-GX": [
+            "sm4-70",
+            "sm4-106",
+            "sm4-117"
         ]
     },
     {
-        "Hydreigon-EX": [
-            "xy6-103",
-            "xy6-62"
+        "Alolan Exeggutor-GX": [
+            "sm4-74",
+            "sm4-107",
+            "sm4-118"
         ]
     },
     {
-        "Rayquaza-EX": [
-            "xy6-104",
-            "xy6-75"
+        "Silvally-GX": [
+            "sm4-90",
+            "sm4-108",
+            "sm4-119",
+            "smp-SM91",
+            "sm5-116"
         ]
     },
     {
-        "M Rayquaza-EX": [
-            "xy6-105",
-            "xy6-76"
-        ]
-    },
-    {
-        "Shaymin-EX": [
-            "xy6-106",
-            "xy6-77"
-        ]
-    },
-    {
-        "Articuno": [
-            "xy6-16",
-            "g1-25"
-        ]
-    },
-    {
-        "Zapdos": [
-            "xy6-23",
-            "g1-29"
-        ]
-    },
-    {
-        "Thundurus-EX": [
-            "xy6-26",
-            "xy6-98"
-        ]
-    },
-    {
-        "Gallade-EX": [
-            "xy6-34",
-            "xy6-99"
-        ]
-    },
-    {
-        "Rayquaza-EX": [
-            "xy6-60",
-            "xyp-XY73"
-        ]
-    },
-    {
-        "Swablu": [
-            "xy6-73",
-            "g1-rc23",
-            "xy8-124"
-        ]
-    },
-    {
-        "Altaria": [
-            "xy6-74",
-            "xyp-XY46"
-        ]
-    },
-    {
-        "Surfing Pikachu": [
-            "pl2-114",
-            "basep-28"
-        ]
-    },
-    {
-        "Chespin": [
-            "xyp-XY01",
-            "xy0-3"
-        ]
-    },
-    {
-        "Fennekin": [
-            "xyp-XY02",
-            "xy0-8"
-        ]
-    },
-    {
-        "Froakie": [
-            "xyp-XY03",
-            "xy0-12"
-        ]
-    },
-    {
-        "Xerneas": [
-            "xyp-XY05",
-            "xy1-96",
-            "xy11-81"
-        ]
-    },
-    {
-        "Yveltal": [
-            "xyp-XY06",
-            "g1-rc16",
-            "xy1-78",
-            "xy11-65"
-        ]
-    },
-    {
-        "Xerneas-EX": [
-            "xyp-XY07",
-            "xyp-XY149",
-            "xy1-146",
-            "xy1-97"
-        ]
-    },
-    {
-        "Yveltal-EX": [
-            "xyp-XY08",
-            "xyp-XY150",
-            "xy1-144",
-            "xy1-79"
-        ]
-    },
-    {
-        "Mewtwo": [
-            "xyp-XY100",
-            "xyp-XY101"
-        ]
-    },
-    {
-        "Gyarados": [
-            "xyp-XY109",
-            "xy7-20",
-            "g1-23"
-        ]
-    },
-    {
-        "Blastoise-EX": [
-            "xyp-XY122",
-            "xyp-XY30",
-            "xy1-142",
-            "xy1-29",
-            "xy12-21"
-        ]
-    },
-    {
-        "Venusaur-EX": [
-            "xyp-XY123",
-            "xyp-XY28",
-            "xy1-1",
-            "xy1-141",
-            "xy12-1"
-        ]
-    },
-    {
-        "Pikachu-EX": [
-            "xyp-XY124",
-            "xyp-XY84"
-        ]
-    },
-    {
-        "Mewtwo-EX": [
-            "xyp-XY125",
-            "xy8-157",
-            "xy8-163",
-            "xy8-61"
-        ]
-    },
-    {
-        "Moltres": [
-            "xyp-XY127",
-            "xy10-9"
-        ]
-    },
-    {
-        "White Kyurem": [
-            "xyp-XY128",
-            "xy10-21"
-        ]
-    },
-    {
-        "Zygarde": [
-            "xyp-XY129",
-            "xyp-XY152",
-            "xy10-53"
-        ]
-    },
-    {
-        "Machamp": [
-            "xyp-XY13",
-            "g1-42",
-            "xy3-46"
-        ]
-    },
-    {
-        "Tyranitar": [
-            "xyp-XY130",
-            "xy10-56"
-        ]
-    },
-    {
-        "Pansear": [
-            "xyp-XY131",
-            "xy8-23"
-        ]
-    },
-    {
-        "Gastly": [
-            "xyp-XY132",
-            "g1-33",
-            "xy8-58"
-        ]
-    },
-    {
-        "Froakie": [
-            "xyp-XY138",
-            "xy9-38"
-        ]
-    },
-    {
-        "Floette": [
-            "xyp-XY139",
-            "xy8-102"
-        ]
-    },
-    {
-        "Magikarp": [
-            "xyp-XY143",
-            "xy7-19",
-            "g1-22"
-        ]
-    },
-    {
-        "Yanmega": [
-            "xyp-XY144",
-            "xy11-7"
-        ]
-    },
-    {
-        "Volcanion": [
-            "xyp-XY145",
-            "xy11-25"
-        ]
-    },
-    {
-        "Clawitzer": [
-            "xyp-XY146",
-            "xy11-34"
-        ]
-    },
-    {
-        "Zygarde-EX": [
-            "xyp-XY151",
-            "xy10-54"
-        ]
-    },
-    {
-        "Volcanion-EX": [
-            "xyp-XY173",
-            "xy11-107",
-            "xy11-26"
-        ]
-    },
-    {
-        "Magearna-EX": [
-            "xyp-XY175",
-            "xy11-110",
-            "xy11-75"
-        ]
-    },
-    {
-        "Bronzong": [
-            "xyp-XY21",
-            "xy4-61"
-        ]
-    },
-    {
-        "Treecko": [
-            "xyp-XY36",
-            "xy5-6"
+        "Entei-EX": [
+            "bw5-13",
+            "bw5-103"
         ]
     },
     {
         "Torchic": [
-            "xyp-XY37",
-            "xy5-25"
-        ]
-    },
-    {
-        "Mudkip": [
-            "xyp-XY38",
-            "xy5-33"
-        ]
-    },
-    {
-        "Kingdra": [
-            "xyp-XY39",
-            "xy5-108"
+            "bw5-15",
+            "bw11-RC5"
         ]
     },
     {
         "Kyogre-EX": [
-            "xyp-XY41",
-            "xy5-148",
-            "xy5-54"
+            "bw5-26",
+            "bw5-104"
+        ]
+    },
+    {
+        "Empoleon": [
+            "bw5-29",
+            "bw9-117"
+        ]
+    },
+    {
+        "Raikou-EX": [
+            "bw5-38",
+            "bw5-105"
+        ]
+    },
+    {
+        "Plusle": [
+            "bw5-39",
+            "bw11-47"
+        ]
+    },
+    {
+        "Minun": [
+            "bw5-40",
+            "bw11-48"
         ]
     },
     {
         "Groudon-EX": [
-            "xyp-XY42",
-            "xy5-150",
-            "xy5-85"
+            "bw5-54",
+            "bw5-106"
         ]
     },
     {
-        "Kyogre": [
-            "xyp-XY51",
-            "xy5-53"
+        "Krookodile": [
+            "bw5-66",
+            "bw6-127"
         ]
     },
     {
-        "Groudon": [
-            "xyp-XY52",
-            "xy5-84"
+        "Zorua": [
+            "bw5-69",
+            "bw11-89"
         ]
     },
     {
-        "Gyarados": [
-            "xyp-XY60",
-            "xy7-21"
-        ]
-    },
-    {
-        "Rayquaza-EX": [
-            "xyp-XY66",
-            "xyp-XY69"
-        ]
-    },
-    {
-        "Chesnaught": [
-            "xyp-XY68",
-            "xy8-11"
-        ]
-    },
-    {
-        "Hoopa-EX": [
-            "xyp-XY71",
-            "xy7-36",
-            "xy7-89"
-        ]
-    },
-    {
-        "Pawniard": [
-            "xy0-19",
-            "bw3-81"
-        ]
-    },
-    {
-        "Vaporeon": [
-            "base2-12",
-            "base2-28"
-        ]
-    },
-    {
-        "Vileplume": [
-            "base2-15",
-            "base2-31"
-        ]
-    },
-    {
-        "Electrode": [
-            "base2-18",
-            "base2-2",
-            "base6-22"
-        ]
-    },
-    {
-        "Flareon": [
-            "base2-19",
-            "base2-3",
-            "base6-10"
-        ]
-    },
-    {
-        "Jolteon": [
-            "base2-20",
-            "base2-4",
-            "base6-14"
-        ]
-    },
-    {
-        "Primeape": [
-            "base2-43",
-            "base6-59"
-        ]
-    },
-    {
-        "Rapidash": [
-            "base2-44",
-            "base6-60"
+        "Zoroark": [
+            "bw5-71",
+            "bw11-90"
         ]
     },
     {
         "Eevee": [
-            "base2-51",
-            "base6-74"
+            "bw5-83",
+            "bw11-RC14"
         ]
     },
     {
-        "Pikachu": [
-            "base2-60",
-            "base6-86"
+        "Tornadus-EX": [
+            "bw5-90",
+            "bw5-108"
         ]
     },
     {
-        "Bastiodon": [
-            "dp2-21",
-            "pop6-1"
+        "Gardevoir": [
+            "bw5-109",
+            "bw4-57"
         ]
     },
     {
-        "Rampardos": [
-            "dp2-33",
-            "pop6-5"
+        "Archeops": [
+            "bw5-110",
+            "bw3-67"
+        ]
+    },
+    {
+        "Dialga": [
+            "dp1-1",
+            "dp4-16"
+        ]
+    },
+    {
+        "Lucario": [
+            "dp1-6",
+            "pop6-2"
+        ]
+    },
+    {
+        "Manaphy": [
+            "dp1-9",
+            "pop6-3"
+        ]
+    },
+    {
+        "Palkia": [
+            "dp1-11",
+            "dp4-26"
+        ]
+    },
+    {
+        "Carnivine": [
+            "dp1-21",
+            "pop8-7"
+        ]
+    },
+    {
+        "Pachirisu": [
+            "dp1-35",
+            "pop6-4"
+        ]
+    },
+    {
+        "Cherrim": [
+            "dp1-45",
+            "pop8-6"
+        ]
+    },
+    {
+        "Drifloon": [
+            "dp1-46",
+            "pop6-6"
+        ]
+    },
+    {
+        "Luxio": [
+            "dp1-52",
+            "pop8-8"
+        ]
+    },
+    {
+        "Riolu": [
+            "dp1-61",
+            "pop6-8"
+        ]
+    },
+    {
+        "Staravia": [
+            "dp1-64",
+            "pop6-10"
+        ]
+    },
+    {
+        "Bidoof": [
+            "dp1-70",
+            "pop6-11"
+        ]
+    },
+    {
+        "Buneary": [
+            "dp1-73",
+            "pop6-12"
+        ]
+    },
+    {
+        "Cherubi": [
+            "dp1-75",
+            "pop6-13"
+        ]
+    },
+    {
+        "Chimchar": [
+            "dp1-76",
+            "pop6-14",
+            "pop8-12"
+        ]
+    },
+    {
+        "Piplup": [
+            "dp1-93",
+            "pop6-15",
+            "pop8-15"
+        ]
+    },
+    {
+        "Starly": [
+            "dp1-101",
+            "pop6-16"
+        ]
+    },
+    {
+        "Turtwig": [
+            "dp1-103",
+            "pop6-17",
+            "pop8-17"
+        ]
+    },
+    {
+        "Kirlia": [
+            "ex15-32",
+            "ex2-40"
+        ]
+    },
+    {
+        "Larvitar": [
+            "ex15-51",
+            "ecard1-116"
+        ]
+    },
+    {
+        "Pupitar": [
+            "ex15-58",
+            "ecard1-90"
+        ]
+    },
+    {
+        "Ralts": [
+            "ex15-60",
+            "ex2-74"
+        ]
+    },
+    {
+        "Bagon": [
+            "dv1-6",
+            "bw10-62"
+        ]
+    },
+    {
+        "Shelgon": [
+            "dv1-7",
+            "bw10-63"
+        ]
+    },
+    {
+        "Rayquaza": [
+            "dv1-11",
+            "bw6-128",
+            "bw11-93"
+        ]
+    },
+    {
+        "Magneton": [
+            "ex3-17",
+            "ex16-16"
+        ]
+    },
+    {
+        "Ho-Oh-EX": [
+            "bw6-22",
+            "bw6-119"
+        ]
+    },
+    {
+        "Emolga": [
+            "bw6-45",
+            "bw11-49",
+            "bw11-RC23"
+        ]
+    },
+    {
+        "Mew-EX": [
+            "bw6-46",
+            "bw6-120",
+            "bw11-RC24",
+            "xyp-XY126"
+        ]
+    },
+    {
+        "Sigilyph": [
+            "bw6-52",
+            "bw11-66",
+            "bw9-118"
+        ]
+    },
+    {
+        "Trubbish": [
+            "bw6-53",
+            "bw11-67"
+        ]
+    },
+    {
+        "Garbodor": [
+            "bw6-54",
+            "bw11-68",
+            "bw9-119"
+        ]
+    },
+    {
+        "Stunfisk": [
+            "bw6-70",
+            "bw11-83"
+        ]
+    },
+    {
+        "Terrakion-EX": [
+            "bw6-71",
+            "bw6-121"
+        ]
+    },
+    {
+        "Registeel-EX": [
+            "bw6-81",
+            "bw6-122"
         ]
     },
     {
         "Gible": [
-            "dp2-85",
-            "pop9-14"
+            "bw6-86",
+            "bw11-94"
+        ]
+    },
+    {
+        "Gabite": [
+            "bw6-88",
+            "bw11-95"
+        ]
+    },
+    {
+        "Garchomp": [
+            "bw6-90",
+            "bw11-96",
+            "bw9-120"
+        ]
+    },
+    {
+        "Giratina-EX": [
+            "bw6-92",
+            "bw6-124"
+        ]
+    },
+    {
+        "Deino": [
+            "bw6-93",
+            "bw11-97"
+        ]
+    },
+    {
+        "Zweilous": [
+            "bw6-95",
+            "bw11-98"
+        ]
+    },
+    {
+        "Hydreigon": [
+            "bw6-97",
+            "bw11-99"
+        ]
+    },
+    {
+        "Deoxys ex": [
+            "ex9-93",
+            "pop4-17"
+        ]
+    },
+    {
+        "Gothita": [
+            "bw2-43",
+            "bw11-69"
+        ]
+    },
+    {
+        "Gothorita": [
+            "bw2-45",
+            "bw11-71"
+        ]
+    },
+    {
+        "Gothitelle": [
+            "bw2-47",
+            "bw11-72"
+        ]
+    },
+    {
+        "Venusaur-EX": [
+            "xy12-1",
+            "xyp-XY28",
+            "xyp-XY123",
+            "xy1-1",
+            "xy1-141"
+        ]
+    },
+    {
+        "M Venusaur-EX": [
+            "xy12-2",
+            "xy12-100",
+            "xy1-2"
+        ]
+    },
+    {
+        "Charizard-EX": [
+            "xy12-12",
+            "xy2-12"
+        ]
+    },
+    {
+        "M Charizard-EX": [
+            "xy12-13",
+            "xy12-101",
+            "xy2-13",
+            "xy2-107"
+        ]
+    },
+    {
+        "Blastoise-EX": [
+            "xy12-21",
+            "xyp-XY30",
+            "xyp-XY122",
+            "xy1-29",
+            "xy1-142"
+        ]
+    },
+    {
+        "M Blastoise-EX": [
+            "xy12-22",
+            "xy12-102",
+            "xy1-30"
+        ]
+    },
+    {
+        "Mewtwo-EX": [
+            "xy12-52",
+            "xy12-103"
+        ]
+    },
+    {
+        "Pidgeot-EX": [
+            "xy12-64",
+            "xy12-104"
+        ]
+    },
+    {
+        "M Pidgeot-EX": [
+            "xy12-65",
+            "xy12-105"
+        ]
+    },
+    {
+        "Dragonite-EX": [
+            "xy12-72",
+            "xy12-106"
+        ]
+    },
+    {
+        "Alakazam": [
+            "ecard1-1",
+            "ecard1-33"
+        ]
+    },
+    {
+        "Ampharos": [
+            "ecard1-2",
+            "ecard1-34"
+        ]
+    },
+    {
+        "Arbok": [
+            "ecard1-3",
+            "ecard1-35"
+        ]
+    },
+    {
+        "Blastoise": [
+            "ecard1-4",
+            "ecard1-37"
+        ]
+    },
+    {
+        "Butterfree": [
+            "ecard1-5",
+            "ecard1-38"
+        ]
+    },
+    {
+        "Charizard": [
+            "ecard1-6",
+            "ecard1-40"
+        ]
+    },
+    {
+        "Clefable": [
+            "ecard1-7",
+            "ecard1-41"
+        ]
+    },
+    {
+        "Cloyster": [
+            "ecard1-8",
+            "ecard1-42"
+        ]
+    },
+    {
+        "Dragonite": [
+            "ecard1-9",
+            "ecard1-43"
+        ]
+    },
+    {
+        "Dugtrio": [
+            "ecard1-10",
+            "ecard1-44"
+        ]
+    },
+    {
+        "Fearow": [
+            "ecard1-11",
+            "ecard1-45"
+        ]
+    },
+    {
+        "Feraligatr": [
+            "ecard1-12",
+            "ecard1-47"
+        ]
+    },
+    {
+        "Gengar": [
+            "ecard1-13",
+            "ecard1-48"
+        ]
+    },
+    {
+        "Golem": [
+            "ecard1-14",
+            "ecard1-49"
+        ]
+    },
+    {
+        "Kingler": [
+            "ecard1-15",
+            "ecard1-50"
+        ]
+    },
+    {
+        "Machamp": [
+            "ecard1-16",
+            "ecard1-51"
+        ]
+    },
+    {
+        "Magby": [
+            "ecard1-17",
+            "ecard1-52"
+        ]
+    },
+    {
+        "Meganium": [
+            "ecard1-18",
+            "ecard1-54"
+        ]
+    },
+    {
+        "Mew": [
+            "ecard1-19",
+            "ecard1-55"
+        ]
+    },
+    {
+        "Mewtwo": [
+            "ecard1-20",
+            "ecard1-56"
+        ]
+    },
+    {
+        "Ninetales": [
+            "ecard1-21",
+            "ecard1-57"
+        ]
+    },
+    {
+        "Pichu": [
+            "ecard1-22",
+            "ecard1-58"
+        ]
+    },
+    {
+        "Pidgeot": [
+            "ecard1-23",
+            "ecard1-59",
+            "pop2-2"
+        ]
+    },
+    {
+        "Poliwrath": [
+            "ecard1-24",
+            "ecard1-60"
+        ]
+    },
+    {
+        "Raichu": [
+            "ecard1-25",
+            "ecard1-61"
+        ]
+    },
+    {
+        "Rapidash": [
+            "ecard1-26",
+            "ecard1-62"
+        ]
+    },
+    {
+        "Skarmory": [
+            "ecard1-27",
+            "ecard1-63"
+        ]
+    },
+    {
+        "Typhlosion": [
+            "ecard1-28",
+            "ecard1-65"
+        ]
+    },
+    {
+        "Tyranitar": [
+            "ecard1-29",
+            "ecard1-66"
+        ]
+    },
+    {
+        "Venusaur": [
+            "ecard1-30",
+            "ecard1-68"
+        ]
+    },
+    {
+        "Vileplume": [
+            "ecard1-31",
+            "ecard1-69"
+        ]
+    },
+    {
+        "Weezing": [
+            "ecard1-32",
+            "ecard1-70"
+        ]
+    },
+    {
+        "Moltres": [
+            "xy10-9",
+            "xyp-XY127"
+        ]
+    },
+    {
+        "Braixen": [
+            "xy10-12",
+            "xyp-XY161"
+        ]
+    },
+    {
+        "Glaceon-EX": [
+            "xy10-20",
+            "xy10-116"
+        ]
+    },
+    {
+        "White Kyurem": [
+            "xy10-21",
+            "xyp-XY128"
+        ]
+    },
+    {
+        "Alakazam-EX": [
+            "xy10-25",
+            "xy10-117",
+            "xy10-125"
+        ]
+    },
+    {
+        "M Alakazam-EX": [
+            "xy10-26",
+            "xy10-118"
+        ]
+    },
+    {
+        "Regirock-EX": [
+            "xy10-43",
+            "xy10-43a"
+        ]
+    },
+    {
+        "Zygarde": [
+            "xy10-53",
+            "xyp-XY129",
+            "xyp-XY152"
+        ]
+    },
+    {
+        "Zygarde-EX": [
+            "xy10-54",
+            "xy10-54a",
+            "xyp-XY151"
+        ]
+    },
+    {
+        "Umbreon-EX": [
+            "xy10-55",
+            "xy10-119"
+        ]
+    },
+    {
+        "Tyranitar": [
+            "xy10-56",
+            "xyp-XY130"
+        ]
+    },
+    {
+        "Genesect-EX": [
+            "xy10-64",
+            "xy10-120"
+        ]
+    },
+    {
+        "M Altaria-EX": [
+            "xy10-69",
+            "xy10-121"
+        ]
+    },
+    {
+        "Kingdra-EX": [
+            "xy10-73",
+            "xy10-122"
+        ]
+    },
+    {
+        "Altaria-EX": [
+            "xy10-83",
+            "xy10-123"
+        ]
+    },
+    {
+        "Ivysaur": [
+            "ex6-35",
+            "pop2-7"
+        ]
+    },
+    {
+        "Caterpie": [
+            "xy2-1",
+            "g1-3"
+        ]
+    },
+    {
+        "Metapod": [
+            "xy2-2",
+            "g1-4"
+        ]
+    },
+    {
+        "Butterfree": [
+            "xy2-3",
+            "g1-5"
+        ]
+    },
+    {
+        "Charizard-EX": [
+            "xy2-11",
+            "xy2-100",
+            "xyp-XY29"
+        ]
+    },
+    {
+        "Ponyta": [
+            "xy2-14",
+            "g1-14"
+        ]
+    },
+    {
+        "Rapidash": [
+            "xy2-15",
+            "g1-15"
+        ]
+    },
+    {
+        "Spheal": [
+            "xy2-24",
+            "xy5-46"
+        ]
+    },
+    {
+        "Magnezone-EX": [
+            "xy2-35",
+            "xy2-101"
+        ]
+    },
+    {
+        "Toxicroak-EX": [
+            "xy2-41",
+            "xy2-102"
+        ]
+    },
+    {
+        "Meowstic": [
+            "xy2-43",
+            "g1-rc15"
+        ]
+    },
+    {
+        "Geodude": [
+            "xy2-45",
+            "g1-43"
+        ]
+    },
+    {
+        "Graveler": [
+            "xy2-46",
+            "g1-44"
+        ]
+    },
+    {
+        "Golem": [
+            "xy2-47",
+            "g1-45"
+        ]
+    },
+    {
+        "Flab\u00e9b\u00e9": [
+            "xy2-63",
+            "g1-rc17"
+        ]
+    },
+    {
+        "Floette": [
+            "xy2-65",
+            "g1-rc18"
+        ]
+    },
+    {
+        "M Charizard-EX": [
+            "xy2-69",
+            "xy2-108"
+        ]
+    },
+    {
+        "Dragalge": [
+            "xy2-71",
+            "xyp-XY10"
+        ]
+    },
+    {
+        "Goomy": [
+            "xy2-72",
+            "xy4-75"
+        ]
+    },
+    {
+        "Sliggoo": [
+            "xy2-73",
+            "xy4-76"
+        ]
+    },
+    {
+        "Kangaskhan-EX": [
+            "xy2-78",
+            "xy2-103"
+        ]
+    },
+    {
+        "M Kangaskhan-EX": [
+            "xy2-79",
+            "xy2-109"
+        ]
+    },
+    {
+        "Snorlax": [
+            "xy2-80",
+            "g1-58"
+        ]
+    },
+    {
+        "Furfrou": [
+            "xy2-87",
+            "xy0-32",
+            "xy0-33",
+            "xy4-90"
         ]
     },
     {
         "Aerodactyl": [
             "base3-1",
             "base3-16"
+        ]
+    },
+    {
+        "Articuno": [
+            "base3-2",
+            "base3-17",
+            "base6-2"
+        ]
+    },
+    {
+        "Ditto": [
+            "base3-3",
+            "base3-18"
+        ]
+    },
+    {
+        "Dragonite": [
+            "base3-4",
+            "base3-19"
+        ]
+    },
+    {
+        "Gengar": [
+            "base3-5",
+            "base3-20",
+            "base6-11"
+        ]
+    },
+    {
+        "Haunter": [
+            "base3-6",
+            "base3-21",
+            "base6-46"
+        ]
+    },
+    {
+        "Hitmonlee": [
+            "base3-7",
+            "base3-22",
+            "base6-13"
+        ]
+    },
+    {
+        "Hypno": [
+            "base3-8",
+            "base3-23",
+            "base6-25"
+        ]
+    },
+    {
+        "Kabutops": [
+            "base3-9",
+            "base3-24",
+            "base6-27"
         ]
     },
     {
@@ -2793,60 +3175,6 @@
         "Zapdos": [
             "base3-15",
             "base3-30"
-        ]
-    },
-    {
-        "Articuno": [
-            "base3-17",
-            "base3-2",
-            "base6-2"
-        ]
-    },
-    {
-        "Ditto": [
-            "base3-18",
-            "base3-3"
-        ]
-    },
-    {
-        "Dragonite": [
-            "base3-19",
-            "base3-4"
-        ]
-    },
-    {
-        "Gengar": [
-            "base3-20",
-            "base3-5",
-            "base6-11"
-        ]
-    },
-    {
-        "Haunter": [
-            "base3-21",
-            "base3-6",
-            "base6-46"
-        ]
-    },
-    {
-        "Hitmonlee": [
-            "base3-22",
-            "base3-7",
-            "base6-13"
-        ]
-    },
-    {
-        "Hypno": [
-            "base3-23",
-            "base3-8",
-            "base6-25"
-        ]
-    },
-    {
-        "Kabutops": [
-            "base3-24",
-            "base3-9",
-            "base6-27"
         ]
     },
     {
@@ -2940,6 +3268,824 @@
         ]
     },
     {
+        "Heracross-EX": [
+            "xy3-4",
+            "xy3-105"
+        ]
+    },
+    {
+        "M Heracross-EX": [
+            "xy3-5",
+            "xy3-112"
+        ]
+    },
+    {
+        "Magmar": [
+            "xy3-10",
+            "g1-16"
+        ]
+    },
+    {
+        "Seismitoad-EX": [
+            "xy3-20",
+            "xy3-106"
+        ]
+    },
+    {
+        "Jynx": [
+            "xy3-37",
+            "g1-36"
+        ]
+    },
+    {
+        "Machop": [
+            "xy3-44",
+            "g1-40"
+        ]
+    },
+    {
+        "Machoke": [
+            "xy3-45",
+            "g1-41"
+        ]
+    },
+    {
+        "Machamp": [
+            "xy3-46",
+            "g1-42",
+            "xyp-XY13"
+        ]
+    },
+    {
+        "Hitmonlee": [
+            "xy3-47",
+            "g1-47"
+        ]
+    },
+    {
+        "Hitmonchan": [
+            "xy3-48",
+            "g1-48"
+        ]
+    },
+    {
+        "Lucario-EX": [
+            "xy3-54",
+            "xy3-107"
+        ]
+    },
+    {
+        "M Lucario-EX": [
+            "xy3-55",
+            "xy3-55a",
+            "xy3-113"
+        ]
+    },
+    {
+        "Clefairy": [
+            "xy3-69",
+            "g1-50"
+        ]
+    },
+    {
+        "Clefable": [
+            "xy3-71",
+            "g1-51"
+        ]
+    },
+    {
+        "Dragonite-EX": [
+            "xy3-74",
+            "xy3-108"
+        ]
+    },
+    {
+        "Tangela": [
+            "g1-8",
+            "xy5-4"
+        ]
+    },
+    {
+        "Shellder": [
+            "g1-19",
+            "xy1-31"
+        ]
+    },
+    {
+        "Cloyster": [
+            "g1-20",
+            "xy1-32"
+        ]
+    },
+    {
+        "Krabby": [
+            "g1-21",
+            "xy4-13"
+        ]
+    },
+    {
+        "Articuno": [
+            "g1-25",
+            "xy6-16"
+        ]
+    },
+    {
+        "Pikachu": [
+            "g1-26",
+            "g1-rc29",
+            "xy1-42"
+        ]
+    },
+    {
+        "Raichu": [
+            "g1-27",
+            "g1-rc9",
+            "xy1-43"
+        ]
+    },
+    {
+        "Jolteon-EX": [
+            "g1-28",
+            "g1-28a"
+        ]
+    },
+    {
+        "Zapdos": [
+            "g1-29",
+            "xy6-23"
+        ]
+    },
+    {
+        "Zubat": [
+            "g1-30",
+            "xy4-31"
+        ]
+    },
+    {
+        "Golbat": [
+            "g1-31",
+            "xy4-32"
+        ]
+    },
+    {
+        "Diglett": [
+            "g1-38",
+            "xy1-58"
+        ]
+    },
+    {
+        "Dugtrio": [
+            "g1-39",
+            "xy1-59"
+        ]
+    },
+    {
+        "Rhyhorn": [
+            "g1-49",
+            "xy5-74"
+        ]
+    },
+    {
+        "Tauros": [
+            "g1-57",
+            "xy1-100"
+        ]
+    },
+    {
+        "Flareon-EX": [
+            "g1-rc6",
+            "g1-rc28"
+        ]
+    },
+    {
+        "Wobbuffet": [
+            "g1-rc11",
+            "xy4-36"
+        ]
+    },
+    {
+        "Yveltal": [
+            "g1-rc16",
+            "xy11-65",
+            "xyp-XY06",
+            "xy1-78"
+        ]
+    },
+    {
+        "Swirlix": [
+            "g1-rc19",
+            "xy4-68"
+        ]
+    },
+    {
+        "Sylveon-EX": [
+            "g1-rc21",
+            "g1-rc32"
+        ]
+    },
+    {
+        "Diancie": [
+            "g1-rc22",
+            "xy4-71"
+        ]
+    },
+    {
+        "Gardevoir-EX": [
+            "g1-rc30",
+            "xy5-105",
+            "xy5-155"
+        ]
+    },
+    {
+        "M Gardevoir-EX": [
+            "g1-rc31",
+            "xy5-106",
+            "xy5-156"
+        ]
+    },
+    {
+        "Latias": [
+            "dp4-22",
+            "pop7-3"
+        ]
+    },
+    {
+        "Latios": [
+            "dp4-23",
+            "pop7-4"
+        ]
+    },
+    {
+        "Delibird": [
+            "dp4-36",
+            "pop7-6"
+        ]
+    },
+    {
+        "Golisopod": [
+            "sm2-9",
+            "smp-SM52"
+        ]
+    },
+    {
+        "Turtonator-GX": [
+            "sm2-18",
+            "sm2-131",
+            "sm2-148"
+        ]
+    },
+    {
+        "Alolan Sandslash": [
+            "sm2-20",
+            "smp-SM18"
+        ]
+    },
+    {
+        "Alolan Ninetales-GX": [
+            "sm2-22",
+            "sm2-132",
+            "sm2-150"
+        ]
+    },
+    {
+        "Wishiwashi-GX": [
+            "sm2-38",
+            "sm2-133",
+            "sm2-151"
+        ]
+    },
+    {
+        "Vikavolt-GX": [
+            "sm2-45",
+            "sm2-134",
+            "sm2-152"
+        ]
+    },
+    {
+        "Tapu Koko-GX": [
+            "sm2-47",
+            "sm2-135",
+            "sm2-153",
+            "smp-SM33",
+            "smp-SM50"
+        ]
+    },
+    {
+        "Oricorio": [
+            "sm2-56",
+            "smp-SM19"
+        ]
+    },
+    {
+        "Toxapex-GX": [
+            "sm2-57",
+            "sm2-136",
+            "sm2-154"
+        ]
+    },
+    {
+        "Mimikyu": [
+            "sm2-58",
+            "smp-SM99"
+        ]
+    },
+    {
+        "Dhelmise": [
+            "sm2-59",
+            "smp-SM53"
+        ]
+    },
+    {
+        "Tapu Lele-GX": [
+            "sm2-60",
+            "sm2-137",
+            "sm2-155"
+        ]
+    },
+    {
+        "Lycanroc-GX": [
+            "sm2-74",
+            "sm2-138",
+            "sm2-156"
+        ]
+    },
+    {
+        "Mudsdale": [
+            "sm2-76",
+            "smp-SM20"
+        ]
+    },
+    {
+        "Metagross-GX": [
+            "sm2-85",
+            "sm2-139",
+            "sm2-157"
+        ]
+    },
+    {
+        "Sylveon-GX": [
+            "sm2-92",
+            "sm2-140",
+            "sm2-158"
+        ]
+    },
+    {
+        "Drampa": [
+            "sm2-97",
+            "smp-SM21"
+        ]
+    },
+    {
+        "Kommo-o-GX": [
+            "sm2-100",
+            "sm2-141",
+            "sm2-159",
+            "smp-SM71"
+        ]
+    },
+    {
+        "Komala": [
+            "sm2-114",
+            "smp-SM41"
+        ]
+    },
+    {
+        "Drampa-GX": [
+            "sm2-115",
+            "sm2-142",
+            "sm2-160"
+        ]
+    },
+    {
+        "Decidueye-GX": [
+            "sm2-146",
+            "smp-SM37",
+            "sm1-12"
+        ]
+    },
+    {
+        "Incineroar-GX": [
+            "sm2-147",
+            "smp-SM38",
+            "sm1-27"
+        ]
+    },
+    {
+        "Primarina-GX": [
+            "sm2-149",
+            "smp-SM39",
+            "sm1-42"
+        ]
+    },
+    {
+        "Sabrina's Abra": [
+            "gym2-93",
+            "basep-19"
+        ]
+    },
+    {
+        "Ninetales": [
+            "ex5-22",
+            "ex16-19"
+        ]
+    },
+    {
+        "Lanturn": [
+            "ex5-38",
+            "ex16-15"
+        ]
+    },
+    {
+        "Chinchou": [
+            "ex5-57",
+            "ex12-50"
+        ]
+    },
+    {
+        "Deoxys \u03b4": [
+            "ex13-5",
+            "pop4-2"
+        ]
+    },
+    {
+        "Electrode": [
+            "base2-2",
+            "base2-18",
+            "base6-22"
+        ]
+    },
+    {
+        "Flareon": [
+            "base2-3",
+            "base2-19",
+            "base6-10"
+        ]
+    },
+    {
+        "Jolteon": [
+            "base2-4",
+            "base2-20",
+            "base6-14"
+        ]
+    },
+    {
+        "Vaporeon": [
+            "base2-12",
+            "base2-28"
+        ]
+    },
+    {
+        "Vileplume": [
+            "base2-15",
+            "base2-31"
+        ]
+    },
+    {
+        "Primeape": [
+            "base2-43",
+            "base6-59"
+        ]
+    },
+    {
+        "Rapidash": [
+            "base2-44",
+            "base6-60"
+        ]
+    },
+    {
+        "Eevee": [
+            "base2-51",
+            "base6-74"
+        ]
+    },
+    {
+        "Pikachu": [
+            "base2-60",
+            "base6-86"
+        ]
+    },
+    {
+        "Chespin": [
+            "xy0-3",
+            "xyp-XY01"
+        ]
+    },
+    {
+        "Fennekin": [
+            "xy0-8",
+            "xyp-XY02"
+        ]
+    },
+    {
+        "Froakie": [
+            "xy0-12",
+            "xyp-XY03"
+        ]
+    },
+    {
+        "Pawniard": [
+            "xy0-19",
+            "bw3-81"
+        ]
+    },
+    {
+        "Dark Blastoise": [
+            "base6-4",
+            "base5-3",
+            "base5-20"
+        ]
+    },
+    {
+        "Dark Dragonite": [
+            "base6-5",
+            "base5-5",
+            "base5-22"
+        ]
+    },
+    {
+        "Dark Persian": [
+            "base6-6",
+            "base5-42"
+        ]
+    },
+    {
+        "Dark Raichu": [
+            "base6-7",
+            "base5-83"
+        ]
+    },
+    {
+        "Dark Slowbro": [
+            "base6-8",
+            "base5-12",
+            "base5-29"
+        ]
+    },
+    {
+        "Dark Vaporeon": [
+            "base6-9",
+            "base5-45"
+        ]
+    },
+    {
+        "Mewtwo": [
+            "base6-29",
+            "basep-12"
+        ]
+    },
+    {
+        "Dark Dragonair": [
+            "base6-38",
+            "base5-33"
+        ]
+    },
+    {
+        "Dark Wartortle": [
+            "base6-39",
+            "base5-46"
+        ]
+    },
+    {
+        "Drowzee": [
+            "base6-73",
+            "base5-54"
+        ]
+    },
+    {
+        "Machop": [
+            "base6-79",
+            "base5-59"
+        ]
+    },
+    {
+        "Psyduck": [
+            "base6-88",
+            "base5-65"
+        ]
+    },
+    {
+        "Sewaddle": [
+            "bw11-9",
+            "bw3-1"
+        ]
+    },
+    {
+        "Swadloon": [
+            "bw11-11",
+            "bw3-2"
+        ]
+    },
+    {
+        "Leavanny": [
+            "bw11-12",
+            "bw3-3"
+        ]
+    },
+    {
+        "Virizion": [
+            "bw11-15",
+            "bw3-13",
+            "bw3-97",
+            "bw10-103"
+        ]
+    },
+    {
+        "Moltres": [
+            "bw11-22",
+            "bw4-14"
+        ]
+    },
+    {
+        "Victini-EX": [
+            "bw11-24",
+            "bw8-18",
+            "bw8-131"
+        ]
+    },
+    {
+        "Articuno": [
+            "bw11-32",
+            "bw4-27"
+        ]
+    },
+    {
+        "Tympole": [
+            "bw11-40",
+            "bw3-22"
+        ]
+    },
+    {
+        "Palpitoad": [
+            "bw11-41",
+            "bw3-23"
+        ]
+    },
+    {
+        "Seismitoad": [
+            "bw11-42",
+            "bw3-24"
+        ]
+    },
+    {
+        "Zapdos": [
+            "bw11-46",
+            "bw4-41"
+        ]
+    },
+    {
+        "Solosis": [
+            "bw11-73",
+            "bw3-50"
+        ]
+    },
+    {
+        "Duosion": [
+            "bw11-75",
+            "bw3-51"
+        ]
+    },
+    {
+        "Reuniclus": [
+            "bw11-76",
+            "bw3-52"
+        ]
+    },
+    {
+        "Riolu": [
+            "bw11-79",
+            "bw4-63"
+        ]
+    },
+    {
+        "Lucario": [
+            "bw11-80",
+            "bw4-64"
+        ]
+    },
+    {
+        "Cobalion": [
+            "bw11-91",
+            "bw3-84",
+            "bw3-100"
+        ]
+    },
+    {
+        "Minccino": [
+            "bw11-104",
+            "bw4-84"
+        ]
+    },
+    {
+        "Cinccino": [
+            "bw11-105",
+            "bw11-RC19",
+            "bw4-85"
+        ]
+    },
+    {
+        "Druddigon": [
+            "bw11-106",
+            "bw3-89"
+        ]
+    },
+    {
+        "Pikachu": [
+            "bw11-RC7",
+            "bw4-39"
+        ]
+    },
+    {
+        "Meloetta-EX": [
+            "bw11-RC11",
+            "bw11-RC25"
+        ]
+    },
+    {
+        "Shaymin-EX": [
+            "bw11-RC21",
+            "bw4-5",
+            "bw4-94"
+        ]
+    },
+    {
+        "Bastiodon": [
+            "dp2-21",
+            "pop6-1"
+        ]
+    },
+    {
+        "Rampardos": [
+            "dp2-33",
+            "pop6-5"
+        ]
+    },
+    {
+        "Happiny": [
+            "dp2-52",
+            "pop8-14"
+        ]
+    },
+    {
+        "Croagunk": [
+            "dp2-78",
+            "pop8-13"
+        ]
+    },
+    {
+        "Gible": [
+            "dp2-85",
+            "pop9-14"
+        ]
+    },
+    {
+        "Forretress": [
+            "neo2-2",
+            "neo2-21"
+        ]
+    },
+    {
+        "Hitmontop": [
+            "neo2-3",
+            "neo2-22"
+        ]
+    },
+    {
+        "Houndoom": [
+            "neo2-4",
+            "neo2-23"
+        ]
+    },
+    {
+        "Houndour": [
+            "neo2-5",
+            "neo2-24"
+        ]
+    },
+    {
+        "Kabutops": [
+            "neo2-6",
+            "neo2-25"
+        ]
+    },
+    {
+        "Magnemite": [
+            "neo2-7",
+            "neo2-26"
+        ]
+    },
+    {
+        "Politoed": [
+            "neo2-8",
+            "neo2-27"
+        ]
+    },
+    {
+        "Poliwrath": [
+            "neo2-9",
+            "neo2-28"
+        ]
+    },
+    {
         "Scizor": [
             "neo2-10",
             "neo2-29"
@@ -2982,1328 +4128,9 @@
         ]
     },
     {
-        "Forretress": [
-            "neo2-2",
-            "neo2-21"
-        ]
-    },
-    {
-        "Hitmontop": [
-            "neo2-22",
-            "neo2-3"
-        ]
-    },
-    {
-        "Houndoom": [
-            "neo2-23",
-            "neo2-4"
-        ]
-    },
-    {
-        "Houndour": [
-            "neo2-24",
-            "neo2-5"
-        ]
-    },
-    {
-        "Kabutops": [
-            "neo2-25",
-            "neo2-6"
-        ]
-    },
-    {
-        "Magnemite": [
-            "neo2-26",
-            "neo2-7"
-        ]
-    },
-    {
-        "Politoed": [
-            "neo2-27",
-            "neo2-8"
-        ]
-    },
-    {
-        "Poliwrath": [
-            "neo2-28",
-            "neo2-9"
-        ]
-    },
-    {
-        "Kyurem-EX": [
-            "xy7-25",
-            "xy7-86"
-        ]
-    },
-    {
-        "Ampharos-EX": [
-            "xy7-27",
-            "xy7-87"
-        ]
-    },
-    {
-        "M Ampharos-EX": [
-            "xy7-28",
-            "xy7-88"
-        ]
-    },
-    {
-        "Machamp-EX": [
-            "xy7-37",
-            "xy7-90"
-        ]
-    },
-    {
-        "Tyranitar-EX": [
-            "xy7-42",
-            "xy7-91"
-        ]
-    },
-    {
-        "M Tyranitar-EX": [
-            "xy7-43",
-            "xy7-92"
-        ]
-    },
-    {
-        "Ralts": [
-            "xy7-52",
-            "xy8-100"
-        ]
-    },
-    {
-        "Giratina-EX": [
-            "xy7-57",
-            "xy7-93"
-        ]
-    },
-    {
-        "Persian": [
-            "xy7-62",
-            "g1-54"
-        ]
-    },
-    {
-        "Lugia-EX": [
-            "xy7-68",
-            "xy7-94"
-        ]
-    },
-    {
-        "Sceptile-EX": [
-            "xy7-7",
-            "xy7-84"
-        ]
-    },
-    {
-        "M Sceptile-EX": [
-            "xy7-8",
-            "xy7-85"
-        ]
-    },
-    {
-        "Magmar": [
-            "g1-16",
-            "xy3-10"
-        ]
-    },
-    {
-        "Shellder": [
-            "g1-19",
-            "xy1-31"
-        ]
-    },
-    {
-        "Cloyster": [
-            "g1-20",
-            "xy1-32"
-        ]
-    },
-    {
-        "Krabby": [
-            "g1-21",
-            "xy4-13"
-        ]
-    },
-    {
-        "Pikachu": [
-            "g1-26",
-            "g1-rc29",
-            "xy1-42"
-        ]
-    },
-    {
-        "Raichu": [
-            "g1-27",
-            "g1-rc9",
-            "xy1-43"
-        ]
-    },
-    {
-        "Zubat": [
-            "g1-30",
-            "xy4-31"
-        ]
-    },
-    {
-        "Golbat": [
-            "g1-31",
-            "xy4-32"
-        ]
-    },
-    {
-        "Haunter": [
-            "g1-34",
-            "xy8-59"
-        ]
-    },
-    {
-        "Gengar": [
-            "g1-35",
-            "xy8-60"
-        ]
-    },
-    {
-        "Jynx": [
-            "g1-36",
-            "xy3-37"
-        ]
-    },
-    {
-        "Diglett": [
-            "g1-38",
-            "xy1-58"
-        ]
-    },
-    {
-        "Dugtrio": [
-            "g1-39",
-            "xy1-59"
-        ]
-    },
-    {
-        "Machop": [
-            "g1-40",
-            "xy3-44"
-        ]
-    },
-    {
-        "Machoke": [
-            "g1-41",
-            "xy3-45"
-        ]
-    },
-    {
-        "Hitmonlee": [
-            "g1-47",
-            "xy3-47"
-        ]
-    },
-    {
-        "Hitmonchan": [
-            "g1-48",
-            "xy3-48"
-        ]
-    },
-    {
-        "Rhyhorn": [
-            "g1-49",
-            "xy5-74"
-        ]
-    },
-    {
-        "Clefairy": [
-            "g1-50",
-            "xy3-69"
-        ]
-    },
-    {
-        "Clefable": [
-            "g1-51",
-            "xy3-71"
-        ]
-    },
-    {
-        "Mr. Mime": [
-            "g1-52",
-            "xy8-97"
-        ]
-    },
-    {
-        "Meowth": [
-            "g1-53",
-            "xy8-114"
-        ]
-    },
-    {
-        "Doduo": [
-            "g1-55",
-            "xy8-116"
-        ]
-    },
-    {
-        "Dodrio": [
-            "g1-56",
-            "xy8-117"
-        ]
-    },
-    {
-        "Tauros": [
-            "g1-57",
-            "xy1-100"
-        ]
-    },
-    {
-        "Paras": [
-            "g1-6",
-            "xy8-1"
-        ]
-    },
-    {
-        "Parasect": [
-            "g1-7",
-            "xy8-2"
-        ]
-    },
-    {
-        "Tangela": [
-            "g1-8",
-            "xy5-4"
-        ]
-    },
-    {
-        "Pinsir": [
-            "g1-9",
-            "xy8-3"
-        ]
-    },
-    {
-        "Wobbuffet": [
-            "g1-rc11",
-            "xy4-36"
-        ]
-    },
-    {
-        "Swirlix": [
-            "g1-rc19",
-            "xy4-68"
-        ]
-    },
-    {
-        "Sylveon-EX": [
-            "g1-rc21",
-            "g1-rc32"
-        ]
-    },
-    {
-        "Diancie": [
-            "g1-rc22",
-            "xy4-71"
-        ]
-    },
-    {
-        "Flareon-EX": [
-            "g1-rc28",
-            "g1-rc6"
-        ]
-    },
-    {
-        "Gardevoir-EX": [
-            "g1-rc30",
-            "xy5-105",
-            "xy5-155"
-        ]
-    },
-    {
-        "M Gardevoir-EX": [
-            "g1-rc31",
-            "xy5-106",
-            "xy5-156"
-        ]
-    },
-    {
-        "Staravia": [
-            "pop6-10",
-            "dp1-64"
-        ]
-    },
-    {
-        "Bidoof": [
-            "pop6-11",
-            "dp1-70"
-        ]
-    },
-    {
-        "Buneary": [
-            "pop6-12",
-            "dp1-73"
-        ]
-    },
-    {
-        "Cherubi": [
-            "pop6-13",
-            "dp1-75"
-        ]
-    },
-    {
-        "Starly": [
-            "pop6-16",
-            "dp1-101"
-        ]
-    },
-    {
-        "Lucario": [
-            "pop6-2",
-            "dp1-6"
-        ]
-    },
-    {
-        "Manaphy": [
-            "pop6-3",
-            "dp1-9"
-        ]
-    },
-    {
-        "Pachirisu": [
-            "pop6-4",
-            "dp1-35"
-        ]
-    },
-    {
-        "Drifloon": [
-            "pop6-6",
-            "dp1-46"
-        ]
-    },
-    {
-        "Riolu": [
-            "pop6-8",
-            "dp1-61"
-        ]
-    },
-    {
-        "Reshiram": [
-            "bw1-113",
-            "bw1-26",
-            "bw4-21",
-            "bw11-114",
-            "bw11-28",
-            "bw11-RC22",
-            "bwp-BW04",
-            "bwp-BW23"
-        ]
-    },
-    {
-        "Zekrom": [
-            "bw1-114",
-            "bw1-47",
-            "bw4-50",
-            "bw11-115",
-            "bw11-51",
-            "bwp-BW05",
-            "bwp-BW24"
-        ]
-    },
-    {
-        "Tepig": [
-            "bw1-16",
-            "bw11-25"
-        ]
-    },
-    {
-        "Pignite": [
-            "bw1-18",
-            "bw11-26"
-        ]
-    },
-    {
-        "Snivy": [
-            "bw1-2",
-            "bw11-6"
-        ]
-    },
-    {
-        "Emboar": [
-            "bw1-20",
-            "bw4-100",
-            "bw11-27",
-            "bwp-BW21"
-        ]
-    },
-    {
-        "Oshawott": [
-            "bw1-28",
-            "bw11-37"
-        ]
-    },
-    {
-        "Dewott": [
-            "bw1-30",
-            "bw11-38"
-        ]
-    },
-    {
-        "Samurott": [
-            "bw1-32",
-            "bw11-39",
-            "bwp-BW22"
-        ]
-    },
-    {
-        "Ducklett": [
-            "bw1-36",
-            "bwp-BW17"
-        ]
-    },
-    {
-        "Servine": [
-            "bw1-4",
-            "bw11-7"
-        ]
-    },
-    {
-        "Zoroark": [
-            "bw1-71",
-            "bwp-BW09"
-        ]
-    },
-    {
-        "Patrat": [
-            "bw1-78",
-            "bw2-78"
-        ]
-    },
-    {
-        "Minccino": [
-            "bw1-88",
-            "bw11-RC18"
-        ]
-    },
-    {
-        "Bouffalant": [
-            "bw1-91",
-            "bw11-107"
-        ]
-    },
-    {
-        "Squirtle": [
-            "ex4-46",
-            "pop4-14"
-        ]
-    },
-    {
-        "Glaceon-EX": [
-            "xy10-116",
-            "xy10-20"
-        ]
-    },
-    {
-        "Alakazam-EX": [
-            "xy10-117",
-            "xy10-25"
-        ]
-    },
-    {
-        "M Alakazam-EX": [
-            "xy10-118",
-            "xy10-26"
-        ]
-    },
-    {
-        "Umbreon-EX": [
-            "xy10-119",
-            "xy10-55"
-        ]
-    },
-    {
-        "Genesect-EX": [
-            "xy10-120",
-            "xy10-64"
-        ]
-    },
-    {
-        "M Altaria-EX": [
-            "xy10-121",
-            "xy10-69"
-        ]
-    },
-    {
-        "Kingdra-EX": [
-            "xy10-122",
-            "xy10-73"
-        ]
-    },
-    {
-        "Altaria-EX": [
-            "xy10-123",
-            "xy10-83"
-        ]
-    },
-    {
-        "Heatran-EX": [
-            "bw9-109",
-            "bw9-13"
-        ]
-    },
-    {
-        "Thundurus-EX": [
-            "bw9-110",
-            "bw9-38",
-            "bwp-BW81"
-        ]
-    },
-    {
-        "Deoxys-EX": [
-            "bw9-111",
-            "bw9-53",
-            "bwp-BW82"
-        ]
-    },
-    {
-        "Latias-EX": [
-            "bw9-112",
-            "bw9-85"
-        ]
-    },
-    {
-        "Latios-EX": [
-            "bw9-113",
-            "bw9-86"
-        ]
-    },
-    {
-        "Tornadus-EX": [
-            "bw9-114",
-            "bw9-98"
-        ]
-    },
-    {
-        "Exeggcute": [
-            "bw9-4",
-            "bw10-102"
-        ]
-    },
-    {
-        "Metagross": [
-            "bw9-52",
-            "bwp-BW75"
-        ]
-    },
-    {
-        "Eevee": [
-            "bw9-89",
-            "bwp-BW94",
-            "bwp-BW97"
-        ]
-    },
-    {
-        "Articuno": [
-            "pl3-148",
-            "basep-22"
-        ]
-    },
-    {
-        "Zapdos": [
-            "pl3-150",
-            "basep-23"
-        ]
-    },
-    {
-        "Moltres": [
-            "bw4-14",
-            "bw11-22"
-        ]
-    },
-    {
-        "Reshiram-EX": [
-            "bw4-22",
-            "bw4-95",
-            "bw11-29",
-            "bwp-BW36"
-        ]
-    },
-    {
-        "Articuno": [
-            "bw4-27",
-            "bw11-32"
-        ]
-    },
-    {
-        "Kyurem-EX": [
-            "bw4-38",
-            "bw4-96",
-            "bw11-44",
-            "bwp-BW37"
-        ]
-    },
-    {
-        "Pikachu": [
-            "bw4-39",
-            "bw11-RC7"
-        ]
-    },
-    {
-        "Zapdos": [
-            "bw4-41",
-            "bw11-46"
-        ]
-    },
-    {
-        "Shaymin-EX": [
-            "bw4-5",
-            "bw4-94",
-            "bw11-RC21"
-        ]
-    },
-    {
-        "Zekrom-EX": [
-            "bw4-51",
-            "bw4-97",
-            "bw11-52",
-            "bwp-BW38"
-        ]
-    },
-    {
-        "Mewtwo-EX": [
-            "bw4-54",
-            "bw4-98",
-            "bw11-54",
-            "bwp-BW45"
-        ]
-    },
-    {
-        "Riolu": [
-            "bw4-63",
-            "bw11-79"
-        ]
-    },
-    {
-        "Lucario": [
-            "bw4-64",
-            "bw11-80"
-        ]
-    },
-    {
         "Regigigas-EX": [
             "bw4-82",
             "bw4-99"
-        ]
-    },
-    {
-        "Minccino": [
-            "bw4-84",
-            "bw11-104"
-        ]
-    },
-    {
-        "Cinccino": [
-            "bw4-85",
-            "bw11-105",
-            "bw11-RC19"
-        ]
-    },
-    {
-        "Gyarados-GX": [
-            "sm4-101",
-            "sm4-112",
-            "sm4-18"
-        ]
-    },
-    {
-        "Alolan Golem-GX": [
-            "sm4-102",
-            "sm4-113",
-            "sm4-34"
-        ]
-    },
-    {
-        "Nihilego-GX": [
-            "sm4-103",
-            "sm4-114",
-            "sm4-49"
-        ]
-    },
-    {
-        "Buzzwole-GX": [
-            "sm4-104",
-            "sm4-115",
-            "sm4-57",
-            "smp-SM69"
-        ]
-    },
-    {
-        "Guzzlord-GX": [
-            "sm4-105",
-            "sm4-116",
-            "sm4-63"
-        ]
-    },
-    {
-        "Kartana-GX": [
-            "sm4-106",
-            "sm4-117",
-            "sm4-70"
-        ]
-    },
-    {
-        "Alolan Exeggutor-GX": [
-            "sm4-107",
-            "sm4-118",
-            "sm4-74"
-        ]
-    },
-    {
-        "Silvally-GX": [
-            "sm4-108",
-            "sm4-119",
-            "sm4-90"
-        ]
-    },
-    {
-        "Machamp": [
-            "base6-15",
-            "base1-8"
-        ]
-    },
-    {
-        "Ninetales": [
-            "base6-17",
-            "base1-12"
-        ]
-    },
-    {
-        "Zapdos": [
-            "base6-19",
-            "base1-16"
-        ]
-    },
-    {
-        "Mewtwo": [
-            "base6-29",
-            "basep-12"
-        ]
-    },
-    {
-        "Charizard": [
-            "base6-3",
-            "base1-4"
-        ]
-    },
-    {
-        "Dark Dragonair": [
-            "base6-38",
-            "base5-33"
-        ]
-    },
-    {
-        "Dark Wartortle": [
-            "base6-39",
-            "base5-46"
-        ]
-    },
-    {
-        "Dark Blastoise": [
-            "base6-4",
-            "base5-20",
-            "base5-3"
-        ]
-    },
-    {
-        "Dark Dragonite": [
-            "base6-5",
-            "base5-22",
-            "base5-5"
-        ]
-    },
-    {
-        "Dark Persian": [
-            "base6-6",
-            "base5-42"
-        ]
-    },
-    {
-        "Dark Raichu": [
-            "base6-7",
-            "base5-83"
-        ]
-    },
-    {
-        "Drowzee": [
-            "base6-73",
-            "base5-54"
-        ]
-    },
-    {
-        "Machop": [
-            "base6-79",
-            "base5-59"
-        ]
-    },
-    {
-        "Dark Slowbro": [
-            "base6-8",
-            "base5-12",
-            "base5-29"
-        ]
-    },
-    {
-        "Ponyta": [
-            "base6-87",
-            "base1-60"
-        ]
-    },
-    {
-        "Psyduck": [
-            "base6-88",
-            "base5-65"
-        ]
-    },
-    {
-        "Dark Vaporeon": [
-            "base6-9",
-            "base5-45"
-        ]
-    },
-    {
-        "Houndoom-EX": [
-            "xy8-153",
-            "xy8-21"
-        ]
-    },
-    {
-        "M Houndoom-EX": [
-            "xy8-154",
-            "xy8-22"
-        ]
-    },
-    {
-        "Glalie-EX": [
-            "xy8-155",
-            "xy8-34"
-        ]
-    },
-    {
-        "M Glalie-EX": [
-            "xy8-156",
-            "xy8-35"
-        ]
-    },
-    {
-        "Mewtwo-EX": [
-            "xy8-158",
-            "xy8-164",
-            "xy8-62"
-        ]
-    },
-    {
-        "M Mewtwo-EX": [
-            "xy8-159",
-            "xy8-63"
-        ]
-    },
-    {
-        "M Mewtwo-EX": [
-            "xy8-160",
-            "xy8-64"
-        ]
-    },
-    {
-        "Lycanroc-GX": [
-            "smp-SM14",
-            "sm3-136",
-            "sm3-155"
-        ]
-    },
-    {
-        "Turtonator": [
-            "smp-SM27",
-            "sm3-26"
-        ]
-    },
-    {
-        "Tapu Koko": [
-            "smp-SM30",
-            "smp-SM31"
-        ]
-    },
-    {
-        "Tapu Bulu-GX": [
-            "smp-SM32",
-            "sm3-130",
-            "sm3-149"
-        ]
-    },
-    {
-        "Seviper": [
-            "smp-SM46",
-            "sm3-50"
-        ]
-    },
-    {
-        "Crabominable": [
-            "smp-SM47",
-            "sm3-74"
-        ]
-    },
-    {
-        "Zygarde": [
-            "smp-SM48",
-            "sm3-100"
-        ]
-    },
-    {
-        "Zoroark-GX": [
-            "smp-SM84",
-            "sm35-53",
-            "sm35-77"
-        ]
-    },
-    {
-        "Mewtwo": [
-            "basep-14",
-            "basep-3"
-        ]
-    },
-    {
-        "Sabrina\u2019s Abra": [
-            "basep-19",
-            "gym2-93"
-        ]
-    },
-    {
-        "Suicune": [
-            "basep-53",
-            "ecard2-175",
-            "ecard2-37"
-        ]
-    },
-    {
-        "Mew": [
-            "basep-8",
-            "basep-9"
-        ]
-    },
-    {
-        "Emolga-EX": [
-            "xy1-143",
-            "xy1-46"
-        ]
-    },
-    {
-        "Skarmory-EX": [
-            "xy1-145",
-            "xy1-80"
-        ]
-    },
-    {
-        "M Venusaur-EX": [
-            "xy1-2",
-            "xy12-100",
-            "xy12-2"
-        ]
-    },
-    {
-        "M Blastoise-EX": [
-            "xy1-30",
-            "xy12-102",
-            "xy12-22"
-        ]
-    },
-    {
-        "Trevenant-EX": [
-            "xy5-145",
-            "xy5-19"
-        ]
-    },
-    {
-        "Camerupt-EX": [
-            "xy5-146",
-            "xy5-29"
-        ]
-    },
-    {
-        "Wailord-EX": [
-            "xy5-147",
-            "xy5-38"
-        ]
-    },
-    {
-        "Primal Kyogre-EX": [
-            "xy5-149",
-            "xy5-55"
-        ]
-    },
-    {
-        "Primal Groudon-EX": [
-            "xy5-151",
-            "xy5-86"
-        ]
-    },
-    {
-        "Sharpedo-EX": [
-            "xy5-152",
-            "xy5-91"
-        ]
-    },
-    {
-        "Aggron-EX": [
-            "xy5-153",
-            "xy5-93"
-        ]
-    },
-    {
-        "M Aggron-EX": [
-            "xy5-154",
-            "xy5-94"
-        ]
-    },
-    {
-        "Lugia-EX": [
-            "bw11-102",
-            "bwp-BW83",
-            "bw8-108",
-            "bw8-134"
-        ]
-    },
-    {
-        "Druddigon": [
-            "bw11-106",
-            "bw3-89"
-        ]
-    },
-    {
-        "Tornadus": [
-            "bw11-108",
-            "bwp-BW42",
-            "bw2-89",
-            "bw2-98"
-        ]
-    },
-    {
-        "Swadloon": [
-            "bw11-11",
-            "bw3-2"
-        ]
-    },
-    {
-        "Leavanny": [
-            "bw11-12",
-            "bw3-3"
-        ]
-    },
-    {
-        "Virizion": [
-            "bw11-15",
-            "bw3-13",
-            "bw3-97",
-            "bw10-103"
-        ]
-    },
-    {
-        "Victini": [
-            "bw11-23",
-            "bwp-BW32",
-            "bw3-14",
-            "bw3-98"
-        ]
-    },
-    {
-        "Victini-EX": [
-            "bw11-24",
-            "bw8-131",
-            "bw8-18"
-        ]
-    },
-    {
-        "Tympole": [
-            "bw11-40",
-            "bw3-22"
-        ]
-    },
-    {
-        "Palpitoad": [
-            "bw11-41",
-            "bw3-23"
-        ]
-    },
-    {
-        "Seismitoad": [
-            "bw11-42",
-            "bw3-24"
-        ]
-    },
-    {
-        "Kyurem": [
-            "bw11-43",
-            "bwp-BW44",
-            "bw3-34"
-        ]
-    },
-    {
-        "Thundurus": [
-            "bw11-50",
-            "bwp-BW41",
-            "bw2-35",
-            "bw2-97"
-        ]
-    },
-    {
-        "Gothita": [
-            "bw11-69",
-            "bw2-43"
-        ]
-    },
-    {
-        "Gothorita": [
-            "bw11-71",
-            "bw2-45"
-        ]
-    },
-    {
-        "Gothitelle": [
-            "bw11-72",
-            "bw2-47"
-        ]
-    },
-    {
-        "Solosis": [
-            "bw11-73",
-            "bw3-50"
-        ]
-    },
-    {
-        "Duosion": [
-            "bw11-75",
-            "bw3-51"
-        ]
-    },
-    {
-        "Reuniclus": [
-            "bw11-76",
-            "bw3-52"
-        ]
-    },
-    {
-        "Landorus": [
-            "bw11-85",
-            "bwp-BW43",
-            "bw3-74"
-        ]
-    },
-    {
-        "Sewaddle": [
-            "bw11-9",
-            "bw3-1"
-        ]
-    },
-    {
-        "Cobalion": [
-            "bw11-91",
-            "bw3-100",
-            "bw3-84"
-        ]
-    },
-    {
-        "Meloetta-EX": [
-            "bw11-RC11",
-            "bw11-RC25"
-        ]
-    },
-    {
-        "Axew": [
-            "bwp-BW10",
-            "bwp-BW16"
-        ]
-    },
-    {
-        "Genesect": [
-            "bwp-BW101",
-            "bwp-BW99"
-        ]
-    },
-    {
-        "Pansage": [
-            "bwp-BW11",
-            "bwp-BW14"
-        ]
-    },
-    {
-        "Pidove": [
-            "bwp-BW15",
-            "bw2-80"
-        ]
-    },
-    {
-        "Crobat": [
-            "bwp-BW51",
-            "bw8-55"
-        ]
-    },
-    {
-        "Giratina": [
-            "bwp-BW74",
-            "bw8-62"
-        ]
-    },
-    {
-        "Porygon-Z": [
-            "bwp-BW84",
-            "bw10-74"
-        ]
-    },
-    {
-        "Gyarados-EX": [
-            "xy9-114",
-            "xy9-123",
-            "xy9-26"
-        ]
-    },
-    {
-        "M Gyarados-EX": [
-            "xy9-115",
-            "xy9-27"
-        ]
-    },
-    {
-        "Manaphy-EX": [
-            "xy9-116",
-            "xy9-32"
-        ]
-    },
-    {
-        "Espeon-EX": [
-            "xy9-117",
-            "xy9-52"
-        ]
-    },
-    {
-        "Darkrai-EX": [
-            "xy9-118",
-            "xy9-74"
-        ]
-    },
-    {
-        "Scizor-EX": [
-            "xy9-119",
-            "xy9-76"
-        ]
-    },
-    {
-        "M Scizor-EX": [
-            "xy9-120",
-            "xy9-77"
-        ]
-    },
-    {
-        "Ho-Oh-EX": [
-            "xy9-121",
-            "xy9-92"
-        ]
-    },
-    {
-        "Sceptile": [
-            "ex1-20",
-            "pop4-5"
         ]
     },
     {
@@ -4313,425 +4140,147 @@
         ]
     },
     {
-        "Golisopod-GX": [
-            "sm3-129",
-            "sm3-148",
-            "sm3-17"
+        "Sceptile": [
+            "pop4-5",
+            "ex1-20"
         ]
     },
     {
-        "Ho-Oh-GX": [
-            "sm3-131",
-            "sm3-150",
-            "sm3-21"
-        ]
-    },
-    {
-        "Salazzle-GX": [
-            "sm3-132",
-            "sm3-151",
-            "sm3-25"
-        ]
-    },
-    {
-        "Tapu Fini-GX": [
-            "sm3-133",
-            "sm3-152",
-            "sm3-39"
-        ]
-    },
-    {
-        "Necrozma-GX": [
-            "sm3-134",
-            "sm3-153",
-            "sm3-63"
-        ]
-    },
-    {
-        "Machamp-GX": [
-            "sm3-135",
-            "sm3-154",
-            "sm3-64"
-        ]
-    },
-    {
-        "Marshadow-GX": [
-            "sm3-137",
-            "sm3-156",
-            "sm3-80"
-        ]
-    },
-    {
-        "Alolan Muk-GX": [
-            "sm3-138",
-            "sm3-157",
-            "sm3-84"
-        ]
-    },
-    {
-        "Darkrai-GX": [
-            "sm3-139",
-            "sm3-158",
-            "sm3-88"
-        ]
-    },
-    {
-        "Gardevoir-GX": [
-            "sm3-140",
-            "sm3-159",
-            "sm3-93"
-        ]
-    },
-    {
-        "Noivern-GX": [
-            "sm3-141",
-            "sm3-160",
-            "sm3-99"
-        ]
-    },
-    {
-        "Dark Alakazam": [
-            "base5-1",
-            "base5-18"
-        ]
-    },
-    {
-        "Dark Machamp": [
-            "base5-10",
-            "base5-27"
-        ]
-    },
-    {
-        "Dark Magneton": [
-            "base5-11",
-            "base5-28"
-        ]
-    },
-    {
-        "Dark Vileplume": [
-            "base5-13",
-            "base5-30"
-        ]
-    },
-    {
-        "Dark Weezing": [
-            "base5-14",
-            "base5-31"
-        ]
-    },
-    {
-        "Dark Arbok": [
-            "base5-19",
-            "base5-2"
-        ]
-    },
-    {
-        "Dark Charizard": [
-            "base5-21",
-            "base5-4"
-        ]
-    },
-    {
-        "Dark Dugtrio": [
-            "base5-23",
-            "base5-6"
-        ]
-    },
-    {
-        "Dark Golbat": [
-            "base5-24",
-            "base5-7"
-        ]
-    },
-    {
-        "Dark Gyarados": [
-            "base5-25",
-            "base5-8"
-        ]
-    },
-    {
-        "Dark Hypno": [
-            "base5-26",
-            "base5-9"
-        ]
-    },
-    {
-        "Entei-GX": [
-            "sm35-10",
-            "sm35-71",
-            "sm35-74"
-        ]
-    },
-    {
-        "Raichu-GX": [
-            "sm35-29",
-            "sm35-75"
-        ]
-    },
-    {
-        "Mewtwo-GX": [
-            "sm35-39",
-            "sm35-72",
-            "sm35-76",
-            "sm35-78"
-        ]
-    },
-    {
-        "Articuno-EX": [
-            "bw8-132",
-            "bw8-25"
-        ]
-    },
-    {
-        "Cobalion-EX": [
-            "bw8-133",
-            "bw8-93"
-        ]
-    },
-    {
-        "Chinchou": [
-            "ex5-57",
-            "ex12-50"
+        "Squirtle": [
+            "pop4-14",
+            "ex4-46"
         ]
     },
     {
         "Ampharos": [
-            "ecard2-1",
-            "ecard2-151"
+            "pop7-1",
+            "dp3-1"
         ]
     },
     {
-        "Espeon": [
-            "ecard2-11",
-            "ecard2-159"
+        "Gallade": [
+            "pop7-2",
+            "dp3-6"
         ]
     },
     {
-        "Exeggutor": [
-            "ecard2-12",
-            "ecard2-160"
+        "Mothim": [
+            "pop7-5",
+            "dp3-33"
         ]
     },
     {
-        "Houndoom": [
-            "ecard2-15",
-            "ecard2-161"
+        "Flaaffy": [
+            "pop7-7",
+            "dp3-50"
         ]
     },
     {
-        "Arcanine": [
-            "ecard2-152",
-            "ecard2-2"
+        "Kirlia": [
+            "pop7-8",
+            "dp3-53"
         ]
     },
     {
-        "Ariados": [
-            "ecard2-153",
-            "ecard2-3"
+        "Stantler": [
+            "pop7-9",
+            "dp3-113"
         ]
     },
     {
-        "Azumarill": [
-            "ecard2-154",
-            "ecard2-4"
+        "Wormadam Sandy Cloak": [
+            "pop7-10",
+            "dp3-42"
         ]
     },
     {
-        "Bellossom": [
-            "ecard2-155",
-            "ecard2-5"
+        "Burmy Plant Cloak": [
+            "pop7-11",
+            "dp3-78"
         ]
     },
     {
-        "Blissey": [
-            "ecard2-156",
-            "ecard2-6"
+        "Burmy Sandy Cloak": [
+            "pop7-12",
+            "dp3-79"
         ]
     },
     {
-        "Electrode": [
-            "ecard2-157",
-            "ecard2-8"
+        "Corsola": [
+            "pop7-13",
+            "dp3-84"
         ]
     },
     {
-        "Jumpluff": [
-            "ecard2-163",
-            "ecard2-17"
+        "Mareep": [
+            "pop7-14",
+            "dp3-94"
         ]
     },
     {
-        "Kingdra": [
-            "ecard2-164",
-            "ecard2-19"
+        "Ralts": [
+            "pop7-15",
+            "dp3-102"
         ]
     },
     {
-        "Lanturn": [
-            "ecard2-165",
-            "ecard2-21"
+        "Sentret": [
+            "pop7-16",
+            "dp3-104"
         ]
     },
     {
-        "Magneton": [
-            "ecard2-166",
-            "ecard2-22"
-        ]
-    },
-    {
-        "Muk": [
-            "ecard2-167",
-            "ecard2-23"
-        ]
-    },
-    {
-        "Nidoking": [
-            "ecard2-168",
-            "ecard2-24"
-        ]
-    },
-    {
-        "Ninetales": [
-            "ecard2-169",
-            "ecard2-25"
-        ]
-    },
-    {
-        "Octillery": [
-            "ecard2-170",
-            "ecard2-26"
-        ]
-    },
-    {
-        "Scizor": [
-            "ecard2-171",
-            "ecard2-32"
-        ]
-    },
-    {
-        "Slowking": [
-            "ecard2-172",
-            "ecard2-34"
-        ]
-    },
-    {
-        "Steelix": [
-            "ecard2-173",
-            "ecard2-35"
-        ]
-    },
-    {
-        "Sudowoodo": [
-            "ecard2-174",
-            "ecard2-36"
-        ]
-    },
-    {
-        "Tentacruel": [
-            "ecard2-176",
-            "ecard2-38"
-        ]
-    },
-    {
-        "Togetic": [
-            "ecard2-177",
-            "ecard2-39"
-        ]
-    },
-    {
-        "Tyranitar": [
-            "ecard2-178",
-            "ecard2-40"
-        ]
-    },
-    {
-        "Umbreon": [
-            "ecard2-179",
-            "ecard2-41"
-        ]
-    },
-    {
-        "Victreebel": [
-            "ecard2-180",
-            "ecard2-42"
-        ]
-    },
-    {
-        "Vileplume": [
-            "ecard2-181",
-            "ecard2-43"
-        ]
-    },
-    {
-        "Zapdos": [
-            "ecard2-182",
-            "ecard2-44"
-        ]
-    },
-    {
-        "Heracross-EX": [
-            "xy3-105",
-            "xy3-4"
-        ]
-    },
-    {
-        "Seismitoad-EX": [
-            "xy3-106",
-            "xy3-20"
-        ]
-    },
-    {
-        "Lucario-EX": [
-            "xy3-107",
-            "xy3-54"
-        ]
-    },
-    {
-        "Dragonite-EX": [
-            "xy3-108",
-            "xy3-74"
-        ]
-    },
-    {
-        "M Heracross-EX": [
-            "xy3-112",
-            "xy3-5"
-        ]
-    },
-    {
-        "M Lucario-EX": [
-            "xy3-113",
-            "xy3-55"
+        "Spinda": [
+            "pop7-17",
+            "dp3-111"
         ]
     },
     {
         "Manectric-EX": [
-            "xy4-113",
-            "xy4-23"
+            "xy4-23",
+            "xy4-113"
+        ]
+    },
+    {
+        "M Manectric-EX": [
+            "xy4-24",
+            "xy4-24a"
         ]
     },
     {
         "Gengar-EX": [
-            "xy4-114",
-            "xy4-34"
+            "xy4-34",
+            "xy4-114"
         ]
     },
     {
         "Malamar-EX": [
-            "xy4-115",
-            "xy4-58"
+            "xy4-58",
+            "xy4-115"
+        ]
+    },
+    {
+        "Bronzong": [
+            "xy4-61",
+            "xyp-XY21"
+        ]
+    },
+    {
+        "Aegislash-EX": [
+            "xy4-65",
+            "xy4-65a"
         ]
     },
     {
         "Florges-EX": [
-            "xy4-116",
-            "xy4-67"
+            "xy4-67",
+            "xy4-116"
         ]
     },
     {
-        "Palkia-EX": [
-            "bw10-100",
-            "bw10-66"
+        "Virizion-EX": [
+            "bw10-9",
+            "bw10-96"
         ]
     },
     {
@@ -4753,69 +4302,306 @@
         ]
     },
     {
-        "Virizion-EX": [
-            "bw10-9",
-            "bw10-96"
+        "Palkia-EX": [
+            "bw10-66",
+            "bw10-100"
         ]
     },
     {
-        "Mewtwo-EX": [
-            "xy12-103",
-            "xy12-52"
+        "Exeggcute": [
+            "bw10-102",
+            "bw9-4"
         ]
     },
     {
-        "Pidgeot-EX": [
-            "xy12-104",
-            "xy12-64"
+        "Heatran-EX": [
+            "bw9-13",
+            "bw9-109"
         ]
     },
     {
-        "M Pidgeot-EX": [
-            "xy12-105",
-            "xy12-65"
+        "Latias-EX": [
+            "bw9-85",
+            "bw9-112"
         ]
     },
     {
-        "Dragonite-EX": [
-            "xy12-106",
-            "xy12-72"
+        "Latios-EX": [
+            "bw9-86",
+            "bw9-113"
         ]
     },
     {
-        "Gengar": [
-            "ecard3-10",
-            "ecard3-159"
+        "Tornadus-EX": [
+            "bw9-98",
+            "bw9-114"
         ]
     },
     {
-        "Gyarados": [
-            "ecard3-11",
-            "ecard3-160"
+        "Articuno-EX": [
+            "bw8-25",
+            "bw8-132"
         ]
     },
     {
-        "Houndoom": [
-            "ecard3-12",
-            "ecard3-161"
+        "Cobalion-EX": [
+            "bw8-93",
+            "bw8-133"
         ]
     },
     {
-        "Jolteon": [
-            "ecard3-13",
-            "ecard3-162"
+        "Delcatty": [
+            "ex16-8",
+            "ex1-5"
         ]
     },
     {
-        "Kabutops": [
-            "ecard3-14",
-            "ecard3-163"
+        "Gardevoir": [
+            "ex16-9",
+            "ex1-7"
         ]
     },
     {
-        "Ledian": [
-            "ecard3-15",
-            "ecard3-164"
+        "Slaking": [
+            "ex16-13",
+            "ex1-12"
+        ]
+    },
+    {
+        "Omastar": [
+            "ex16-20",
+            "ex2-19"
+        ]
+    },
+    {
+        "Wobbuffet": [
+            "ex16-24",
+            "ex2-26"
+        ]
+    },
+    {
+        "Combusken": [
+            "ex16-29",
+            "ex1-28"
+        ]
+    },
+    {
+        "Treecko": [
+            "xy5-6",
+            "xyp-XY36"
+        ]
+    },
+    {
+        "Trevenant-EX": [
+            "xy5-19",
+            "xy5-145"
+        ]
+    },
+    {
+        "Torchic": [
+            "xy5-25",
+            "xyp-XY37"
+        ]
+    },
+    {
+        "Camerupt-EX": [
+            "xy5-29",
+            "xy5-146"
+        ]
+    },
+    {
+        "Mudkip": [
+            "xy5-33",
+            "xyp-XY38"
+        ]
+    },
+    {
+        "Wailord-EX": [
+            "xy5-38",
+            "xy5-147"
+        ]
+    },
+    {
+        "Kyogre": [
+            "xy5-53",
+            "xyp-XY51"
+        ]
+    },
+    {
+        "Kyogre-EX": [
+            "xy5-54",
+            "xy5-148",
+            "xyp-XY41"
+        ]
+    },
+    {
+        "Primal Kyogre-EX": [
+            "xy5-55",
+            "xy5-149"
+        ]
+    },
+    {
+        "Groudon": [
+            "xy5-84",
+            "xyp-XY52"
+        ]
+    },
+    {
+        "Groudon-EX": [
+            "xy5-85",
+            "xy5-150",
+            "xyp-XY42"
+        ]
+    },
+    {
+        "Primal Groudon-EX": [
+            "xy5-86",
+            "xy5-151"
+        ]
+    },
+    {
+        "Sharpedo-EX": [
+            "xy5-91",
+            "xy5-152"
+        ]
+    },
+    {
+        "Aggron-EX": [
+            "xy5-93",
+            "xy5-153"
+        ]
+    },
+    {
+        "M Aggron-EX": [
+            "xy5-94",
+            "xy5-154"
+        ]
+    },
+    {
+        "Kingdra": [
+            "xy5-108",
+            "xyp-XY39"
+        ]
+    },
+    {
+        "Surfing Pikachu": [
+            "pl2-114",
+            "basep-28"
+        ]
+    },
+    {
+        "Thundurus-EX": [
+            "xy6-26",
+            "xy6-98"
+        ]
+    },
+    {
+        "Gallade-EX": [
+            "xy6-34",
+            "xy6-99"
+        ]
+    },
+    {
+        "M Gallade-EX": [
+            "xy6-35",
+            "xy6-100"
+        ]
+    },
+    {
+        "Latios-EX": [
+            "xy6-58",
+            "xy6-101",
+            "xyp-XY72"
+        ]
+    },
+    {
+        "M Latios-EX": [
+            "xy6-59",
+            "xy6-102"
+        ]
+    },
+    {
+        "Rayquaza-EX": [
+            "xy6-60",
+            "xyp-XY73"
+        ]
+    },
+    {
+        "Hydreigon-EX": [
+            "xy6-62",
+            "xy6-103"
+        ]
+    },
+    {
+        "Altaria": [
+            "xy6-74",
+            "xyp-XY46"
+        ]
+    },
+    {
+        "Rayquaza-EX": [
+            "xy6-75",
+            "xy6-104"
+        ]
+    },
+    {
+        "M Rayquaza-EX": [
+            "xy6-76",
+            "xy6-105"
+        ]
+    },
+    {
+        "Shaymin-EX": [
+            "xy6-77",
+            "xy6-77a",
+            "xy6-106"
+        ]
+    },
+    {
+        "Entei-GX": [
+            "sm35-10",
+            "sm35-71",
+            "sm35-74"
+        ]
+    },
+    {
+        "Raichu-GX": [
+            "sm35-29",
+            "sm35-75",
+            "smp-SM90"
+        ]
+    },
+    {
+        "Mewtwo-GX": [
+            "sm35-39",
+            "sm35-72",
+            "sm35-76",
+            "sm35-78"
+        ]
+    },
+    {
+        "Latios": [
+            "sm35-41",
+            "smp-SM88"
+        ]
+    },
+    {
+        "Marshadow": [
+            "sm35-45",
+            "smp-SM85"
+        ]
+    },
+    {
+        "Zorua": [
+            "sm35-52",
+            "smp-SM83"
+        ]
+    },
+    {
+        "Zoroark-GX": [
+            "sm35-53",
+            "sm35-77",
+            "smp-SM84"
         ]
     },
     {
@@ -4867,9 +4653,45 @@
         ]
     },
     {
+        "Gengar": [
+            "ecard3-159",
+            "ecard3-10"
+        ]
+    },
+    {
+        "Gyarados": [
+            "ecard3-160",
+            "ecard3-11"
+        ]
+    },
+    {
+        "Houndoom": [
+            "ecard3-161",
+            "ecard3-12"
+        ]
+    },
+    {
+        "Jolteon": [
+            "ecard3-162",
+            "ecard3-13"
+        ]
+    },
+    {
+        "Kabutops": [
+            "ecard3-163",
+            "ecard3-14"
+        ]
+    },
+    {
+        "Ledian": [
+            "ecard3-164",
+            "ecard3-15"
+        ]
+    },
+    {
         "Machamp": [
-            "ecard3-16",
-            "ecard3-165"
+            "ecard3-165",
+            "ecard3-16"
         ]
     },
     {
@@ -4963,27 +4785,416 @@
         ]
     },
     {
+        "Yanmega": [
+            "xy11-7",
+            "xyp-XY144"
+        ]
+    },
+    {
+        "Volcanion": [
+            "xy11-25",
+            "xyp-XY145"
+        ]
+    },
+    {
+        "Volcanion-EX": [
+            "xy11-26",
+            "xy11-107",
+            "xy11-115",
+            "xyp-XY173"
+        ]
+    },
+    {
+        "Clawitzer": [
+            "xy11-34",
+            "xyp-XY146"
+        ]
+    },
+    {
         "Steelix-EX": [
-            "xy11-108",
-            "xy11-67"
+            "xy11-67",
+            "xy11-108"
         ]
     },
     {
         "M Steelix-EX": [
-            "xy11-109",
-            "xy11-68"
+            "xy11-68",
+            "xy11-109"
+        ]
+    },
+    {
+        "Magearna-EX": [
+            "xy11-75",
+            "xy11-110",
+            "xyp-XY175"
         ]
     },
     {
         "Gardevoir-EX": [
+            "xy11-78",
             "xy11-111",
-            "xy11-78"
+            "xy11-116"
         ]
     },
     {
         "M Gardevoir-EX": [
-            "xy11-112",
-            "xy11-79"
+            "xy11-79",
+            "xy11-112"
+        ]
+    },
+    {
+        "Xerneas": [
+            "xy11-81",
+            "xyp-XY05",
+            "xy1-96"
+        ]
+    },
+    {
+        "Pikachu": [
+            "smp-SM04",
+            "smp-SM76",
+            "smp-SM81"
+        ]
+    },
+    {
+        "Togedemaru": [
+            "smp-SM09",
+            "sm1-53"
+        ]
+    },
+    {
+        "Shiinotic": [
+            "smp-SM10",
+            "sm1-17"
+        ]
+    },
+    {
+        "Bruxish": [
+            "smp-SM11",
+            "sm1-48"
+        ]
+    },
+    {
+        "Passimian": [
+            "smp-SM12",
+            "sm1-73"
+        ]
+    },
+    {
+        "Oranguru": [
+            "smp-SM13",
+            "sm1-113"
+        ]
+    },
+    {
+        "Solgaleo-GX": [
+            "smp-SM16",
+            "sm1-89",
+            "sm1-143",
+            "sm1-155"
+        ]
+    },
+    {
+        "Lunala-GX": [
+            "smp-SM17",
+            "sm1-66",
+            "sm1-141",
+            "sm1-153"
+        ]
+    },
+    {
+        "Rowlet": [
+            "smp-SM22",
+            "sm1-9"
+        ]
+    },
+    {
+        "Litten": [
+            "smp-SM23",
+            "sm1-24"
+        ]
+    },
+    {
+        "Popplio": [
+            "smp-SM24",
+            "sm1-39"
+        ]
+    },
+    {
+        "Tsareena": [
+            "smp-SM26",
+            "sm1-20"
+        ]
+    },
+    {
+        "Vikavolt": [
+            "smp-SM28",
+            "sm1-52"
+        ]
+    },
+    {
+        "Tapu Koko": [
+            "smp-SM30",
+            "smp-SM31"
+        ]
+    },
+    {
+        "Espeon-GX": [
+            "smp-SM35",
+            "sm1-61",
+            "sm1-140",
+            "sm1-152"
+        ]
+    },
+    {
+        "Umbreon-GX": [
+            "smp-SM36",
+            "sm1-80",
+            "sm1-142",
+            "sm1-154"
+        ]
+    },
+    {
+        "Cosmog": [
+            "smp-SM42",
+            "sm1-64"
+        ]
+    },
+    {
+        "Decidueye": [
+            "smp-SM55",
+            "sm1-11"
+        ]
+    },
+    {
+        "Pheromosa-GX": [
+            "smp-SM66",
+            "sm5-140"
+        ]
+    },
+    {
+        "Celesteela-GX": [
+            "smp-SM67",
+            "sm5-144"
+        ]
+    },
+    {
+        "Xurkitree-GX": [
+            "smp-SM68",
+            "sm5-142"
+        ]
+    },
+    {
+        "Lurantis-GX": [
+            "sm1-15",
+            "sm1-138",
+            "sm1-150"
+        ]
+    },
+    {
+        "Lapras-GX": [
+            "sm1-35",
+            "sm1-139",
+            "sm1-151"
+        ]
+    },
+    {
+        "Cosmoem": [
+            "sm1-65",
+            "sm5-61"
+        ]
+    },
+    {
+        "Tauros-GX": [
+            "sm1-100",
+            "sm1-144",
+            "sm1-156"
+        ]
+    },
+    {
+        "Gumshoos-GX": [
+            "sm1-110",
+            "sm1-145",
+            "sm1-157"
+        ]
+    },
+    {
+        "Articuno": [
+            "pl3-148",
+            "basep-22"
+        ]
+    },
+    {
+        "Zapdos": [
+            "pl3-150",
+            "basep-23"
+        ]
+    },
+    {
+        "Dark Alakazam": [
+            "base5-1",
+            "base5-18"
+        ]
+    },
+    {
+        "Dark Arbok": [
+            "base5-2",
+            "base5-19"
+        ]
+    },
+    {
+        "Dark Charizard": [
+            "base5-4",
+            "base5-21"
+        ]
+    },
+    {
+        "Dark Dugtrio": [
+            "base5-6",
+            "base5-23"
+        ]
+    },
+    {
+        "Dark Golbat": [
+            "base5-7",
+            "base5-24"
+        ]
+    },
+    {
+        "Dark Gyarados": [
+            "base5-8",
+            "base5-25"
+        ]
+    },
+    {
+        "Dark Hypno": [
+            "base5-9",
+            "base5-26"
+        ]
+    },
+    {
+        "Dark Machamp": [
+            "base5-10",
+            "base5-27"
+        ]
+    },
+    {
+        "Dark Magneton": [
+            "base5-11",
+            "base5-28"
+        ]
+    },
+    {
+        "Dark Vileplume": [
+            "base5-13",
+            "base5-30"
+        ]
+    },
+    {
+        "Dark Weezing": [
+            "base5-14",
+            "base5-31"
+        ]
+    },
+    {
+        "Leafeon-GX": [
+            "sm5-13",
+            "sm5-139"
+        ]
+    },
+    {
+        "Glaceon-GX": [
+            "sm5-39",
+            "sm5-141"
+        ]
+    },
+    {
+        "Dawn Wings Necrozma-GX": [
+            "sm5-63",
+            "sm5-143"
+        ]
+    },
+    {
+        "Dusk Mane Necrozma-GX": [
+            "sm5-90",
+            "sm5-145"
+        ]
+    },
+    {
+        "Dialga-GX": [
+            "sm5-100",
+            "sm5-146"
+        ]
+    },
+    {
+        "Palkia-GX": [
+            "sm5-101",
+            "sm5-147"
+        ]
+    },
+    {
+        "Mewtwo": [
+            "basep-3",
+            "basep-14"
+        ]
+    },
+    {
+        "Mew": [
+            "basep-8",
+            "basep-9"
+        ]
+    },
+    {
+        "Xerneas-EX": [
+            "xyp-XY07",
+            "xyp-XY149",
+            "xy1-97",
+            "xy1-146"
+        ]
+    },
+    {
+        "Yveltal-EX": [
+            "xyp-XY08",
+            "xyp-XY150",
+            "xyp-XY150a",
+            "xy1-79",
+            "xy1-144"
+        ]
+    },
+    {
+        "Rayquaza-EX": [
+            "xyp-XY66",
+            "xyp-XY69"
+        ]
+    },
+    {
+        "Jirachi": [
+            "xyp-XY67",
+            "xyp-XY67a"
+        ]
+    },
+    {
+        "Pikachu-EX": [
+            "xyp-XY84",
+            "xyp-XY124"
+        ]
+    },
+    {
+        "Mewtwo": [
+            "xyp-XY100",
+            "xyp-XY101"
+        ]
+    },
+    {
+        "Emolga-EX": [
+            "xy1-46",
+            "xy1-143"
+        ]
+    },
+    {
+        "Skarmory-EX": [
+            "xy1-80",
+            "xy1-145"
         ]
     }
 ]

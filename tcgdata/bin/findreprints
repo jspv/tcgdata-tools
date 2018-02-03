@@ -1,0 +1,4 @@
+#!/usr/bin/env python3
+from tcgdata import find_reprints
+if __name__ == '__main__':
+    find_reprints.main()

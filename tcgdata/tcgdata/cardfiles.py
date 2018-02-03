@@ -8,11 +8,8 @@ import os
 import sys
 import re
 
-from loadcards import x_to_times, quote_to_apostrophe
-
-# Note: not using OrderedDict, but leaving remenants of it here in cardset
-# I need to add it back in
-# from collections import OrderedDict
+# To be able to sort the dictionaries before writing the json
+from collections import OrderedDict
 
 logger = logging.getLogger(__name__)
 
@@ -84,14 +81,22 @@ def main():
 
     # Apply filters
     for card in cards:
-        # sort_energy(card=card, dont_sort_energy=formats['dont_sort_energy'])
+        sort_energy(card=card, dont_sort_energy=formats['dont_sort_energy'])
         apostrophe_to_quotes(item=card)
+        # quote_to_apostrophe(item=card)
+        x_to_times(item=card)
+        clean_attack_text(item=card)
 
-    writefiles(args.carddir[0], cards, formats['setfiles'])
+    writefiles(args.carddir[0], cards,
+               formats['setfiles'], formats['keyorder'])
 
 
 def readfiles(dirpath, setfiles):
-    """ read set json files """
+    """ read set json files
+    dirpath - folder where card files are restored
+    setfiles - list of files from formats.com
+
+    """
     # List to hold the cards
     cards = []
 
@@ -116,7 +121,7 @@ def readfiles(dirpath, setfiles):
     return cards
 
 
-def writefiles(dirpath, cards, setfiles):
+def writefiles(dirpath, cards, setfiles, sortorder=None):
     """ write set json files """
 
     # OK, time to reverse the flows
@@ -127,6 +132,14 @@ def writefiles(dirpath, cards, setfiles):
 
     # Populate cards into the right lists
     for card in cards:
+        if sortorder:
+            try:
+                card = sortdict(card, sortorder)
+            except Exception as e:
+                print('Exception trying to sort card keys prior to writing')
+                print('Card = {}'.format(card['id']))
+                raise
+
         card_output[card['setCode']].append(card)
 
     # write the files
@@ -135,6 +148,65 @@ def writefiles(dirpath, cards, setfiles):
         with open(dirpath + set_file_name, 'w') as set_file_handler:
             print(json.dumps(card_output[setcode], indent=2,
                              ensure_ascii=False), file=set_file_handler)
+
+
+def sortdict(dictionary, sortorder, prefix='.'):
+    """ return an OrderedDict using the order specified in sortorder
+
+    sortorder needs to be a list or can be a dict of lists.  If a dict, it has
+    to be able to reference the list as sortorder[prefix]
+
+    if sortorder is a list and not a dict, it will not recurse.  If it is a
+    dict, it will check for dicts and lists containind dicts, and will recurse
+    into them if found.
+
+    Exception raised if there are any keys in dict which are not in
+    sortorder.  When ordering dictionaries in dictionaries (recursive)
+    the prefix should be passed.  (see formats.json)
+    """
+
+    # Check each value, see if it's a dict or a list containing a dict
+    for key in dictionary:
+        value = dictionary.get(key)
+
+        # check if it is a l ist of dictionaries or a subdict and sortorder is
+        # also a dictthen recurse
+        if isinstance(sortorder, dict):
+            # Build next prefix in case it's needed
+            if prefix.endswith('.'):
+                nextprefix = prefix + key
+            else:
+                nextprefix = prefix + '.' + key
+            if isinstance(value, list):
+                for item in value:
+                    if isinstance(item, dict):
+                        item = sortdict(item, sortorder, prefix=nextprefix)
+
+            # if value is a dictionary and sortorder is also a dict, recurse
+            if isinstance(value, dict):
+                value = sortdict(value, sortorder, prefix=nextprefix)
+
+            # check to make sure key esists in sortorder
+            if key not in sortorder[prefix]:
+                raise Exception(
+                    'Key {} not found in sort list'
+                    ' {}'.format(key, sortorder[prefix]))
+        else:
+            if key not in sortorder:
+                raise Exception(
+                    'Key {} not found in sort list {}'.format(key, sortorder))
+
+    # we're ready to output, if a dict, get the actual sortorder
+    if isinstance(sortorder, dict):
+        sortorder = sortorder[prefix]
+
+    newdict = OrderedDict()
+    # Write all the keys
+    for key in sortorder:
+        if key in dictionary:
+            newdict[key] = dictionary[key]
+
+    return newdict
 
 
 def apostrophe_to_quotes(**kwargs):
@@ -168,6 +240,104 @@ def apostrophe_to_quotes(**kwargs):
                         logger.debug('replaced [{}]'.format(d[i]))
             if isinstance(v, dict):
                 apostrophe_to_quotes(item=v)
+
+
+def quote_to_apostrophe(**kwargs):
+    """ Change single quotes to apostrophe characters
+    replace 's and 't with ’s and ’t
+
+    """
+    patterns = [
+        (r'\'s\b', r'’s'),
+        (r'\'t\b', r'’t')
+    ]
+
+    d = kwargs['item']
+    if isinstance(d, dict):
+        for k, v in list(d.items()):
+            if isinstance(v, list) or isinstance(v, dict):
+                quote_to_apostrophe(item=v)
+            if isinstance(v, str):
+                for pattern, replacement in patterns:
+                    if re.search(pattern, v):
+                        logger.debug('replacing[{}]'.format(d[k]))
+                        v = d[k] = re.sub(pattern, replacement, v)
+                        logger.debug('replaced [{}]'.format(d[k]))
+    elif isinstance(d, list):
+        for i, v in enumerate(d):
+            if isinstance(v, str):
+                for pattern, replacement in patterns:
+                    if re.search(pattern, v):
+                        logger.debug('replacing[{}]'.format(d[i]))
+                        v = d[i] = re.sub(pattern, replacement, v)
+                        logger.debug('replaced [{}]'.format(d[i]))
+            if isinstance(v, dict):
+                quote_to_apostrophe(item=v)
+
+
+def x_to_times(**kwargs):
+    """ Change where the letter x was used when it should have been \xd7
+
+    Patterns:
+
+    Change x to 'times' when letter x is used in x+d (e.g. x2) or d+ (e.g. 20x)
+            (r'\b(\d+)x\b', r'\1×'),
+            (r'\bx(\d+)\b', r'×\1')
+    \b matches empty string at beginning or end of a word
+
+    """
+    patterns = [
+        (r'\b(\d+)x\b', r'\1×'),
+        (r'\bx(\d+)\b', r'×\1')
+    ]
+
+    d = kwargs['item']
+    if isinstance(d, dict):
+        for k, v in list(d.items()):
+            if isinstance(v, list) or isinstance(v, dict):
+                x_to_times(item=v)
+            if isinstance(v, str):
+                for pattern, replacement in patterns:
+                    if re.search(pattern, v):
+                        logger.debug('replacing[{}]'.format(d[k]))
+                        v = d[k] = re.sub(pattern, replacement, v)
+                        logger.debug('replaced [{}]'.format(d[k]))
+    elif isinstance(d, list):
+        for i, v in enumerate(d):
+            if isinstance(v, str):
+                for pattern, replacement in patterns:
+                    if re.search(pattern, v):
+                        logger.debug('replacing[{}]'.format(d[i]))
+                        v = d[i] = re.sub(pattern, replacement, v)
+                        logger.debug('replaced [{}]'.format(d[i]))
+            if isinstance(v, dict):
+                x_to_times(item=v)
+
+
+def clean_attack_text(**kwargs):
+    """ Fix common errors in attack text
+
+    Patterns:
+    Change x to 'times' when letter x is used in x+d (e.g. x2) or d+ (e.g. 20x)
+            (r'\b(\d+)x\b', r'\1×'),
+            (r'\bx(\d+)\b', r'×\1')
+
+    """
+    patterns = [
+        (r'^\(\d+×\)\s*', r''),
+        (r'^\(\d+\+\)\s*', r'')
+    ]
+
+    item = kwargs['item']
+    if item.get('attacks'):
+        for attack in item['attacks']:
+            if attack.get('text'):
+                for pattern, replacement in patterns:
+                    if re.search(pattern, attack['text']):
+                        logger.debug('replacing[{}]'.format(attack['text']))
+                        attack['text'] = re.sub(
+                            pattern, replacement, attack['text'])
+                        logger.debug('replaced [{}]'.format(attack['text']))
 
 
 def sort_energy(**kwargs):
@@ -216,12 +386,6 @@ def sort_energy(**kwargs):
                         attack['cost'][i] = 'Grass'
                     if energy_card == 'Dark':
                         attack['cost'][i] = 'Darkness'
-
-                # # Check to see if a multi-type attack (debugging)
-                # energy_set = set(attack['cost'])
-                # energy_set.discard('Colorless')
-                # if len(energy_set) > 1:
-                #     print('CardId = {} in set {}'.format(card['id'], card['set']))
 
                 if card['setCode'] in kwargs['dont_sort_energy']:
                     attack['cost'].sort(key=_colorless_order)
