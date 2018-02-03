@@ -333,8 +333,8 @@
       "attacks",
       "weaknesses",
       "resistances",
-      "nationalPokedexNumber",
       "imageUrlHiRes",
+      "nationalPokedexNumber",
       "evolvesTo"
     ],
     ".ability": [
