@@ -51,7 +51,8 @@ def main():
     args = parser.parse_args()
 
     # Set log level and configure log formatter
-    logger.setLevel(args.loglevel)
+    if args.loglevel:
+        logger.setLevel(args.loglevel)
     logFormatter = logging.Formatter(
         '%(asctime)s [%(filename)s] [%(funcName)s] [%(levelname)s] ' +
         '[%(lineno)d] %(message)s')
@@ -319,9 +320,8 @@ def clean_attack_text(**kwargs):
     """ Fix common errors in attack text
 
     Patterns:
-    Change x to 'times' when letter x is used in x+d (e.g. x2) or d+ (e.g. 20x)
-            (r'\b(\d+)x\b', r'\1×'),
-            (r'\bx(\d+)\b', r'×\1')
+    Remove when attack damage is included in the attack text e.g. "(20+) This
+        attack does 20 damage plus ..."
 
     """
     patterns = [
