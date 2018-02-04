@@ -170,3 +170,8 @@ tcgdata/bin/tcgdata
 
 # Ignore local database
 local_dynamodb
+pokemon-tcg-data
+
+
+# Ignore backups
+*.bak

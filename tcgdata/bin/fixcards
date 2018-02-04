@@ -1,0 +1,4 @@
+#!/usr/bin/env python3
+from tcgdata import cardfiles
+if __name__ == '__main__':
+    cardfiles.main()

@@ -46,7 +46,8 @@ def main():
     parser.add_argument('--carddir', nargs=1, required=True,
                         help='file to load')
     parser.add_argument('--formats', nargs=1, type=argparse.FileType('r'),
-                        required=True, help='formats json file')
+                        required=False, default='formats.json',
+                        help='formats json file')
     args = parser.parse_args()
 
     # Set log level and configure log formatter
