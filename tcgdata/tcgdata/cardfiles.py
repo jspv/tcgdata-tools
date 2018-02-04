@@ -11,21 +11,20 @@ import re
 # To be able to sort the dictionaries before writing the json
 from collections import OrderedDict
 
+# Initialise the logger
 logger = logging.getLogger(__name__)
+# Custome logfilter for selective debug messages
 
-# # Set log level and configure log formatter of the *root* logger
-# rootlogger = logging.getLogger()
-# logFormatter = logging.Formatter(
-#     '%(asctime)s [%(filename)s] [%(funcName)s] [%(levelname)s] ' +
-#     '[%(lineno)d] %(message)s')
-# # clear existing handlers (pythonista)
-# rootlogger.handlers = []
-#
-# # configure stream handler and add it to the root logger
-# consoleHandler = logging.StreamHandler()
-# consoleHandler.setFormatter(logFormatter)
-# rootlogger.addHandler(consoleHandler)
-# rootlogger.setLevel(args.deeploglevel)
+
+class debugLogFilter(logging.Filter):
+    def __init__(self, funclist):
+        self.funclist = funclist
+
+    def filter(self, rec):
+        if rec.levelno == logging.DEBUG:
+            return rec.funcName in self.funclist
+        return True
+
 
 # List to hold cards
 cards = []
@@ -35,35 +34,59 @@ def main():
     # Structure to hold cards
     global cards
 
-    parser = argparse.ArgumentParser()
-    parser.add_argument("-v", "--verbose", action="store_const",
-                        help="increase output verbosity for local functions",
-                        dest='loglevel', const=logging.INFO)
-    parser.add_argument('-d', '--debug', action="store_const",
-                        help="Set debug for local functions",
-                        dest="loglevel", const=logging.DEBUG,
-                        default=logging.WARNING)
+    parser = argparse.ArgumentParser(description='Normalize TCG json files')
+    mgroup = parser.add_mutually_exclusive_group()
+    mgroup.add_argument("-v", "--verbosity", action="count",
+                        help="increase output verbosity. -vv = DEBUG",
+                        default=0)
+    mgroup.add_argument('-d', '--debug', nargs='+',
+                        help="Set debug for specific local functions, verbose"
+                        " for everything else")
     parser.add_argument('--carddir', nargs=1, required=True,
-                        help='file to load')
+                        help='directory of the files to read and write')
     parser.add_argument('--formats', nargs=1, type=argparse.FileType('r'),
                         required=False, default='formats.json',
                         help='formats json file')
     args = parser.parse_args()
 
     # Set log level and configure log formatter
-    if args.loglevel:
-        logger.setLevel(args.loglevel)
-    logFormatter = logging.Formatter(
-        '%(asctime)s [%(filename)s] [%(funcName)s] [%(levelname)s] ' +
-        '[%(lineno)d] %(message)s')
+    # *Loggers* expose the interface that application code directly uses.
+    # *Handlers* send the log records (created by loggers) to the appropriate
+    # destination.
+    # *Filters* provide a finer grained facility for determining which log
+    # records to output.
+    # *Formatters*  specify the layout of log records in the final output.
+
+    if args.verbosity > 1:
+        logger.setLevel(logging.DEBUG)
+    elif args.verbosity == 1:
+        logger.setLevel(logging.INFO)
+    else:
+        logger.setLevel(logging.WARNING)
+
+    #
+    # Create Log Handler
+    #
 
     # clear existing handlers (pythonista)
     logger.handlers = []
+    logFormatter = logging.Formatter(
+        '%(asctime)s [%(filename)s] [%(funcName)s] [%(levelname)s] ' +
+        '[%(lineno)d] %(message)s')
 
     # configure stream handler (this is what prints to the console)
     consoleHandler = logging.StreamHandler()
     consoleHandler.setFormatter(logFormatter)
     logger.addHandler(consoleHandler)
+
+    # Set up filter if debug was chosen
+    if args.debug:
+        logger.setLevel(logging.DEBUG)
+        logger.addFilter(debugLogFilter(args.debug))
+
+    #
+    # Prep done, start the work
+    #
 
     # Check the carddir
     if not os.path.isdir(args.carddir[0]):
@@ -77,6 +100,7 @@ def main():
     # Check formats file
     if os.path.isfile(args.formats[0].name):
         formats = json.load(args.formats[0])
+        logger.info('Loaded formats file %s', args.formats[0].name)
 
     cards = readfiles(args.carddir[0], formats['setfiles'])
     logger.info('Loaded {} cards'.format(len(cards)))
