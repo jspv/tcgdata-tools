@@ -164,6 +164,7 @@ ENV/
 
 # Using separate repository here
 tcgdata/static/images/
+tcgdata/tcgdata/static/images
 
 # Ignore symlink used to find the module in bin
 tcgdata/bin/tcgdata
