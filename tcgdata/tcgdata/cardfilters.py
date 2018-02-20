@@ -201,3 +201,8 @@ def add_converted_reteat_cost(**kwargs):
     card = kwargs['card']
     if card.get('retreatCost'):
         card['convertedRetreatCost'] = len(card['retreatCost'])
+        return
+
+    # Check if a Pokémon, if so, set convertedRetreatCost to 0
+    if card['supertype'] == 'Pokémon':
+        card['convertedRetreatCost'] = 0

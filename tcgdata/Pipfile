@@ -13,6 +13,7 @@ fuzzywuzzy = "*"
 pokemontcgsdk = "*"
 "urllib3" = "*"
 python-levenshtein = "*"
+verbosity = "*"
 
 
 [dev-packages]

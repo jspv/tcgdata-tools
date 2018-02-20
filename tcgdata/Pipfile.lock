@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "42792a36858691fd72b0f3e327bd0e9f1ae2b3aedd39a4704fb69ed859b20441"
+            "sha256": "87b480f6fe7bb9fd42f9921525ed98b2c5e5709b824698a8436b8a0155924e5d"
         },
         "host-environment-markers": {
             "implementation_name": "cpython",
@@ -31,17 +31,17 @@
     "default": {
         "boto3": {
             "hashes": [
-                "sha256:49bda3ac6e69c2d0a34c37fc4ec47efd73e5f5cf86e34524b1918857aa74d797",
-                "sha256:5430b5cd532fe56ccc9eaf1ed433ac74805811b931ae1e44eb896af98a1297f0"
+                "sha256:8db0b63e0bdf0b188803a4a793a0779369d7b08e45758d0fe0ac610d124bc019",
+                "sha256:0591da93d0c5e8fda7f032cd3e175e93ab0baf7b5174e07aee92b48baeb5582f"
             ],
-            "version": "==1.5.22"
+            "version": "==1.5.32"
         },
         "botocore": {
             "hashes": [
-                "sha256:a91430f0bfbf7c13edc474c3f0d46449108aaebcd6d8e82a5bf9aebe17b42258",
-                "sha256:b2c9e0fd6d14910f759a33c19f8315dddedbb3c5569472b7be7ceed4f001a675"
+                "sha256:52bc09d2f4439bb89ec9606ad652dedeb5bfe2c4db56f27417f4d2e5e50e4e79",
+                "sha256:d798b9aa32e070f6483a9723fb3296da546a2d9d09f17bb62adc57eb5771aaa6"
             ],
-            "version": "==1.8.36"
+            "version": "==1.8.46"
         },
         "click": {
             "hashes": [
@@ -126,10 +126,10 @@
         },
         "s3transfer": {
             "hashes": [
-                "sha256:23c156ca4d64b022476c92c44bf938bef71af9ce0dcd8fd6585e7bce52f66e47",
-                "sha256:10891b246296e0049071d56c32953af05cea614dca425a601e4c0be35990121e"
+                "sha256:c7a9ec356982d5e9ab2d4b46391a7d6a950e2b04c472419f5fdec70cc0ada72f",
+                "sha256:90dc18e028989c609146e241ea153250be451e05ecc0c2832565231dacdf59c1"
             ],
-            "version": "==0.1.12"
+            "version": "==0.1.13"
         },
         "six": {
             "hashes": [
@@ -144,6 +144,13 @@
                 "sha256:cc44da8e1145637334317feebd728bd869a35285b93cbb4cca2577da7e62db4f"
             ],
             "version": "==1.22"
+        },
+        "verbosity": {
+            "hashes": [
+                "sha256:b36a018a258ce2d4f9b594ff35d87217275f73dcc22c2572d5f6c81a4d3a4c5f",
+                "sha256:50db514b5efa7102109342ce218fac1ca797182a3f60e4b8c1ae8fee4d825ef4"
+            ],
+            "version": "==0.1"
         },
         "werkzeug": {
             "hashes": [
