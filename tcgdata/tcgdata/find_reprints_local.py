@@ -14,15 +14,9 @@ from fuzzywuzzy import fuzz
 from tcgdata.forms import Form, create_compare_form
 from tcgdata.forms import display_cards, review_cards_manually
 from tcgdata.cardfiles import readfiles, writefiles
+import pylogging
 
 logger = logging.getLogger(__name__)
-# trootlogger=logging.getLogger()
-# print(trootlogger)
-# trootlogger.setLevel(logging.DEBUG)
-
-# logger = logging.getLogger()
-# logging.getLogger('botocore').setLevel(logging.WARNING)
-# logging.getLogger('boto3').setLevel(logging.WARNING)
 
 # Nasty Globals
 errorlist = []
@@ -42,70 +36,35 @@ def main():
     global nomatchlist
     global forcematchlist
     global reprintlist
-    # webtest()
-    # builtins.wait("waiting")
+
     parser = argparse.ArgumentParser()
-    parser.add_argument('--easy', '-e', action='store_true',
-                        help='find easy matches only', required=False)
-    # parser.add_argument('--reprintsfile', '-rf', nargs=1,
-    #                     type=argparse.FileType('w'),
-    #                     default=[sys.stdout], required=False,
-    #                     help='load then output reprints to file')
-    parser.add_argument('--reprintsfile', nargs=1, default=['reprints.json'],
-                        required=False, help='output reprints to file')
-    parser.add_argument('--startindex', nargs=1, type=int, required=False,
-                        help='force start at a specified index (dangerous)')
-    parser.add_argument('--forcematchfile', nargs=1, default=['forced.json'],
-                        help='known reprints with negligible differences')
-    parser.add_argument('--errorfile', nargs=1, default=['errors.json'],
-                        help='override errorfile.json file')
-    parser.add_argument('--nomatchfile', nargs=1, default=['nomatches.json'],
-                        help='override nomatches.json file')
-    parser.add_argument('--formats', nargs=1, type=argparse.FileType('r'),
-                        required=False, default='formats.json',
-                        help='formats json file')
-    parser.add_argument('--carddir', nargs=1, required=True,
-                        help='file to load')
     parser.add_argument('--hard', action='store_true',
                         help='find hard matches', required=False)
+    parser.add_argument('--easy', '-e', action='store_true',
+                        help='find easy matches only', required=False)
+    parser.add_argument('--carddir', required=True,
+                        help='file to load')
+    parser.add_argument('--reprintsfile', default='reprints.json',
+                        required=False, help='output reprints to file')
+    parser.add_argument('--startindex', type=int, required=False,
+                        help='force start at a specified index (dangerous)')
+    parser.add_argument('--forcematchfile', default='forced.json',
+                        help='known reprints with negligible differences')
+    parser.add_argument('--errorfile', default='errors.json',
+                        help='override errorfile.json file')
+    parser.add_argument('--nomatchfile', default='nomatches.json',
+                        help='override nomatches.json file')
+    parser.add_argument('--formatsfile', type=argparse.FileType('r'),
+                        required=False, default='formats.json',
+                        help='formats json file')
 
-    parser.add_argument('-d', '--debug', action="store_const",
-                        help="Set debug for local functions",
-                        dest="loglevel", const=logging.DEBUG,
-                        default=logging.WARNING)
-    parser.add_argument("-v", "--verbose", action="store_const",
-                        help="increase output verbosity for local functions",
-                        dest='loglevel', const=logging.INFO)
-    parser.add_argument('-dd', '--deepdebug', action="store_const",
-                        help="Print lots of debugging statements",
-                        dest="deeploglevel", const=logging.DEBUG,
-                        default=logging.WARNING)
-    parser.add_argument("-vv", "--deepverbose", action="store_const",
-                        help="increase output verbosity",
-                        dest='deeploglevel', const=logging.INFO)
-
+    # add logging arguments
+    pylogging.add_arguments(parser)
     args = parser.parse_args()
 
-    # Set log level and configure log formatter of the *root* logger
-    rootlogger = logging.getLogger()
-    logFormatter = logging.Formatter(
-        '%(asctime)s [%(filename)s] [%(funcName)s] [%(levelname)s] ' +
-        '[%(lineno)d] %(message)s')
-    # clear existing handlers (pythonista)
-    rootlogger.handlers = []
-
-    # configure stream handler and add it to the root logger
-    consoleHandler = logging.StreamHandler()
-    consoleHandler.setFormatter(logFormatter)
-    rootlogger.addHandler(consoleHandler)
-    rootlogger.setLevel(args.deeploglevel)
-
-    # configure local package logging.  This file's logger (__name__) will be
-    # in the format of package.name, the root logger controls all logging, so
-    # if just want the local package, we can grab the first token in
-    # package.name
-    if args.deeploglevel != args.loglevel:
-        logging.getLogger(__name__.split('.')[0]).setLevel(args.loglevel)
+    # initialize logging handle logging arguments
+    pylogging.initialize(logger)
+    pylogging.handle_arguments(args, logger=logger)
 
     if args.hard and args.easy:
         parser.error("--easy and --hard are mutually exclusive")
@@ -116,33 +75,37 @@ def main():
     if args.startindex and not args.reprintsfile:
         parser.error("--startindex requires --reprintfile")
         sys.exit(2)
-    if args.startindex and not os.path.isfile(args.reprintsfile[0]):
+    if args.startindex and not os.path.isfile(args.reprintsfile):
         parser.error(
             'reprintsfile \'{}\' must exist in order to use '
-            '--startindex'.format(args.reprintsfile[0]))
+            '--startindex'.format(args.reprintsfile))
         sys.exit(2)
 
     is_easymode = True if args.easy else False
 
     # Check the carddir
-    if not os.path.isdir(args.carddir[0]):
+    if not os.path.isdir(args.carddir):
         print('--cardir must be a directory')
         sys.exit(2)
     else:
         # Ensure there is a slash at the end of the directory
-        if not args.carddir[0].endswith('/'):
-            args.carddir[0] = args.carddir[0] + '/'
+        if not args.carddir.endswith('/'):
+            args.carddir = args.carddir + '/'
 
     # Check formats file
-    if os.path.isfile(args.formats.name):
-        formats = json.load(args.formats)
+    if os.path.isfile(args.formatsfile.name):
+        formats = json.load(args.formatsfile)
+        logger.info('Loaded formats file {}'.format(args.formatsfile.name))
 
     # Load the cards
-    cards = readfiles(args.carddir[0], formats['setfiles'])
+    logger.info('Reading cards from {}'.format(args.carddir))
+    cards = readfiles(args.carddir, formats['setfiles'])
 
     # initialise errorlist - if the file exists, load the json files
-    if args.errorfile and os.path.isfile(args.errorfile[0]):
-        with open(args.errorfile[0], 'r') as errorfile:
+    if args.errorfile and os.path.isfile(args.errorfile):
+        logger.info('Loading and processing errorfile '
+                    '{}'.format(args.errorfile))
+        with open(args.errorfile, 'r') as errorfile:
             errorlist = json.load(errorfile)
             for error in errorlist:
                 for cardid, errorstruct in error.items():
@@ -153,36 +116,38 @@ def main():
                     if card is None:
                         raise Exception(
                             'Cant find cardid={} loading errorfile')
-                    logger.debug('editing card = {}\n'
-                                 'type={}'.format(card, type(card)))
                     # Check to see if the error still exists, if so, apply
                     # the edit
                     check_val = _get_val(
                         card,
                         errorstruct['key'])[errorstruct['index']]
-                    print('>>', check_val)
-                    print('==', card)
-                    if check_val == '':
-                        check_val = None
                     if (check_val == errorstruct['oldvalue']):
                         _put_val(card, errorstruct['key'],
                                  errorstruct['index'], errorstruct['newvalue'])
+                        logger.debug('Fixed error: {} - {}'.format(
+                            card['id'], errorstruct['key']))
                     else:
                         logger.debug('Oldvalue does not match current value '
-                                     'not applying edit.\ncard = {}\n'
-                                     'key = {}\ncurrent = {}\noldvalue = {}\n'
-                                     'newvalue '
+                                     'not applying edit.\n'
+                                     'D: card = {}\n'
+                                     'D: key = {}\n'
+                                     'D: current = {}\n'
+                                     'D: oldvalue = {}\n'
+                                     'D: newvalue '
                                      '= {}'.format(card['id'],
                                                    errorstruct['key'],
                                                    check_val,
                                                    errorstruct['oldvalue'],
                                                    errorstruct['newvalue']))
                         if check_val == errorstruct['newvalue']:
-                            logger.debug('Current is same as newvalue! '
-                                         'removing error, it\'s been fixed')
+                            logger.debug('Error already fixed: error: {} - {}'
+                                         ''.format(card['id'],
+                                                   errorstruct['key']))
+                            logger.debug('Removing the error')
                             _delete_error(card, errorstruct['key'],
                                           errorstruct['index'])
                         else:
+                            # Bad state, force the error and exit
                             print('Oldvalue does not match current value '
                                   'not applying edit.\ncard = {}\n'
                                   'key = {}\ncurrent = {}\n'
@@ -195,51 +160,59 @@ def main():
                             sys.exit(2)
 
     # initialise nomatchfile - if the file exists, load the json
-    if args.nomatchfile and os.path.isfile(args.nomatchfile[0]):
-        with open(args.nomatchfile[0], 'r') as nomatchfile:
+    if args.nomatchfile and os.path.isfile(args.nomatchfile):
+        with open(args.nomatchfile, 'r') as nomatchfile:
             nomatchlist = json.load(nomatchfile)
+            logger.info('Loaded nomatchfile {}'.format(args.nomatchfile))
 
     # initialize forcematchfile - if the file exists, load the json
-    if args.forcematchfile and os.path.isfile(args.forcematchfile[0]):
-        with open(args.forcematchfile[0], 'r') as forcematchfile:
+    if args.forcematchfile and os.path.isfile(args.forcematchfile):
+        with open(args.forcematchfile, 'r') as forcematchfile:
             forcematchlist = json.load(forcematchfile)
+            logger.debug('Loaded forcematchfile {}'.format(
+                args.forcematchfile))
 
     # initilalize reprintsfile - used for --startindex (existance is checked)
     # earlier
     if args.startindex:
-        with open(args.reprintsfile[0], 'r') as reprintsfile:
+        with open(args.reprintsfile, 'r') as reprintsfile:
             reprintslist = json.load(reprintsfile)
+            logger.info('Loaded reprintsfile {}'.format(args.reprintsfile))
 
     # Find the reprints
-    with open(args.reprintsfile[0], 'w') as reprintsfile:
+    with open(args.reprintsfile, 'w') as reprintsfile:
         if args.startindex:
-            print(find_reprints(cards, is_easymode, args.startindex[0]),
+            logger.info('Processing at index {}'.format(args.startinex))
+            print(find_all_reprints(cards, is_easymode, args.startindex),
                   file=reprintsfile)
         else:
-            print(find_reprints(cards, is_easymode), file=reprintsfile)
+            print(find_all_reprints(cards, is_easymode), file=reprintsfile)
 
     # write the errorfile
-    with open(args.errorfile[0], 'w') as errorfile:
-        # logger.debug('errorlist = {}'.format(errorlist))
-        print(json.dumps(errorlist, indent=4), file=errorfile)
+    if len(errorlist):
+        with open(args.errorfile, 'w') as errorfile:
+            # logger.debug('errorlist = {}'.format(errorlist))
+            print(json.dumps(errorlist, indent=4), file=errorfile)
 
     # write the nomatchfile
     # {cardid: [cardid, cardid, carddid], cardid: [...]}
-    with open(args.nomatchfile[0], 'w') as nomatchfile:
-        logger.debug('nomatchlist = {}'.format(nomatchlist))
-        print(json.dumps(nomatchlist, indent=4), file=nomatchfile)
+    if len(nomatchlist):
+        with open(args.nomatchfile, 'w') as nomatchfile:
+            logger.debug('nomatchlist = {}'.format(nomatchlist))
+            print(json.dumps(nomatchlist, indent=4), file=nomatchfile)
 
     # write the forcematchfile
-    with open(args.forcematchfile[0], 'w') as forcematchfile:
-        logger.debug('forcematchlist = {}'.format(forcematchlist))
-        print(json.dumps(forcematchlist, indent=4), file=forcematchfile)
+    if len(forcematchlist):
+        with open(args.forcematchfile, 'w') as forcematchfile:
+            logger.debug('forcematchlist = {}'.format(forcematchlist))
+            print(json.dumps(forcematchlist, indent=4), file=forcematchfile)
 
     # finally, write the cardfiles
-    writefiles(args.carddir[0], cards,
+    writefiles(args.carddir, cards,
                formats['setfiles'], formats['keyorder'])
 
 
-def find_reprints(cards, is_easymode, startindex=0):
+def find_all_reprints(cards, is_easymode, startindex=0):
     """ Search through a list of card objects and find all reprints """
 
     # holder for list of reprints in the format of:
@@ -257,7 +230,7 @@ def find_reprints(cards, is_easymode, startindex=0):
 
         supertype = card['supertype']
 
-        if supertype == 'Pokémon':
+        if supertype in ['Pokémon', 'Trainer']:
 
             # if there are any reprint objects in the reprintslist, check to
             # see if the current card is already listed in any of them, if not
@@ -274,14 +247,11 @@ def find_reprints(cards, is_easymode, startindex=0):
             if not any(card['id'] in prints.get(card['name'], {})
                        for prints in reprintslist):
                 # output the index so we can follow the progress
-                print(i)
+                print(i, supertype, card['name'])
                 try:
-                    reprints = find_reprints_pokemon(cards, i, is_easymode)
+                    reprints = find_card_reprints(i, cards, is_easymode)
                     if reprints:
                         reprintslist.append(reprints)
-                        # with open('manual_reprints.json', 'a') as outfile:
-                        # print(json.dumps(reprintslist),
-                        #       file=outfile)
                         print(json.dumps(reprints))
                 except QuitChosen as e:
                     print('Quit chosen Exiting cleaning saving file')
@@ -291,7 +261,7 @@ def find_reprints(cards, is_easymode, startindex=0):
     return(json.dumps(reprintslist, indent=4))
 
 
-def find_reprints_pokemon(cards, index, find_easy=False):
+def find_card_reprints(index, cards, find_easy=False):
     """ identify reprints for a specific pokemon card, return a dictionary
         in the form of {Name: [cardid, cardid]}
     """
@@ -458,7 +428,7 @@ def compare_cards_easy(card1, card2):
     if card1['supertype'] != card2['supertype']:
         return QUICKFAIL
 
-    if card1['supertype'] != 'Pokémon':
+    if card1['supertype'] != 'Pokémon' and card1['supertype'] != 'Trainer':
         return NONSUPPORTED
 
     # TODO - change conditional when supporing more types, here now for
@@ -480,6 +450,10 @@ def compare_cards_easy(card1, card2):
                   'resistances': 'match',
                   'retreatCost': 'match',
                   'ancient_trait': 'match'}
+
+    elif card1['supertype'] == 'Trainer':
+        checks = {'name': 99,
+                  'text': 'match'}
 
     for key, value in checks.items():
         if type(value) == int:
@@ -564,8 +538,8 @@ def compare_cards_full(card1, card2):
     if card1['supertype'] != card2['supertype']:
         return QUICKFAIL
 
-    # If it's not a pokemon, continue (TODO - add more comparisons)
-    if card1['supertype'] != 'Pokémon':
+    # If it's not a pokemon or Trainer, continue (TODO - add more comparisons)
+    if card1['supertype'] != 'Pokémon' and card1['supertype'] != 'Trainer':
         return NONSUPPORTED
 
     # TODO - change conditional when supporing more types, here now for
@@ -575,6 +549,7 @@ def compare_cards_full(card1, card2):
         # Note: checks are done in order, when an integer, any fuzzy match
         # greater than the specified value is considered a match.  Less than
         # the integer results in full rejection of the card.
+
         # Use different match set if Unown
         if bool(re.match('Unown', card1['name'], re.I)):
             checks = {'hp': 100,
@@ -587,7 +562,7 @@ def compare_cards_full(card1, card2):
                       'attacks.cost': 'match',
                       'attacks.convertedEnergyCost': 'match',
                       'ability.name': 'match',
-                      'ability.text': '80',
+                      'ability.text': 80,
                       'ability.type': 'match',
                       'weaknesses': 'match',
                       'resistances': 'match',
@@ -611,6 +586,9 @@ def compare_cards_full(card1, card2):
                       'ancient_trait': 'match',
                       'retreatCost': 'match'}
 
+    elif card1['supertype'] == 'Trainer':
+        checks = {'name': 90,
+                  'text': 'match'}
     # For each of the checks, extract a *list* of values from the cards which
     # match the check.  It's a list as there may be more than one (e.g multiple
     # attacks)
@@ -697,7 +675,7 @@ def compare_cards_full(card1, card2):
     return response
 
 
-def _get_val(record, key):
+def _get_val(record, key, level=0):
     """ return list containing value(s) for the key, handling subkeys with '.'
 
     recursively goes down subkeys until it receives the final record.
@@ -732,7 +710,7 @@ def _get_val(record, key):
         return [record.get(key)]
     nextrecord = {} if record.get(
         keylist[0]) is None else record.get(keylist[0])
-    return _get_val(nextrecord, '.'.join(keylist[1:]))
+    return _get_val(nextrecord, '.'.join(keylist[1:]), level=level + 1)
 
 
 def _put_val(record, key, index, value, level=0):
@@ -757,7 +735,6 @@ def _put_val(record, key, index, value, level=0):
         # check to see if it's a list of dictionaries
         if isinstance(record, list) and isinstance(record[0], dict):
             # logger.debug('record = {}\nkey = {}'.format(record, key))
-            # record[index][key + '_was'] = record[index].get(key, "__missing__")
             record[index][key] = value
             return
         # it must be a single object

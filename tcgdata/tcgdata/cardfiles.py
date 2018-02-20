@@ -6,25 +6,14 @@ import argparse
 import logging
 import os
 import sys
-import re
+import tcgdata.cardfilters as cardfilters
+import verbosity
 
 # To be able to sort the dictionaries before writing the json
 from collections import OrderedDict
 
 # Initialise the logger
 logger = logging.getLogger(__name__)
-# Custome logfilter for selective debug messages
-
-
-class debugLogFilter(logging.Filter):
-    def __init__(self, funclist):
-        self.funclist = funclist
-
-    def filter(self, rec):
-        if rec.levelno == logging.DEBUG:
-            return rec.funcName in self.funclist
-        return True
-
 
 # List to hold cards
 cards = []
@@ -35,54 +24,19 @@ def main():
     global cards
 
     parser = argparse.ArgumentParser(description='Normalize TCG json files')
-    mgroup = parser.add_mutually_exclusive_group()
-    mgroup.add_argument("-v", "--verbosity", action="count",
-                        help="increase output verbosity. -vv = DEBUG",
-                        default=0)
-    mgroup.add_argument('-d', '--debug', nargs='+',
-                        help="Set debug for specific local functions, verbose"
-                        " for everything else")
     parser.add_argument('--carddir', nargs=1, required=True,
                         help='directory of the files to read and write')
-    parser.add_argument('--formats', nargs=1, type=argparse.FileType('r'),
+    parser.add_argument('--formats', nargs='?', type=argparse.FileType('r'),
                         required=False, default='formats.json',
                         help='formats json file')
+
+    # add logging arguments
+    verbosity.add_arguments(parser)
     args = parser.parse_args()
 
-    # Set log level and configure log formatter
-    # *Loggers* expose the interface that application code directly uses.
-    # *Handlers* send the log records (created by loggers) to the appropriate
-    # destination.
-    # *Filters* provide a finer grained facility for determining which log
-    # records to output.
-    # *Formatters*  specify the layout of log records in the final output.
-
-    if args.verbosity > 1:
-        logger.setLevel(logging.DEBUG)
-    elif args.verbosity == 1:
-        logger.setLevel(logging.INFO)
-    else:
-        logger.setLevel(logging.WARNING)
-
-    #
-    # Create Log Handler
-    #
-
-    # clear existing handlers (pythonista)
-    logger.handlers = []
-    logFormatter = logging.Formatter(
-        '%(asctime)s [%(filename)s] [%(funcName)s] [%(levelname)s] ' +
-        '[%(lineno)d] %(message)s')
-
-    # configure stream handler (this is what prints to the console)
-    consoleHandler = logging.StreamHandler()
-    consoleHandler.setFormatter(logFormatter)
-    logger.addHandler(consoleHandler)
-
-    # Set up filter if debug was chosen
-    if args.debug:
-        logger.setLevel(logging.DEBUG)
-        logger.addFilter(debugLogFilter(args.debug))
+    # initialize logging handle logging arguments
+    verbosity.initialize(logger)
+    verbosity.handle_arguments(args, logger)
 
     #
     # Prep done, start the work
@@ -98,20 +52,24 @@ def main():
             args.carddir[0] = args.carddir[0] + '/'
 
     # Check formats file
-    if os.path.isfile(args.formats[0].name):
-        formats = json.load(args.formats[0])
-        logger.info('Loaded formats file %s', args.formats[0].name)
+    print(args.formats)
+    if os.path.isfile(args.formats.name):
+        formats = json.load(args.formats)
+        logger.info('Loaded formats file {}'.format(args.formats.name))
 
+    logger.info('Loading files in: {}'.format(args.carddir[0]))
     cards = readfiles(args.carddir[0], formats['setfiles'])
     logger.info('Loaded {} cards'.format(len(cards)))
 
     # Apply filters
     for card in cards:
-        sort_energy(card=card, dont_sort_energy=formats['dont_sort_energy'])
-        apostrophe_to_quotes(item=card)
+        cardfilters.sort_energy(
+            card=card, dont_sort_energy=formats['dont_sort_energy'])
+        cardfilters.apostrophe_to_quotes(item=card)
         # quote_to_apostrophe(item=card)
-        x_to_times(item=card)
-        clean_attack_text(item=card)
+        cardfilters.x_to_times(item=card)
+        cardfilters.clean_attack_text(item=card)
+        cardfilters.add_converted_reteat_cost(card=card)
 
     writefiles(args.carddir[0], cards,
                formats['setfiles'], formats['keyorder'])
@@ -123,6 +81,7 @@ def readfiles(dirpath, setfiles):
     setfiles - list of files from formats.com
 
     """
+
     # List to hold the cards
     cards = []
 
@@ -137,13 +96,14 @@ def readfiles(dirpath, setfiles):
         else:
             # Open the file and load the cards
             with open(set_file_path, 'r') as set_file_handler:
+                logger.debug('Reading {}'.format(set_file_path))
                 set_cards = json.load(set_file_handler)
                 logger.debug('Found {} cards in {}'.format(len(set_cards),
                                                            set_file_path))
         # Add the cards to the car array
         for card in set_cards:
             cards.append(card)
-    logger.debug('Loaded {} cards'.format(len(cards)))
+    logger.info('Loaded {} cards'.format(len(cards)))
     return cards
 
 
@@ -233,196 +193,6 @@ def sortdict(dictionary, sortorder, prefix='.'):
             newdict[key] = dictionary[key]
 
     return newdict
-
-
-def apostrophe_to_quotes(**kwargs):
-    """ Change apostrophe to single quote characters
-    replace ’s and ’t with 's and 't with
-
-    """
-    patterns = [
-        (r'’s\b', r"'s"),
-        (r'’t\b', r"'t")
-    ]
-
-    d = kwargs['item']
-    if isinstance(d, dict):
-        for k, v in list(d.items()):
-            if isinstance(v, list) or isinstance(v, dict):
-                apostrophe_to_quotes(item=v)
-            if isinstance(v, str):
-                for pattern, replacement in patterns:
-                    if re.search(pattern, v):
-                        logger.debug('replacing[{}]'.format(d[k]))
-                        v = d[k] = re.sub(pattern, replacement, v)
-                        logger.debug('replaced [{}]'.format(d[k]))
-    elif isinstance(d, list):
-        for i, v in enumerate(d):
-            if isinstance(v, str):
-                for pattern, replacement in patterns:
-                    if re.search(pattern, v):
-                        logger.debug('replacing[{}]'.format(d[i]))
-                        v = d[i] = re.sub(pattern, replacement, v)
-                        logger.debug('replaced [{}]'.format(d[i]))
-            if isinstance(v, dict):
-                apostrophe_to_quotes(item=v)
-
-
-def quote_to_apostrophe(**kwargs):
-    """ Change single quotes to apostrophe characters
-    replace 's and 't with ’s and ’t
-
-    """
-    patterns = [
-        (r'\'s\b', r'’s'),
-        (r'\'t\b', r'’t')
-    ]
-
-    d = kwargs['item']
-    if isinstance(d, dict):
-        for k, v in list(d.items()):
-            if isinstance(v, list) or isinstance(v, dict):
-                quote_to_apostrophe(item=v)
-            if isinstance(v, str):
-                for pattern, replacement in patterns:
-                    if re.search(pattern, v):
-                        logger.debug('replacing[{}]'.format(d[k]))
-                        v = d[k] = re.sub(pattern, replacement, v)
-                        logger.debug('replaced [{}]'.format(d[k]))
-    elif isinstance(d, list):
-        for i, v in enumerate(d):
-            if isinstance(v, str):
-                for pattern, replacement in patterns:
-                    if re.search(pattern, v):
-                        logger.debug('replacing[{}]'.format(d[i]))
-                        v = d[i] = re.sub(pattern, replacement, v)
-                        logger.debug('replaced [{}]'.format(d[i]))
-            if isinstance(v, dict):
-                quote_to_apostrophe(item=v)
-
-
-def x_to_times(**kwargs):
-    """ Change where the letter x was used when it should have been \xd7
-
-    Patterns:
-
-    Change x to 'times' when letter x is used in x+d (e.g. x2) or d+ (e.g. 20x)
-            (r'\b(\d+)x\b', r'\1×'),
-            (r'\bx(\d+)\b', r'×\1')
-    \b matches empty string at beginning or end of a word
-
-    """
-    patterns = [
-        (r'\b(\d+)x\b', r'\1×'),
-        (r'\bx(\d+)\b', r'×\1')
-    ]
-
-    d = kwargs['item']
-    if isinstance(d, dict):
-        for k, v in list(d.items()):
-            if isinstance(v, list) or isinstance(v, dict):
-                x_to_times(item=v)
-            if isinstance(v, str):
-                for pattern, replacement in patterns:
-                    if re.search(pattern, v):
-                        logger.debug('replacing[{}]'.format(d[k]))
-                        v = d[k] = re.sub(pattern, replacement, v)
-                        logger.debug('replaced [{}]'.format(d[k]))
-    elif isinstance(d, list):
-        for i, v in enumerate(d):
-            if isinstance(v, str):
-                for pattern, replacement in patterns:
-                    if re.search(pattern, v):
-                        logger.debug('replacing[{}]'.format(d[i]))
-                        v = d[i] = re.sub(pattern, replacement, v)
-                        logger.debug('replaced [{}]'.format(d[i]))
-            if isinstance(v, dict):
-                x_to_times(item=v)
-
-
-def clean_attack_text(**kwargs):
-    """ Fix common errors in attack text
-
-    Patterns:
-    Remove when attack damage is included in the attack text e.g. "(20+) This
-        attack does 20 damage plus ..."
-
-    """
-    patterns = [
-        (r'^\(\d+×\)\s*', r''),
-        (r'^\(\d+\+\)\s*', r'')
-    ]
-
-    item = kwargs['item']
-    if item.get('attacks'):
-        for attack in item['attacks']:
-            if attack.get('text'):
-                for pattern, replacement in patterns:
-                    if re.search(pattern, attack['text']):
-                        logger.debug('replacing[{}]'.format(attack['text']))
-                        attack['text'] = re.sub(
-                            pattern, replacement, attack['text'])
-                        logger.debug('replaced [{}]'.format(attack['text']))
-
-
-def sort_energy(**kwargs):
-    """ Ensure energy costs are sorted - allows for better matching """
-
-    def _energy_order(energytype):
-        order = {
-            'Free': 5,
-            'Fire': 10,
-            'Grass': 20,
-            'Water': 30,
-            'Psychic': 40,
-            'Darkness': 50,
-            'Fairy': 60,
-            'Lightning': 70,
-            'Fighting': 80,
-            'Metal': 90,
-            'Colorless': 100
-        }
-        return order[energytype]
-
-    def _colorless_order(energytype):
-        order = {
-            'Free': 5,
-            'Fire': 5,
-            'Grass': 5,
-            'Psychic': 5,
-            'Darkness': 5,
-            'Fairy': 5,
-            'Water': 5,
-            'Lightning': 5,
-            'Fighting': 5,
-            'Metal': 5,
-            'Colorless': 100
-        }
-        return order[energytype]
-
-    card = kwargs['card']
-    if card.get('attacks'):
-        for attack in card['attacks']:
-            if attack.get('cost'):
-
-                # Fix a few common mistakes
-                for i, energy_card in enumerate(attack['cost']):
-                    if energy_card == 'Green':
-                        attack['cost'][i] = 'Grass'
-                    if energy_card == 'Dark':
-                        attack['cost'][i] = 'Darkness'
-
-                if card['setCode'] in kwargs['dont_sort_energy']:
-                    attack['cost'].sort(key=_colorless_order)
-                else:
-                    attack['cost'].sort(key=_energy_order)
-                if attack['cost'] != ['Free']:
-                    attack['convertedEnergyCost'] = len(attack['cost'])
-                else:
-                    attack['convertedEnergyCost'] = 0
-            else:
-                attack['cost'] = ['Free']
-                attack['convertedEnergyCost'] = 0
 
 
 if __name__ == "__main__":

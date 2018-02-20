@@ -25,53 +25,117 @@
     }
   },
   "abbreviations": {
+    "base1": {
+      "name": "Base Set",
+      "trainer_text": null,
+      "supporter_text": null
+    },
+    "base2": {
+      "name": "Base Set - Jungle",
+      "trainer_text": null,
+      "supporter_text": null
+    },
+    "base3": {
+      "name": "Base Set - Fossil",
+      "trainer_text": null,
+      "supporter_text": null
+    },
+    "base4": {
+      "name": "Base Set - Base Set 2",
+      "trainer_text": null,
+      "supporter_text": null
+    },
+    "base5": {
+      "name": "Base Set - Team Rocket",
+      "trainer_text": null,
+      "supporter_text": null
+    },
+    "base6": {
+      "name": "Base Set - Gym Booster 1: Leaders' Stadium",
+      "trainer_text": null,
+      "supporter_text": null
+    },
+    "base7": {
+      "name": "Base Set - Gym Booster 2: Challenge from the Darkness",
+      "trainer_text": null,
+      "supporter_text": null
+    },
+    "basep": {
+      "name": "Base Set - Wizard's Black Star Promos",
+      "trainer_text": null,
+      "supporter_text": null
+    },
     "bw1": {
       "abbr": "blw",
-      "name": "Black & White"
+      "name": "Black & White",
+      "trainer_text": "You may play as many Item cards as you like during your turn (before your attack)",
+      "supporter_text": "You may play only 1 Supporter card during your turn (before your attack)"
     },
     "bw2": {
       "abbr": "epo",
-      "name": "Black & White - Emerging Powers"
+      "name": "Black & White - Emerging Powers",
+      "trainer_text": "You may play as many Item cards as you like during your turn (before your attack)",
+      "supporter_text": "You may play only 1 Supporter card during your turn (before your attack)"
     },
     "bw3": {
       "abbr": "nvi",
-      "name": "Black & White - Noble Victories"
+      "name": "Black & White - Noble Victories",
+      "trainer_text": "You may play as many Item cards as you like during your turn (before your attack)",
+      "supporter_text": "You may play only 1 Supporter card during your turn (before your attack)"
     },
     "bw4": {
       "abbr": "nxd",
-      "name": "Black & White - Next Destinies"
+      "name": "Black & White - Next Destinies",
+      "trainer_text": "You may play as many Item cards as you like during your turn (before your attack)",
+      "supporter_text": "You may play only 1 Supporter card during your turn (before your attack)"
     },
     "bw5": {
       "abbr": "dex",
-      "name": "Black & White - Dark Explorers"
+      "name": "Black & White - Dark Explorers",
+      "trainer_text": "You may play as many Item cards as you like during your turn (before your attack)",
+      "supporter_text": "You may play only 1 Supporter card during your turn (before your attack)"
     },
     "bw6": {
       "abbr": "drx",
-      "name": "Black & White - Dragons Exalted"
+      "name": "Black & White - Dragons Exalted",
+      "trainer_text": "You may play as many Item cards as you like during your turn (before your attack)",
+      "supporter_text": "You may play only 1 Supporter card during your turn (before your attack)"
     },
     "bw7": {
       "abbr": "bcr",
-      "name": "Black & White - Boundaries Crossed"
+      "name": "Black & White - Boundaries Crossed",
+      "trainer_text": "You may play as many Item cards as you like during your turn (before your attack)",
+      "supporter_text": "You may play only 1 Supporter card during your turn (before your attack)"
     },
     "bw8": {
       "abbr": "pls",
-      "name": "Black & White - Plasma Storm"
+      "name": "Black & White - Plasma Storm",
+      "trainer_text": "You may play as many Item cards as you like during your turn (before your attack)",
+      "supporter_text": "You may play only 1 Supporter card during your turn (before your attack)"
     },
     "bw9": {
       "abbr": "plf",
-      "name": "Black & White - Plasma Freeze"
+      "name": "Black & White - Plasma Freeze",
+      "trainer_text": "You may play as many Item cards as you like during your turn (before your attack)",
+      "supporter_text": "You may play only 1 Supporter card during your turn (before your attack)"
     },
     "bw10": {
       "abbr": "plb",
-      "name": "Black & White - Plasma Blast"
+      "name": "Black & White - Plasma Blast",
+      "trainer_text": "You may play as many Item cards as you like during your turn (before your attack)",
+      "supporter_text": "You may play only 1 Supporter card during your turn (before your attack)"
     },
     "bw11": {
       "abbr": "ltr",
-      "name": "Black & White - Legendary Treasures"
+      "name": "Black & White - Legendary Treasures",
+      "trainer_text": "You may play as many Item cards as you like during your turn (before your attack)",
+      "supporter_text": "You may play only 1 Supporter card during your turn (before your attack)"
     },
     "bwp": {
       "abbr": "pr",
-      "name": "Black Star Promos BW"
+      "name": "Black Star Promos BW",
+      "trainer_text": "You may play as many Item cards as you like during your turn (before your attack)",
+      "supporter_text": "You may play only 1 Supporter card during your turn (before your attack)"
     },
     "dv1": {
       "abbr": "drv",
@@ -322,6 +386,7 @@
       "ancientTrait",
       "hp",
       "retreatCost",
+      "convertedRetreatCost",
       "number",
       "artist",
       "rarity",
